@@ -1,16 +1,45 @@
 package com.example.protokols;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
+// Добавил Resource Directory в res и выбрал  menu
+// Добавил в menu Resource Menu File
 public class MainActivity extends AppCompatActivity {
+    private Toolbar toolbarMain;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        
-        
+
+        // Для меню обязательно вызвать setSupportActionBar
+        toolbarMain = findViewById(R.id.toolbarMain);
+        setSupportActionBar(toolbarMain);
+        toolbarMain.setTitle("Application");
+
+    }
+    // Метод : Создает меню в тулбаре из указанного ресурса
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.list_menu, menu);
+        return true;
+    }
+
+    // Метод : Обрабатывает нажатия пунктов меню
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuList){
+            Intent i = new Intent(MainActivity.this, ViewingProtokolsList.class);
+            startActivity(i);
+        }
+        return true;
     }
 }
