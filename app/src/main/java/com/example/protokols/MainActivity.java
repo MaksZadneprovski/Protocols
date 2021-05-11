@@ -8,6 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 
 // Добавил Resource Directory в res и выбрал  menu
 // Добавил в menu Resource Menu File
@@ -41,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }
         return true;
+    }
+
+    public void onClickCreateProtocol(View view) {
+        Intent i = new Intent(MainActivity.this, MainSilovoyTrans.class);
+        startActivity(i);
     }
 }

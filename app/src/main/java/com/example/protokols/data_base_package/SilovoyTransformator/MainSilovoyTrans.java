@@ -33,7 +33,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     private RadioButton rbZvezda,rbTreugol,rbOm,rbmOm, rbQuantityRpn5,rbQuantityRpn10,rbQuantityRpn25;
     private TextView tvWork, tvA, tvB, tvC;
     private Date currentDate = new Date();
-    private Button btnSave, btnShow;
+    private Button btnSave, btnShow,btnSetConstantForRpn;
     private EditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvAB7, etRpnHvAB8,
@@ -43,7 +43,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
             etRpnHvBC14, etRpnHvBC15, etRpnHvBC16, etRpnHvBC17, etRpnHvBC18, etRpnHvBC19, etRpnHvBC20, etRpnHvBC21, etRpnHvBC22, etRpnHvBC23,
             etRpnHvBC24, etRpnHvBC25, etRpnHvCA1, etRpnHvCA2, etRpnHvCA3, etRpnHvCA4, etRpnHvCA5, etRpnHvCA6, etRpnHvCA7, etRpnHvCA8, etRpnHvCA9,
             etRpnHvCA10, etRpnHvCA11, etRpnHvCA12, etRpnHvCA13, etRpnHvCA14, etRpnHvCA15, etRpnHvCA16, etRpnHvCA17, etRpnHvCA18, etRpnHvCA19,
-            etRpnHvCA20, etRpnHvCA21, etRpnHvCA22, etRpnHvCA23, etRpnHvCA24, etRpnHvCA25,etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etWindingConnectionDiagramLv;
+            etRpnHvCA20, etRpnHvCA21, etRpnHvCA22, etRpnHvCA23, etRpnHvCA24, etRpnHvCA25,etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etWindingConnectionDiagramLv,etSetConstantForRpn;
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -398,6 +398,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
         rbQuantityRpn25 = findViewById(R.id.rbQuantityRpn25);
         btnSave =findViewById(R.id.btnSave);
         btnShow =findViewById(R.id.btnShow);
+        btnSetConstantForRpn =findViewById(R.id.btnSetConstantForRpn);
+
         // TextView
         tvWork= findViewById(R.id.tvWork);
         tvA= findViewById(R.id.tvSchemaFazaA);
@@ -540,6 +542,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etRpnLvCn = findViewById(R.id.etRpnLvCn);
         etRpnLvBn = findViewById(R.id.etRpnLvBn);
         etRpnLvAn = findViewById(R.id.etRpnLvAn);
+        etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
 
     }
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -647,8 +650,183 @@ public class MainSilovoyTrans extends AppCompatActivity {
         tableRpnHvBC25.setVisibility(tableRpnHvBC25.GONE);
         tableRpnHvCA25.setVisibility(tableRpnHvCA25.GONE);
     }
+
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
+    // 6 Метод : Устанавливает текст в поля сопротивления для удобства ввода
+    public void onClickBtnSetConstant(View view) {
+        String constantForEt = etSetConstantForRpn.getText().toString();
+        if (rbQuantityRpn5.isChecked()){
+            setConstant5(constantForEt);
+        }
+        else if (rbQuantityRpn10.isChecked()){
+            setConstant5(constantForEt);
+            setConstant10(constantForEt);
+        }
+        else if (rbQuantityRpn25.isChecked()){
+            setConstant5(constantForEt);
+            setConstant10(constantForEt);
+            setConstant25(constantForEt);
+        }
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    private void setConstant5 (String constantForEt) {
+        etRpnHvAB1.setText(constantForEt);
+        etRpnHvAB1.setSelection(etRpnHvAB1.getText().length());
+        etRpnHvAB2.setText(constantForEt);
+        etRpnHvAB2.setSelection(etRpnHvAB2.getText().length());
+        etRpnHvAB3.setText(constantForEt);
+        etRpnHvAB3.setSelection(etRpnHvAB3.getText().length());
+        etRpnHvAB4.setText(constantForEt);
+        etRpnHvAB4.setSelection(etRpnHvAB4.getText().length());
+        etRpnHvAB5.setText(constantForEt);
+        etRpnHvAB5.setSelection(etRpnHvAB5.getText().length());
+        etRpnHvBC1.setText(constantForEt);
+        etRpnHvBC1.setSelection(etRpnHvBC1.getText().length());
+        etRpnHvBC2.setText(constantForEt);
+        etRpnHvBC2.setSelection(etRpnHvBC2.getText().length());
+        etRpnHvBC3.setText(constantForEt);
+        etRpnHvBC3.setSelection(etRpnHvBC3.getText().length());
+        etRpnHvBC4.setText(constantForEt);
+        etRpnHvBC4.setSelection(etRpnHvBC4.getText().length());
+        etRpnHvBC5.setText(constantForEt);
+        etRpnHvBC5.setSelection(etRpnHvBC5.getText().length());
+        etRpnHvCA1.setText(constantForEt);
+        etRpnHvCA1.setSelection(etRpnHvCA1.getText().length());
+        etRpnHvCA2.setText(constantForEt);
+        etRpnHvCA2.setSelection(etRpnHvCA2.getText().length());
+        etRpnHvCA3.setText(constantForEt);
+        etRpnHvCA3.setSelection(etRpnHvCA3.getText().length());
+        etRpnHvCA4.setText(constantForEt);
+        etRpnHvCA4.setSelection(etRpnHvCA4.getText().length());
+        etRpnHvCA5.setText(constantForEt);
+        etRpnHvCA5.setSelection(etRpnHvCA5.getText().length());
+    }
+    private void setConstant10 (String constantForEt) {
+        etRpnHvAB6.setText(constantForEt);
+        etRpnHvAB6.setSelection(etRpnHvAB6.getText().length());
+        etRpnHvAB7.setText(constantForEt);
+        etRpnHvAB7.setSelection(etRpnHvAB7.getText().length());
+        etRpnHvAB8.setText(constantForEt);
+        etRpnHvAB8.setSelection(etRpnHvAB8.getText().length());
+        etRpnHvAB9.setText(constantForEt);
+        etRpnHvAB9.setSelection(etRpnHvAB9.getText().length());
+        etRpnHvAB10.setText(constantForEt);
+        etRpnHvAB10.setSelection(etRpnHvAB10.getText().length());
+        etRpnHvBC6.setText(constantForEt);
+        etRpnHvBC6.setSelection(etRpnHvBC6.getText().length());
+        etRpnHvBC7.setText(constantForEt);
+        etRpnHvBC7.setSelection(etRpnHvBC7.getText().length());
+        etRpnHvBC8.setText(constantForEt);
+        etRpnHvBC8.setSelection(etRpnHvBC8.getText().length());
+        etRpnHvBC9.setText(constantForEt);
+        etRpnHvBC9.setSelection(etRpnHvBC9.getText().length());
+        etRpnHvBC10.setText(constantForEt);
+        etRpnHvBC10.setSelection(etRpnHvBC10.getText().length());
+        etRpnHvCA6.setText(constantForEt);
+        etRpnHvCA6.setSelection(etRpnHvCA6.getText().length());
+        etRpnHvCA7.setText(constantForEt);
+        etRpnHvCA7.setSelection(etRpnHvCA7.getText().length());
+        etRpnHvCA8.setText(constantForEt);
+        etRpnHvCA8.setSelection(etRpnHvCA8.getText().length());
+        etRpnHvCA9.setText(constantForEt);
+        etRpnHvCA9.setSelection(etRpnHvCA9.getText().length());
+        etRpnHvCA10.setText(constantForEt);
+        etRpnHvCA10.setSelection(etRpnHvCA10.getText().length());
+    }
+    private void setConstant25 (String constantForEt) {
+        etRpnHvAB11.setText(constantForEt);
+        etRpnHvAB11.setSelection(etRpnHvAB11.getText().length());
+        etRpnHvAB12.setText(constantForEt);
+        etRpnHvAB12.setSelection(etRpnHvAB12.getText().length());
+        etRpnHvAB13.setText(constantForEt);
+        etRpnHvAB13.setSelection(etRpnHvAB13.getText().length());
+        etRpnHvAB14.setText(constantForEt);
+        etRpnHvAB14.setSelection(etRpnHvAB14.getText().length());
+        etRpnHvAB15.setText(constantForEt);
+        etRpnHvAB15.setSelection(etRpnHvAB15.getText().length());
+        etRpnHvAB16.setText(constantForEt);
+        etRpnHvAB16.setSelection(etRpnHvAB16.getText().length());
+        etRpnHvAB17.setText(constantForEt);
+        etRpnHvAB17.setSelection(etRpnHvAB17.getText().length());
+        etRpnHvAB18.setText(constantForEt);
+        etRpnHvAB18.setSelection(etRpnHvAB18.getText().length());
+        etRpnHvAB19.setText(constantForEt);
+        etRpnHvAB19.setSelection(etRpnHvAB19.getText().length());
+        etRpnHvAB20.setText(constantForEt);
+        etRpnHvAB20.setSelection(etRpnHvAB20.getText().length());
+        etRpnHvAB21.setText(constantForEt);
+        etRpnHvAB21.setSelection(etRpnHvAB21.getText().length());
+        etRpnHvAB22.setText(constantForEt);
+        etRpnHvAB22.setSelection(etRpnHvAB22.getText().length());
+        etRpnHvAB23.setText(constantForEt);
+        etRpnHvAB23.setSelection(etRpnHvAB23.getText().length());
+        etRpnHvAB24.setText(constantForEt);
+        etRpnHvAB24.setSelection(etRpnHvAB24.getText().length());
+        etRpnHvAB25.setText(constantForEt);
+        etRpnHvAB25.setSelection(etRpnHvAB25.getText().length());
+        etRpnHvBC11.setText(constantForEt);
+        etRpnHvBC11.setSelection(etRpnHvBC11.getText().length());
+        etRpnHvBC12.setText(constantForEt);
+        etRpnHvBC12.setSelection(etRpnHvBC12.getText().length());
+        etRpnHvBC13.setText(constantForEt);
+        etRpnHvBC13.setSelection(etRpnHvBC13.getText().length());
+        etRpnHvBC14.setText(constantForEt);
+        etRpnHvBC14.setSelection(etRpnHvBC14.getText().length());
+        etRpnHvBC15.setText(constantForEt);
+        etRpnHvBC15.setSelection(etRpnHvBC15.getText().length());
+        etRpnHvBC16.setText(constantForEt);
+        etRpnHvBC16.setSelection(etRpnHvBC16.getText().length());
+        etRpnHvBC17.setText(constantForEt);
+        etRpnHvBC17.setSelection(etRpnHvBC17.getText().length());
+        etRpnHvBC18.setText(constantForEt);
+        etRpnHvBC18.setSelection(etRpnHvBC18.getText().length());
+        etRpnHvBC19.setText(constantForEt);
+        etRpnHvBC19.setSelection(etRpnHvBC19.getText().length());
+        etRpnHvBC20.setText(constantForEt);
+        etRpnHvBC20.setSelection(etRpnHvBC20.getText().length());
+        etRpnHvBC21.setText(constantForEt);
+        etRpnHvBC21.setSelection(etRpnHvBC21.getText().length());
+        etRpnHvBC22.setText(constantForEt);
+        etRpnHvBC22.setSelection(etRpnHvBC22.getText().length());
+        etRpnHvBC23.setText(constantForEt);
+        etRpnHvBC23.setSelection(etRpnHvBC23.getText().length());
+        etRpnHvBC24.setText(constantForEt);
+        etRpnHvBC24.setSelection(etRpnHvBC24.getText().length());
+        etRpnHvBC25.setText(constantForEt);
+        etRpnHvBC25.setSelection(etRpnHvBC25.getText().length());
+        etRpnHvCA11.setText(constantForEt);
+        etRpnHvCA11.setSelection(etRpnHvCA11.getText().length());
+        etRpnHvCA12.setText(constantForEt);
+        etRpnHvCA12.setSelection(etRpnHvCA12.getText().length());
+        etRpnHvCA13.setText(constantForEt);
+        etRpnHvCA13.setSelection(etRpnHvCA13.getText().length());
+        etRpnHvCA14.setText(constantForEt);
+        etRpnHvCA14.setSelection(etRpnHvCA14.getText().length());
+        etRpnHvCA15.setText(constantForEt);
+        etRpnHvCA15.setSelection(etRpnHvCA15.getText().length());
+        etRpnHvCA16.setText(constantForEt);
+        etRpnHvCA16.setSelection(etRpnHvCA16.getText().length());
+        etRpnHvCA17.setText(constantForEt);
+        etRpnHvCA17.setSelection(etRpnHvCA17.getText().length());
+        etRpnHvCA18.setText(constantForEt);
+        etRpnHvCA18.setSelection(etRpnHvCA18.getText().length());
+        etRpnHvCA19.setText(constantForEt);
+        etRpnHvCA19.setSelection(etRpnHvCA19.getText().length());
+        etRpnHvCA20.setText(constantForEt);
+        etRpnHvCA20.setSelection(etRpnHvCA20.getText().length());
+        etRpnHvCA21.setText(constantForEt);
+        etRpnHvCA21.setSelection(etRpnHvCA21.getText().length());
+        etRpnHvCA22.setText(constantForEt);
+        etRpnHvCA22.setSelection(etRpnHvCA22.getText().length());
+        etRpnHvCA23.setText(constantForEt);
+        etRpnHvCA23.setSelection(etRpnHvCA23.getText().length());
+        etRpnHvCA24.setText(constantForEt);
+        etRpnHvCA24.setSelection(etRpnHvCA24.getText().length());
+        etRpnHvCA25.setText(constantForEt);
+        etRpnHvCA25.setSelection(etRpnHvCA25.getText().length());
+    }
 
 
 }
