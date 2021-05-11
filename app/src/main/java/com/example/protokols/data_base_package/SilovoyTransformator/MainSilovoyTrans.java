@@ -33,7 +33,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     private RadioButton rbZvezda,rbTreugol,rbOm,rbmOm, rbQuantityRpn5,rbQuantityRpn10,rbQuantityRpn25;
     private TextView tvWork, tvA, tvB, tvC;
     private Date currentDate = new Date();
-    private Button btnSave, btnShow,btnSetConstantForRpn;
+    private Button btnSave,btnSetConstantForRpn;
     private EditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvAB7, etRpnHvAB8,
@@ -50,7 +50,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
     // 1 onCreate :
         // 1.1 Создание  объекта DAO для работы с БД
         // 1.2 Кнопка сохранения данных в БД
-        // 1.3 Кнопка перехода на экран показа списка
         // 1.4 Обработчик нажатия радиокнопки, выбирающей схему вторички
         // 1.5 Обработчик нажатия радиокнопки, выбирающей количество ступеней рпн
 
@@ -87,17 +86,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 insertToBd();
-            }
-        });
-        ////////////////////////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        // 1.3 Кнопка перехода на экран показа списка
-        btnShow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
-                startActivity(i);
             }
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -397,7 +385,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
         rbQuantityRpn10 = findViewById(R.id.rbQuantityRpn10);
         rbQuantityRpn25 = findViewById(R.id.rbQuantityRpn25);
         btnSave =findViewById(R.id.btnSave);
-        btnShow =findViewById(R.id.btnShow);
         btnSetConstantForRpn =findViewById(R.id.btnSetConstantForRpn);
 
         // TextView

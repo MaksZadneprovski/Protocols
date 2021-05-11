@@ -411,7 +411,7 @@
                         style="@style/EtForData"
                         android:layout_marginTop="1dp"
                         android:ems="5"
-                        android:inputType="number" />
+                        android:inputType="numberDecimal" />
 
                     <Button
                         android:id="@+id/btnSetConstantForRpn"
@@ -1748,12 +1748,6 @@
                     android:layout_marginLeft="16dp"
                     android:text="Сохранить" />
 
-                <Button
-                    android:id="@+id/btnShow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="Показать" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
