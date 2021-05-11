@@ -1,0 +1,102 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Protokols" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/grey</item>
+        <item name="colorPrimaryVariant">@color/grey</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/grey</item>
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <!-- Название протокола -->
+    <style name="Title" parent="Theme.AppCompat.Light">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+               <!-- tv -->
+    <style name="TvForEt" parent="Theme.AppCompat.Light">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">@dimen/text14</item>
+    </style>
+               <!-- et -->
+    <style name="EtForData" parent="Theme.AppCompat.Light">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:ems">15</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:inputType">textPersonName</item>
+    </style>
+    <!-- Линия подчеркивания -->
+    <style name="Line" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:background">@color/grey</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <!-- radio -->
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/grey</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!-- Линия подчеркивания -->
+    <style name="etTableRow" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:ems">5</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">@dimen/text14</item>
+    </style>
+    <!-- Линия подчеркивания -->
+    <style name="tvTableRow" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <!--Кнопка выпадающего поля -->
+    <style name="DropBtn" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="srcCompat">@drawable/ic_baseline_arrow_drop_down_24</item>
+    </style>
+    <!-- Поле заметки-->
+    <style name="Notes" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:ems">15</item>
+        <item name="android:gravity">start|top</item>
+        <item name="android:inputType">textMultiLine</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+    </style>
+</resources>
