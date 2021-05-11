@@ -99,4 +99,10 @@
         <item name="android:textSize">@dimen/text14</item>
         <item name="android:background">@drawable/edit_text_background</item>
     </style>
+    <style name="Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        android:theme="?attr/actionBarTheme"
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/grey</item>
+    </style>
 </resources>
