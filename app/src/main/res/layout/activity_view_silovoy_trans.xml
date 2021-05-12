@@ -36,9 +36,8 @@
                 android:textSize="@dimen/text16" />
 
             <EditText
-                android:id="@+id/etObject"
-                style="@style/EtForData"
-                android:hint="РП-1 яч.№1 Т01.01" />
+                android:id="@+id/etObjectV"
+                style="@style/EtForData" />
 
             <TextView
                 style="@style/TvForEt"
@@ -46,7 +45,7 @@
                 android:textSize="@dimen/text16" />
 
             <EditText
-                android:id="@+id/etDate"
+                android:id="@+id/etDateV"
                 style="@style/EtForData"
                 android:ems="6" />
 
@@ -56,7 +55,7 @@
                 android:textSize="@dimen/text16" />
 
             <EditText
-                android:id="@+id/etTemperature"
+                android:id="@+id/etTemperatureV"
                 style="@style/EtForData"
                 android:ems="6" />
 
@@ -72,15 +71,10 @@
                     android:text="Паспортные данные"
                     android:textSize="@dimen/text16" />
 
-                <ImageView
-                    android:id="@+id/silTransImgBtnPasport"
-                    style="@style/DropBtn"
-                    android:onClick="onClickBtnPasport" />
-
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutPasport"
+                android:id="@+id/linearLayoutPasportV"
                 android:layout_width="281dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -93,18 +87,17 @@
                     android:text="Тип" />
 
                 <EditText
-                    android:id="@+id/etPasportType"
+                    android:id="@+id/etPasportTypeV"
                     style="@style/EtForData"
-                    android:hint="ТМ-2500/10У1" />
+                     />
 
                 <TextView
                     style="@style/TvForEt"
                     android:text="Заводской номер" />
 
                 <EditText
-                    android:id="@+id/etPasportZavNumber"
+                    android:id="@+id/etPasportZavNumberV"
                     style="@style/EtForData"
-                    android:hint="374586"
                     android:inputType="numberDecimal" />
 
                 <TextView
@@ -112,9 +105,8 @@
                     android:text="Мощность, кВА" />
 
                 <EditText
-                    android:id="@+id/etPasportPower"
+                    android:id="@+id/etPasportPowerV"
                     style="@style/EtForData"
-                    android:hint="2500"
                     android:inputType="numberDecimal" />
 
                 <TextView
@@ -122,36 +114,32 @@
                     android:text="Напряжение, кВ" />
 
                 <EditText
-                    android:id="@+id/etPasportVoltage"
-                    style="@style/EtForData"
-                    android:hint="10 0,4" />
+                    android:id="@+id/etPasportVoltageV"
+                    style="@style/EtForData"/>
 
                 <TextView
                     style="@style/TvForEt"
                     android:text="Ток, А" />
 
                 <EditText
-                    android:id="@+id/etPasportCurrent"
-                    style="@style/EtForData"
-                    android:hint="144/3600" />
+                    android:id="@+id/etPasportCurrentV"
+                    style="@style/EtForData" />
 
                 <TextView
                     style="@style/TvForEt"
                     android:text="U, %" />
 
                 <EditText
-                    android:id="@+id/etPasportVoltageKz"
-                    style="@style/EtForData"
-                    android:hint="6,55" />
+                    android:id="@+id/etPasportVoltageKzV"
+                    style="@style/EtForData" />
 
                 <TextView
                     style="@style/TvForEt"
                     android:text="Год изготовления" />
 
                 <EditText
-                    android:id="@+id/etPasportYearOfManufacture"
-                    style="@style/EtForData"
-                    android:hint="2021" />
+                    android:id="@+id/etPasportYearOfManufactureV"
+                    style="@style/EtForData" />
 
             </LinearLayout>
 
@@ -163,20 +151,14 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/izm"
                     style="@style/TvForEt"
                     android:text="Сопротивление изоляции"
                     android:textSize="@dimen/text16" />
 
-                <ImageView
-                    android:id="@+id/silTransImgBtnIzol"
-                    style="@style/DropBtn"
-                    android:onClick="onClickBtnIzol" />
-
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linaerLayoutIzol"
+                android:id="@+id/linaerLayoutIzolV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -195,7 +177,7 @@
                     android:text="R15, МОм" />
 
                 <EditText
-                    android:id="@+id/etIzolHvR15"
+                    android:id="@+id/etIzolHvR15V"
                     style="@style/EtForData"
                     android:ems="5"
                     android:inputType="numberDecimal" />
@@ -205,7 +187,7 @@
                     android:text="R60, МОм" />
 
                 <EditText
-                    android:id="@+id/etIzolHvR60"
+                    android:id="@+id/etIzolHvR60V"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -221,7 +203,7 @@
                     android:text="К абс" />
 
                 <EditText
-                    android:id="@+id/etIzolHvKoef"
+                    android:id="@+id/etIzolHvKoefV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -243,7 +225,7 @@
                     android:text="R15, МОм" />
 
                 <EditText
-                    android:id="@+id/etIzolLvR15"
+                    android:id="@+id/etIzolLvR15V"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -259,7 +241,7 @@
                     android:text="R60, МОм" />
 
                 <EditText
-                    android:id="@+id/etIzolLvR60"
+                    android:id="@+id/etIzolLvR60V"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -275,7 +257,7 @@
                     android:text="К абс" />
 
                 <EditText
-                    android:id="@+id/etIzolLvKoef"
+                    android:id="@+id/etIzolLvKoefV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -296,133 +278,36 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/izo"
                     style="@style/TvForEt"
                     android:text="Сопротивление обмоток"
                     android:textSize="@dimen/text16" />
 
-                <ImageView
-                    android:id="@+id/silTransImgBtnSoprotiv"
-                    style="@style/DropBtn"
-                    android:onClick="onClickBtnSoprot" />
-
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutRpnInf"
+                android:id="@+id/linearLayoutRpnInfV"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvUnitsDCresistanceV"
                     style="@style/TvForEt"
                     android:layout_marginTop="16dp"
-                    android:text="Единицы измерения" />
-
-                <RadioGroup
-                    android:id="@+id/silTransImgRadioGroupR"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1">
-
-                    <RadioButton
-                        android:id="@+id/silTransImgRadioSchemaOm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Ом"
-                        android:theme="@style/MyRadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/silTransImgRadioSchemaMilOm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="мОм"
-                        android:theme="@style/MyRadioButton" />
-                </RadioGroup>
+                    android:text="Единицы измерения :" />
 
                 <TextView
-                    android:id="@+id/textView"
-                    style="@style/TvForEt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Количество ступеней РПН или ПБВ" />
-
-                <RadioGroup
-                    android:id="@+id/rgQuantityRpn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1">
-
-                    <RadioButton
-                        android:id="@+id/rbQuantityRpn5"
-                        style="@style/MyRadioButton"
-                        android:text="5"
-                        android:theme="@style/MyRadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/rbQuantityRpn10"
-                        style="@style/MyRadioButton"
-                        android:text="10"
-                        android:theme="@style/MyRadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/rbQuantityRpn25"
-                        style="@style/MyRadioButton"
-                        android:text="25"
-                        android:theme="@style/MyRadioButton" />
-                </RadioGroup>
-
-                <TextView
+                    android:id="@+id/tvSwitchOperationPositionV"
                     style="@style/TvForEt"
                     android:layout_marginTop="16dp"
                     android:text="Рабочее положение переключателя" />
 
                 <EditText
-                    android:id="@+id/etSwitchOperatingPosition"
+                    android:id="@+id/etSwitchOperatingPositionV"
                     style="@style/EtForData"
                     android:ems="5"
                     android:inputType="number" />
-
-                <TextView
-                    style="@style/TvForEt"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="Перед измеренем необходимо\nснять заземление с обмоток!"
-                    android:textSize="@dimen/text16" />
-
-                <TextView
-                    style="@style/TvForEt"
-                    android:layout_marginTop="16dp"
-                    android:text="Установить константу для полей\nсопротивления по ступеням" />
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <EditText
-                        android:id="@+id/etSetConstantForRpn"
-                        style="@style/EtForData"
-                        android:layout_marginTop="1dp"
-                        android:ems="5"
-                        android:inputType="numberDecimal" />
-
-                    <Button
-                        android:id="@+id/btnSetConstantForRpn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:text="Установить"
-                        android:onClick="onClickBtnSetConstant"
-                        android:textSize="10sp" />
-
-                </LinearLayout>
 
 
             </LinearLayout>
@@ -463,7 +348,7 @@
                         android:text="1" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB1"
+                        android:id="@+id/etRpnHvAB1V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -477,7 +362,7 @@
                         android:text="2" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB2"
+                        android:id="@+id/etRpnHvAB2V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -490,7 +375,7 @@
                         android:text="3" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB3"
+                        android:id="@+id/etRpnHvAB3V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -503,12 +388,11 @@
                         android:text="4" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB4"
+                        android:id="@+id/etRpnHvAB4V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -517,14 +401,14 @@
                         android:text="5" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB5"
+                        android:id="@+id/etRpnHvAB5V"
                         style="@style/etTableRow" />
                 </TableRow>
 
             </TableLayout>
 
             <TableLayout
-                android:id="@+id/tableRpnHvAB10"
+                android:id="@+id/tableRpnHvAB10V"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -542,7 +426,7 @@
                         android:text="6" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB6"
+                        android:id="@+id/etRpnHvAB6V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -569,7 +453,7 @@
                         android:text="8" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB8"
+                        android:id="@+id/etRpnHvAB8V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -582,12 +466,11 @@
                         android:text="9" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB9"
+                        android:id="@+id/etRpnHvAB9V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -596,14 +479,14 @@
                         android:text="10" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB10"
+                        android:id="@+id/etRpnHvAB10V"
                         style="@style/etTableRow" />
                 </TableRow>
 
             </TableLayout>
 
             <TableLayout
-                android:id="@+id/tableRpnHvAB25"
+                android:id="@+id/tableRpnHvAB25V"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -622,7 +505,7 @@
                         android:text="11" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB11"
+                        android:id="@+id/etRpnHvAB11V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -636,7 +519,7 @@
                         android:text="12" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB12"
+                        android:id="@+id/etRpnHvAB12V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -649,7 +532,7 @@
                         android:text="13" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB13"
+                        android:id="@+id/etRpnHvAB13V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -662,12 +545,11 @@
                         android:text="14" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB14"
+                        android:id="@+id/etRpnHvAB14V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -676,12 +558,11 @@
                         android:text="15" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB15"
+                        android:id="@+id/etRpnHvAB15V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -690,12 +571,11 @@
                         android:text="16" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB16"
+                        android:id="@+id/etRpnHvAB16V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -704,12 +584,11 @@
                         android:text="17" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB17"
+                        android:id="@+id/etRpnHvAB17V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -718,12 +597,11 @@
                         android:text="18" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB18"
+                        android:id="@+id/etRpnHvAB18V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -732,12 +610,11 @@
                         android:text="19" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB19"
+                        android:id="@+id/etRpnHvAB19V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -751,7 +628,6 @@
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -760,12 +636,11 @@
                         android:text="21" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB21"
+                        android:id="@+id/etRpnHvAB21V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -774,12 +649,11 @@
                         android:text="22" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB22"
+                        android:id="@+id/etRpnHvAB22V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -788,12 +662,11 @@
                         android:text="23" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB23"
+                        android:id="@+id/etRpnHvAB23V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -802,12 +675,11 @@
                         android:text="24" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB24"
+                        android:id="@+id/etRpnHvAB24V"
                         style="@style/etTableRow" />
                 </TableRow>
 
                 <TableRow
-                    android:id="@+id/trA5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -816,7 +688,7 @@
                         android:text="25" />
 
                     <EditText
-                        android:id="@+id/etRpnHvAB25"
+                        android:id="@+id/etRpnHvAB25V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -824,7 +696,7 @@
 
 
             <TableLayout
-                android:id="@+id/tableRpnHvBC"
+                android:id="@+id/tableRpnHvBCV"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -858,7 +730,7 @@
                         android:text="1" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC1"
+                        android:id="@+id/etRpnHvBC1V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -872,7 +744,7 @@
                         android:text="2" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC2"
+                        android:id="@+id/etRpnHvBC2V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -885,7 +757,7 @@
                         android:text="3" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC3"
+                        android:id="@+id/etRpnHvBC3V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -898,7 +770,7 @@
                         android:text="4" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC4"
+                        android:id="@+id/etRpnHvBC4V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -911,7 +783,7 @@
                         android:text="5" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC5"
+                        android:id="@+id/etRpnHvBC5V"
                         style="@style/etTableRow" />
                 </TableRow>
             </TableLayout>
@@ -935,7 +807,7 @@
                         android:text="6" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC6"
+                        android:id="@+id/etRpnHvBC6V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -949,7 +821,7 @@
                         android:text="7" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC7"
+                        android:id="@+id/etRpnHvBC7V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -962,7 +834,7 @@
                         android:text="8" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC8"
+                        android:id="@+id/etRpnHvBC8V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -975,7 +847,7 @@
                         android:text="9" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC9"
+                        android:id="@+id/etRpnHvBC9V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -988,7 +860,7 @@
                         android:text="10" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC10"
+                        android:id="@+id/etRpnHvBC10V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1014,7 +886,7 @@
                         android:text="11" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC11"
+                        android:id="@+id/etRpnHvBC11V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -1028,7 +900,7 @@
                         android:text="12" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC12"
+                        android:id="@+id/etRpnHvBC12V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1041,7 +913,7 @@
                         android:text="13" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC13"
+                        android:id="@+id/etRpnHvBC13V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1054,7 +926,7 @@
                         android:text="14" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC14"
+                        android:id="@+id/etRpnHvBC14V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1067,7 +939,7 @@
                         android:text="15" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC15"
+                        android:id="@+id/etRpnHvBC15V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1080,7 +952,7 @@
                         android:text="16" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC16"
+                        android:id="@+id/etRpnHvBC16V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1093,7 +965,7 @@
                         android:text="17" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC17"
+                        android:id="@+id/etRpnHvBC17V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1106,7 +978,7 @@
                         android:text="18" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC18"
+                        android:id="@+id/etRpnHvBC18V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1119,7 +991,7 @@
                         android:text="19" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC19"
+                        android:id="@+id/etRpnHvBC19V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1132,7 +1004,7 @@
                         android:text="20" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC20"
+                        android:id="@+id/etRpnHvBC20V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1145,7 +1017,7 @@
                         android:text="21" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC21"
+                        android:id="@+id/etRpnHvBC21V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1158,7 +1030,7 @@
                         android:text="22" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC22"
+                        android:id="@+id/etRpnHvBC22V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1171,7 +1043,7 @@
                         android:text="23" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC23"
+                        android:id="@+id/etRpnHvBC23V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1184,7 +1056,7 @@
                         android:text="24" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC24"
+                        android:id="@+id/etRpnHvBC24V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1197,7 +1069,7 @@
                         android:text="25" />
 
                     <EditText
-                        android:id="@+id/etRpnHvBC25"
+                        android:id="@+id/etRpnHvBC25V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1238,7 +1110,7 @@
                         android:text="1" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA1"
+                        android:id="@+id/etRpnHvCA1V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -1252,7 +1124,7 @@
                         android:text="2" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA2"
+                        android:id="@+id/etRpnHvCA2V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1265,7 +1137,7 @@
                         android:text="3" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA3"
+                        android:id="@+id/etRpnHvCA3V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1278,7 +1150,7 @@
                         android:text="4" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA4"
+                        android:id="@+id/etRpnHvCA4V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1292,7 +1164,7 @@
                         android:text="5" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA5"
+                        android:id="@+id/etRpnHvCA5V"
                         style="@style/etTableRow" />
                 </TableRow>
             </TableLayout>
@@ -1316,7 +1188,7 @@
                         android:text="6" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA6"
+                        android:id="@+id/etRpnHvCA6V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -1330,7 +1202,7 @@
                         android:text="7" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA7"
+                        android:id="@+id/etRpnHvCA7V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1343,7 +1215,7 @@
                         android:text="8" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA8"
+                        android:id="@+id/etRpnHvCA8V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1356,7 +1228,7 @@
                         android:text="9" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA9"
+                        android:id="@+id/etRpnHvCA9V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1369,7 +1241,7 @@
                         android:text="10" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA10"
+                        android:id="@+id/etRpnHvCA10V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1395,7 +1267,7 @@
                         android:text="11" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA11"
+                        android:id="@+id/etRpnHvCA11V"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -1409,7 +1281,7 @@
                         android:text="12" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA12"
+                        android:id="@+id/etRpnHvCA12V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1422,7 +1294,7 @@
                         android:text="13" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA13"
+                        android:id="@+id/etRpnHvCA13V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1435,7 +1307,7 @@
                         android:text="14" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA14"
+                        android:id="@+id/etRpnHvCA14V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1448,7 +1320,7 @@
                         android:text="15" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA15"
+                        android:id="@+id/etRpnHvCA15V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1461,7 +1333,7 @@
                         android:text="16" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA16"
+                        android:id="@+id/etRpnHvCA16V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1474,7 +1346,7 @@
                         android:text="17" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA17"
+                        android:id="@+id/etRpnHvCA17V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1487,7 +1359,7 @@
                         android:text="18" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA18"
+                        android:id="@+id/etRpnHvCA18V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1500,7 +1372,7 @@
                         android:text="19" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA19"
+                        android:id="@+id/etRpnHvCA19V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1513,7 +1385,7 @@
                         android:text="20" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA20"
+                        android:id="@+id/etRpnHvCA20V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1526,7 +1398,7 @@
                         android:text="21" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA21"
+                        android:id="@+id/etRpnHvCA21V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1539,7 +1411,7 @@
                         android:text="22" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA22"
+                        android:id="@+id/etRpnHvCA22V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1552,7 +1424,7 @@
                         android:text="23" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA23"
+                        android:id="@+id/etRpnHvCA23V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1565,7 +1437,7 @@
                         android:text="24" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA24"
+                        android:id="@+id/etRpnHvCA24V"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1578,62 +1450,13 @@
                         android:text="25" />
 
                     <EditText
-                        android:id="@+id/etRpnHvCA25"
+                        android:id="@+id/etRpnHvCA25V"
                         style="@style/etTableRow" />
                 </TableRow>
 
             </TableLayout>
 
             <LinearLayout style="@style/Line"></LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutSchema"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/schema"
-                        style="@style/TvForEt"
-                        android:text="Схема соединения обмоток НН"
-                        android:textSize="@dimen/text16" />
-
-                    <ImageView
-                        android:id="@+id/silTransImgBtnSchema"
-                        style="@style/DropBtn"
-                        android:onClick="onClickBtnSchema" />
-
-                </LinearLayout>
-
-                <RadioGroup
-                    android:id="@+id/silTransImgRadioGroupSchema"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal">
-
-                    <RadioButton
-                        android:id="@+id/silTransImgRadioSchemaZvezda"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Звезда"
-                        android:theme="@style/MyRadioButton" />
-
-                    <RadioButton
-                        android:id="@+id/silTransImgRadioSchemaTreugol"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Треугольник"
-                        android:theme="@style/MyRadioButton" />
-                </RadioGroup>
-            </LinearLayout>
 
             <TableLayout
                 android:id="@+id/tableRpnLv"
@@ -1664,12 +1487,12 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvSchemaFazaA"
+                        android:id="@+id/tvSchemaFazaAV"
                         style="@style/tvTableRow"
                         android:text="a-n" />
 
                     <EditText
-                        android:id="@+id/etRpnLvAn"
+                        android:id="@+id/etRpnLvAnV"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -1679,12 +1502,12 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvSchemaFazaB"
+                        android:id="@+id/tvSchemaFazaBV"
                         style="@style/tvTableRow"
                         android:text="b-n" />
 
                     <EditText
-                        android:id="@+id/etRpnLvBn"
+                        android:id="@+id/etRpnLvBnV"
                         style="@style/etTableRow" />
                 </TableRow>
 
@@ -1693,12 +1516,12 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvSchemaFazaC"
+                        android:id="@+id/tvSchemaFazaCV"
                         style="@style/tvTableRow"
                         android:text="c-n" />
 
                     <EditText
-                        android:id="@+id/etRpnLvCn"
+                        android:id="@+id/etRpnLvCnV"
                         style="@style/etTableRow" />
 
                 </TableRow>
@@ -1706,7 +1529,7 @@
             </TableLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayoutProcent"
+                android:id="@+id/linearLayoutProcentV"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -1738,15 +1561,8 @@
                     android:text="Заметки" />
 
                 <EditText
-                    android:id="@+id/etNotes"
+                    android:id="@+id/etNotesV"
                     style="@style/Notes" />
-
-                <Button
-                    android:id="@+id/btnSave"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="Сохранить" />
 
             </LinearLayout>
         </LinearLayout>

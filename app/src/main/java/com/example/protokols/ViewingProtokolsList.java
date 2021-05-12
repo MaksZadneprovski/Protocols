@@ -12,6 +12,7 @@ import com.example.protokols.data_base_package.AppDelegateBd;
 import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
+import com.example.protokols.data_base_package.SilovoyTransformator.ViewSilovoyTrans;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(ViewingProtokolsList.this, MainSilovoyTrans.class);
+                Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
                 startActivity(i);
             }
         });

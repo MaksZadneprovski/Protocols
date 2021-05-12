@@ -36,7 +36,7 @@
                 android:textSize="@dimen/text16" />
 
             <EditText
-                android:id="@+id/etObject"
+                android:id="@+id/etObjectV"
                 style="@style/EtForData"
                 android:hint="РП-1 яч.№1 Т01.01" />
 
@@ -345,7 +345,7 @@
                 </RadioGroup>
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/tvQuantityRpnV"
                     style="@style/TvForEt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

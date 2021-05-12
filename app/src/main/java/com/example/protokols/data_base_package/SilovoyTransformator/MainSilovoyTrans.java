@@ -1,9 +1,13 @@
 package com.example.protokols.data_base_package.SilovoyTransformator;
 
+import androidx.annotation.NonNull;
 import  androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,6 +29,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainSilovoyTrans extends AppCompatActivity {
+    private Toolbar toolbarMain;
     private ImageView btnPasport, btnIzol, btnSoprot, btnSchema;
     private LinearLayout linearLayoutPasport,linearLayoutRpn, linearLayoutIzol, linearLayoutSchema, linearLayoutProcent;
     private TableLayout tableRpnHvAB,tableRpnHvAB10,tableRpnHvAB25, tableRpnHvBC,tableRpnHvBC10,tableRpnHvBC25,
@@ -79,13 +84,17 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
         init();
 
+        // Для меню обязательно вызвать setSupportActionBar
+        toolbarMain = findViewById(R.id.toolbarMain);
+        setSupportActionBar(toolbarMain);
+        toolbarMain.setTitle("Application");
 
         ////////////////////////////////////////////////////////////////////////////////////////////
         // 1.2 Кнопка сохранения данных в БД
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                insertToBd();
+
             }
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -129,6 +138,25 @@ public class MainSilovoyTrans extends AppCompatActivity {
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
     } // Конец onCreate
+    // Метод : Создает меню в тулбаре из указанного ресурса
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main_silovoy_trans, menu);
+        return true;
+    }
+
+    // Метод : Обрабатывает нажатия пунктов меню
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuSave){
+            insertToBd();
+        }
+        else if (item.getItemId() == R.id.menuList){
+            Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
+            startActivity(i);
+        }
+        return true;
+    }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -432,7 +460,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         // Date setting
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
         // EditText
-         etObject = findViewById(R.id.etObject);
+         etObject = findViewById(R.id.etObjectV);
          etDate = findViewById(R.id.etDate);
          etDate.setText(dateFormat.format(currentDate));
          etTemperature = findViewById(R.id.etTemperature);
