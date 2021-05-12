@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Protokols">
-        <activity android:name=".ViewingProtokolsList"></activity>
+        <activity android:name=".data_base_package.SilovoyTransformator.ViewSilovoyTrans"></activity>
+        <activity android:name=".ViewingProtokolsList" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".data_base_package.SilovoyTransformator.MainSilovoyTrans">
-        </activity>
+        <activity android:name=".data_base_package.SilovoyTransformator.MainSilovoyTrans"></activity>
     </application>
+
 </manifest>

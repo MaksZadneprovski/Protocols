@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".data_base_package.SilovoyTransformator.ViewSilovoyTrans">
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvWork"
+                style="@style/Title"
+                android:text="Испытание силового трансформатора" />
+
+            <LinearLayout style="@style/Line"></LinearLayout>
+
+            <TextView
+                style="@style/TvForEt"
+                android:text="Объект"
+                android:textSize="@dimen/text16" />
+
+            <EditText
+                android:id="@+id/etObject"
+                style="@style/EtForData"
+                android:hint="РП-1 яч.№1 Т01.01" />
+
+            <TextView
+                style="@style/TvForEt"
+                android:text="Дата"
+                android:textSize="@dimen/text16" />
+
+            <EditText
+                android:id="@+id/etDate"
+                style="@style/EtForData"
+                android:ems="6" />
+
+            <TextView
+                style="@style/TvForEt"
+                android:text="Температура, °С"
+                android:textSize="@dimen/text16" />
+
+            <EditText
+                android:id="@+id/etTemperature"
+                style="@style/EtForData"
+                android:ems="6" />
+
+            <LinearLayout style="@style/Line"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Паспортные данные"
+                    android:textSize="@dimen/text16" />
+
+                <ImageView
+                    android:id="@+id/silTransImgBtnPasport"
+                    style="@style/DropBtn"
+                    android:onClick="onClickBtnPasport" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutPasport"
+                android:layout_width="281dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:text="Тип" />
+
+                <EditText
+                    android:id="@+id/etPasportType"
+                    style="@style/EtForData"
+                    android:hint="ТМ-2500/10У1" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Заводской номер" />
+
+                <EditText
+                    android:id="@+id/etPasportZavNumber"
+                    style="@style/EtForData"
+                    android:hint="374586"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Мощность, кВА" />
+
+                <EditText
+                    android:id="@+id/etPasportPower"
+                    style="@style/EtForData"
+                    android:hint="2500"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Напряжение, кВ" />
+
+                <EditText
+                    android:id="@+id/etPasportVoltage"
+                    style="@style/EtForData"
+                    android:hint="10 0,4" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Ток, А" />
+
+                <EditText
+                    android:id="@+id/etPasportCurrent"
+                    style="@style/EtForData"
+                    android:hint="144/3600" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="U, %" />
+
+                <EditText
+                    android:id="@+id/etPasportVoltageKz"
+                    style="@style/EtForData"
+                    android:hint="6,55" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Год изготовления" />
+
+                <EditText
+                    android:id="@+id/etPasportYearOfManufacture"
+                    style="@style/EtForData"
+                    android:hint="2021" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/Line"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/izm"
+                    style="@style/TvForEt"
+                    android:text="Сопротивление изоляции"
+                    android:textSize="@dimen/text16" />
+
+                <ImageView
+                    android:id="@+id/silTransImgBtnIzol"
+                    style="@style/DropBtn"
+                    android:onClick="onClickBtnIzol" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linaerLayoutIzol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="ВН - (НН+бак)"
+                    android:textSize="@dimen/text18" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="R15, МОм" />
+
+                <EditText
+                    android:id="@+id/etIzolHvR15"
+                    style="@style/EtForData"
+                    android:ems="5"
+                    android:inputType="numberDecimal" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="R60, МОм" />
+
+                <EditText
+                    android:id="@+id/etIzolHvR60"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="5"
+                    android:hint=""
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="@dimen/text14" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="К абс" />
+
+                <EditText
+                    android:id="@+id/etIzolHvKoef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="5"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="@dimen/text14" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="НН - (ВН+бак)"
+                    android:textSize="@dimen/text18" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="R15, МОм" />
+
+                <EditText
+                    android:id="@+id/etIzolLvR15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="5"
+                    android:hint=""
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="@dimen/text14" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="R60, МОм" />
+
+                <EditText
+                    android:id="@+id/etIzolLvR60"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="5"
+                    android:hint=""
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="@dimen/text14" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="К абс" />
+
+                <EditText
+                    android:id="@+id/etIzolLvKoef"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="5"
+                    android:hint=""
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:textSize="@dimen/text14" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/Line"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/izo"
+                    style="@style/TvForEt"
+                    android:text="Сопротивление обмоток"
+                    android:textSize="@dimen/text16" />
+
+                <ImageView
+                    android:id="@+id/silTransImgBtnSoprotiv"
+                    style="@style/DropBtn"
+                    android:onClick="onClickBtnSoprot" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutRpnInf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:text="Единицы измерения" />
+
+                <RadioGroup
+                    android:id="@+id/silTransImgRadioGroupR"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1">
+
+                    <RadioButton
+                        android:id="@+id/silTransImgRadioSchemaOm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ом"
+                        android:theme="@style/MyRadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/silTransImgRadioSchemaMilOm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="мОм"
+                        android:theme="@style/MyRadioButton" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/textView"
+                    style="@style/TvForEt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Количество ступеней РПН или ПБВ" />
+
+                <RadioGroup
+                    android:id="@+id/rgQuantityRpn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1">
+
+                    <RadioButton
+                        android:id="@+id/rbQuantityRpn5"
+                        style="@style/MyRadioButton"
+                        android:text="5"
+                        android:theme="@style/MyRadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantityRpn10"
+                        style="@style/MyRadioButton"
+                        android:text="10"
+                        android:theme="@style/MyRadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/rbQuantityRpn25"
+                        style="@style/MyRadioButton"
+                        android:text="25"
+                        android:theme="@style/MyRadioButton" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:text="Рабочее положение переключателя" />
+
+                <EditText
+                    android:id="@+id/etSwitchOperatingPosition"
+                    style="@style/EtForData"
+                    android:ems="5"
+                    android:inputType="number" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Перед измеренем необходимо\nснять заземление с обмоток!"
+                    android:textSize="@dimen/text16" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:text="Установить константу для полей\nсопротивления по ступеням" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etSetConstantForRpn"
+                        style="@style/EtForData"
+                        android:layout_marginTop="1dp"
+                        android:ems="5"
+                        android:inputType="numberDecimal" />
+
+                    <Button
+                        android:id="@+id/btnSetConstantForRpn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:text="Установить"
+                        android:onClick="onClickBtnSetConstant"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvAB"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Положение \n переключателя"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Обмотка ВН\nA-B  "
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="1" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB1"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="2" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB2"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="3" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB3"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="4" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB4"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="5" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB5"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvAB10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                tools:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="6" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB6"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="7" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB7"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="8" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB8"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="9" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB9"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="10" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB10"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvAB25"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:paddingLeft="48dp"
+                        android:paddingRight="48dp"
+                        android:text="11" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB11"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="12" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB12"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="13" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB13"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="14" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB14"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="15" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB15"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="16" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB16"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="17" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB17"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="18" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB18"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="19" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB19"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="20" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB20"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="21" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB21"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="22" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB22"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="23" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB23"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="24" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB24"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/trA5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="25" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvAB25"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+
+            <TableLayout
+                android:id="@+id/tableRpnHvBC"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Положение \n переключателя"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Обмотка ВН\nB-C  "
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="1" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC1"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="2" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC2"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="3" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC3"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="4" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC4"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="5" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC5"
+                        style="@style/etTableRow" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvBC10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                tools:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="6" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC6"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="7" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC7"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="8" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC8"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="9" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC9"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="10" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC10"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvBC25"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="11" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC11"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="12" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC12"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="13" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC13"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="14" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC14"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="15" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC15"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="16" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC16"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="17" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC17"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="18" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC18"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="19" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC19"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="20" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC20"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="21" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC21"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="22" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC22"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="23" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC23"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="24" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC24"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="25" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvBC25"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvCA"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:visibility="visible">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Положение \n переключателя"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Обмотка ВН\nC-A  "
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="1" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA1"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="2" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA2"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="3" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA3"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="4" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA4"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="5" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA5"
+                        style="@style/etTableRow" />
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvCA10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                tools:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="6" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA6"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="7" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA7"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="8" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA8"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="9" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA9"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="10" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA10"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnHvCA25"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                tools:visibility="visible">
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:paddingLeft="50dp"
+                        android:paddingRight="50dp"
+                        android:text="11" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA11"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="12" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA12"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="13" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA13"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="14" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA14"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="15" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA15"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="16" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA16"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="17" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA17"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="18" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA18"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="19" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA19"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="20" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA20"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="21" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA21"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="22" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA22"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="23" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA23"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="24" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA24"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/tvTableRow"
+                        android:text="25" />
+
+                    <EditText
+                        android:id="@+id/etRpnHvCA25"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout style="@style/Line"></LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSchema"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/schema"
+                        style="@style/TvForEt"
+                        android:text="Схема соединения обмоток НН"
+                        android:textSize="@dimen/text16" />
+
+                    <ImageView
+                        android:id="@+id/silTransImgBtnSchema"
+                        style="@style/DropBtn"
+                        android:onClick="onClickBtnSchema" />
+
+                </LinearLayout>
+
+                <RadioGroup
+                    android:id="@+id/silTransImgRadioGroupSchema"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
+
+                    <RadioButton
+                        android:id="@+id/silTransImgRadioSchemaZvezda"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Звезда"
+                        android:theme="@style/MyRadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/silTransImgRadioSchemaTreugol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Треугольник"
+                        android:theme="@style/MyRadioButton" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tableRpnLv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Обмотка НН"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        style="@style/TvForEt"
+                        android:layout_marginLeft="0dp"
+                        android:text="Значение"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvSchemaFazaA"
+                        style="@style/tvTableRow"
+                        android:text="a-n" />
+
+                    <EditText
+                        android:id="@+id/etRpnLvAn"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvSchemaFazaB"
+                        style="@style/tvTableRow"
+                        android:text="b-n" />
+
+                    <EditText
+                        android:id="@+id/etRpnLvBn"
+                        style="@style/etTableRow" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvSchemaFazaC"
+                        style="@style/tvTableRow"
+                        android:text="c-n" />
+
+                    <EditText
+                        android:id="@+id/etRpnLvCn"
+                        style="@style/etTableRow" />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutProcent"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Максимальное процентное расхождение" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Обмотка ВН :" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Обмотка НН :" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:text="Заметки" />
+
+                <EditText
+                    android:id="@+id/etNotes"
+                    style="@style/Notes" />
+
+                <Button
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:text="Сохранить" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
