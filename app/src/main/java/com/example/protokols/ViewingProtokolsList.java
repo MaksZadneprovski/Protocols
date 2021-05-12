@@ -13,6 +13,7 @@ import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyT
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.data_base_package.SilovoyTransformator.ViewSilovoyTrans;
+import com.example.protokols.utils.ConstantsForSilovoyTrans;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +26,10 @@ public class ViewingProtokolsList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewing_protokols_list);
+
+        // Статичная переменная, чтобы определить, хочу ли я редактировать объект или создаю новый
+        // Так как с этого экрана нельзя нажать кнопку редактировать, то переменная false
+        MainActivity.isEditSilovoyTrans= false;
 
         // Создание  объекта DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
@@ -46,6 +51,9 @@ public class ViewingProtokolsList extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
+                SilovoyTrans silovoyTrans = silovoyTransList.get(position);
+                int idOfSelectedItem = silovoyTrans.getId();
+                i.putExtra(ConstantsForSilovoyTrans.ID_KEY,idOfSelectedItem );
                 startActivity(i);
             }
         });

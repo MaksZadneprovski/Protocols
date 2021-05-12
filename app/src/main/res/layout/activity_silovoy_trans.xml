@@ -6,15 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".data_base_package.SilovoyTransformator.MainSilovoyTrans">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMainSilovoyTrans"
+        android:layout_width="0dp"
+        style="@style/Toolbar"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarMainSilovoyTrans"
         app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
@@ -1740,13 +1748,6 @@
                 <EditText
                     android:id="@+id/etNotes"
                     style="@style/Notes" />
-
-                <Button
-                    android:id="@+id/btnSave"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:text="Сохранить" />
 
             </LinearLayout>
         </LinearLayout>

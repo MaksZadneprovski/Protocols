@@ -19,9 +19,11 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.protokols.MainActivity;
 import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
+import com.example.protokols.utils.ConstantsForSilovoyTrans;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -54,7 +56,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
     // 1 onCreate :
         // 1.1 Создание  объекта DAO для работы с БД
-        // 1.2 Кнопка сохранения данных в БД
         // 1.4 Обработчик нажатия радиокнопки, выбирающей схему вторички
         // 1.5 Обработчик нажатия радиокнопки, выбирающей количество ступеней рпн
 
@@ -84,19 +85,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
         init();
 
-        // Для меню обязательно вызвать setSupportActionBar
-        toolbarMain = findViewById(R.id.toolbarMain);
-        setSupportActionBar(toolbarMain);
-        toolbarMain.setTitle("Application");
-
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        // 1.2 Кнопка сохранения данных в БД
-        btnSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -150,10 +138,12 @@ public class MainSilovoyTrans extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menuSave){
             insertToBd();
+            finish();
         }
         else if (item.getItemId() == R.id.menuList){
             Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
             startActivity(i);
+            finish();
         }
         return true;
     }
@@ -167,10 +157,20 @@ public class MainSilovoyTrans extends AppCompatActivity {
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
         // Проверяем поля Объект и Дата на заполненность
         if (!(etObject.getText().toString().equals("")) & !(etDate.getText().toString().equals(""))){
-            // Записываем в БД
-            silovoyTransDao.insertSilovoyTrans(createSilovoyTransFromEditText());
-            // Показываем Toast
-            Toast.makeText(MainSilovoyTrans.this, "Сохранено", Toast.LENGTH_LONG).show();
+
+            // Проверка: Хотим ли мы создать новый объект в БД или обновить существующий
+            if (!MainActivity.isEditSilovoyTrans){
+                // Записываем в БД
+                silovoyTransDao.insertSilovoyTrans(createSilovoyTransFromEditText());
+                // Показываем Toast
+                Toast.makeText(MainSilovoyTrans.this, "Сохранено", Toast.LENGTH_LONG).show();
+            }
+            else {
+                SilovoyTrans silovoyTransUpdate = createSilovoyTransFromEditText();
+               // silovoyTransUpdate.setId();
+                silovoyTransDao.updateSilovoyTrans(silovoyTransUpdate);
+            }
+
         }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -412,7 +412,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
         rbQuantityRpn5 = findViewById(R.id.rbQuantityRpn5);
         rbQuantityRpn10 = findViewById(R.id.rbQuantityRpn10);
         rbQuantityRpn25 = findViewById(R.id.rbQuantityRpn25);
-        btnSave =findViewById(R.id.btnSave);
         btnSetConstantForRpn =findViewById(R.id.btnSetConstantForRpn);
 
         // TextView
@@ -558,6 +557,10 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etRpnLvBn = findViewById(R.id.etRpnLvBn);
         etRpnLvAn = findViewById(R.id.etRpnLvAn);
         etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
+        // Для меню обязательно вызвать setSupportActionBar
+        toolbarMain = findViewById(R.id.toolbarMainSilovoyTrans);
+        setSupportActionBar(toolbarMain);
+        toolbarMain.setTitle("yo");
 
     }
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -841,6 +844,18 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etRpnHvCA24.setSelection(etRpnHvCA24.getText().length());
         etRpnHvCA25.setText(constantForEt);
         etRpnHvCA25.setSelection(etRpnHvCA25.getText().length());
+    }
+
+    private void getMyIntent (){
+        Intent i = getIntent();
+        if (i != null){
+            //  Проверяем пришли ли мы на этот экран, нажав на кнопку добавить, или, нажав на элемент RecyclerView
+            if (i.getStringExtra(ConstantsForSilovoyTrans.ID_KEY) != null) {
+
+                // Заполняем поля
+
+            }
+        }
     }
 
 

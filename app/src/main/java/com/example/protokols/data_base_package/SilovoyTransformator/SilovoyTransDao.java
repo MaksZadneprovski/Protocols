@@ -26,6 +26,9 @@ public interface SilovoyTransDao {
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateSilovoyTransList (List<SilovoyTrans> silovoyTransList);
 
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    void updateSilovoyTrans (SilovoyTrans silovoyTransList);
+
     @Delete
     void deleteSilovoyTransList(List<SilovoyTrans> silovoyTransList);
 

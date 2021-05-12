@@ -17,6 +17,9 @@ import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyT
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbarMain;
 
+    // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
+    public static boolean isEditSilovoyTrans = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
