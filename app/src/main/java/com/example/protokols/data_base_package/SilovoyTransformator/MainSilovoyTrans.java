@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -51,6 +52,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
             etRpnHvBC24, etRpnHvBC25, etRpnHvCA1, etRpnHvCA2, etRpnHvCA3, etRpnHvCA4, etRpnHvCA5, etRpnHvCA6, etRpnHvCA7, etRpnHvCA8, etRpnHvCA9,
             etRpnHvCA10, etRpnHvCA11, etRpnHvCA12, etRpnHvCA13, etRpnHvCA14, etRpnHvCA15, etRpnHvCA16, etRpnHvCA17, etRpnHvCA18, etRpnHvCA19,
             etRpnHvCA20, etRpnHvCA21, etRpnHvCA22, etRpnHvCA23, etRpnHvCA24, etRpnHvCA25,etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etWindingConnectionDiagramLv,etSetConstantForRpn;
+    public final String TAG = "MyLogger";
+
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -136,12 +139,21 @@ public class MainSilovoyTrans extends AppCompatActivity {
     // Метод : Обрабатывает нажатия пунктов меню
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
         if (item.getItemId() == R.id.menuSave){
             insertToBd();
+            String s;
+            if (MainActivity.isEditSilovoyTrans){
+                 s = "true";
+            }
+            else {
+                 s = "false";
+            }
+            Log.v(TAG,s);
+            startActivity(i);
             finish();
         }
         else if (item.getItemId() == R.id.menuList){
-            Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
             startActivity(i);
             finish();
         }
@@ -150,11 +162,12 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
-    // 2 Метод : проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом
-    // createSilovoyTransFromEditText()
+    // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createSilovoyTransFromEditText()
     private void insertToBd() {
+
         // Создание объекта  DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
+
         // Проверяем поля Объект и Дата на заполненность
         if (!(etObject.getText().toString().equals("")) & !(etDate.getText().toString().equals(""))){
 
@@ -166,9 +179,17 @@ public class MainSilovoyTrans extends AppCompatActivity {
                 Toast.makeText(MainSilovoyTrans.this, "Сохранено", Toast.LENGTH_LONG).show();
             }
             else {
+                // Создаем объект по полям для обновления БД
                 SilovoyTrans silovoyTransUpdate = createSilovoyTransFromEditText();
-               // silovoyTransUpdate.setId();
+
+                // Получение id  объекта для перезаписи в БД из экрана ViewSilovoyTrans
+                Intent i = getIntent();
+                int idSilovoyTrans = i.getIntExtra(ConstantsForSilovoyTrans.ID_KEY, 0);
+
+                silovoyTransUpdate.setId(idSilovoyTrans);
                 silovoyTransDao.updateSilovoyTrans(silovoyTransUpdate);
+
+                Toast.makeText(MainSilovoyTrans.this, "Обновлено", Toast.LENGTH_LONG).show();
             }
 
         }
@@ -457,7 +478,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         rbOm.setChecked(true);
         rbQuantityRpn5.setChecked(true);
         // Date setting
-        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         // EditText
          etObject = findViewById(R.id.etObjectV);
          etDate = findViewById(R.id.etDate);

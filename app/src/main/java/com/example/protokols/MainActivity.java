@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbarMain);
         toolbarMain.setTitle("Application");
 
+        isEditSilovoyTrans = false;
+
     }
     // Метод : Создает меню в тулбаре из указанного ресурса
     @Override

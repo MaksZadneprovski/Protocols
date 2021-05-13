@@ -55,8 +55,7 @@
 
             <EditText
                 android:id="@+id/etDate"
-                style="@style/EtForData"
-                android:ems="6" />
+                style="@style/EtForData" />
 
             <TextView
                 style="@style/TvForEt"
