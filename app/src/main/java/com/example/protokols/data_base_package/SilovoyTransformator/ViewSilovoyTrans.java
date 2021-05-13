@@ -57,6 +57,8 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Получение id объекта для отправки на экран MainSilovoyTrans, в случае редактирования
         idSilovoyTrans = silovoyTrans.getId();
 
+        // Статичная переменная, чтобы определить, хочу ли я редактировать объект или создаю новый
+        MainActivity.isEditSilovoyTrans= true;
 
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -77,9 +79,6 @@ public class ViewSilovoyTrans extends AppCompatActivity {
             // Переход на экран создания объекта, с отправкой id объекта, который нужно редактировать
             Intent i = new Intent(ViewSilovoyTrans.this, MainSilovoyTrans.class);
             i.putExtra(ConstantsForSilovoyTrans.ID_KEY,idSilovoyTrans );
-
-            // Статичная переменная, чтобы определить, хочу ли я редактировать объект или создаю новый
-            MainActivity.isEditSilovoyTrans= true;
 
             startActivity(i);
             finish();

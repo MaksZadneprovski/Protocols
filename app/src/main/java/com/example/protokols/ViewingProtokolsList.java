@@ -62,6 +62,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
                 int idOfSelectedItem = silovoyTrans.getId();
                 i.putExtra(ConstantsForSilovoyTrans.ID_KEY,idOfSelectedItem );
                 startActivity(i);
+                finish();
             }
         });
 
