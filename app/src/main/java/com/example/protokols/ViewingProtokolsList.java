@@ -1,6 +1,7 @@
 package com.example.protokols;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ import java.util.List;
 public class ViewingProtokolsList extends AppCompatActivity {
     private List <SilovoyTrans> silovoyTransList;
     private ListView lv;
+    private Toolbar toolbarMain;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,10 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
         // Инициализация
         lv = findViewById(R.id.lv);
+        // Для меню обязательно вызвать setSupportActionBar
+        toolbarMain = findViewById(R.id.toolbarViewProtocols);
+        setSupportActionBar(toolbarMain);
+        toolbarMain.setTitle("Application");
 
         // По запросу возвращается список всех объектов из таблицы БД SilovoyTrans
         silovoyTransList = silovoyTransDao.getAll();
