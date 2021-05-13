@@ -7,8 +7,4 @@
         android:icon="@drawable/ic_edit"
         android:title="Edit"/>
 
-    <item android:id="@+id/menuList"
-        app:showAsAction="always"
-        android:icon="@drawable/outline_format_list_bulleted_24"
-        android:title="Список Протоколов"/>
 </menu>

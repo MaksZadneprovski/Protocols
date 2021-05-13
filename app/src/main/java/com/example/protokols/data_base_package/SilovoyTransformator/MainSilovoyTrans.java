@@ -153,10 +153,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
             startActivity(i);
             finish();
         }
-        else if (item.getItemId() == R.id.menuList){
-            startActivity(i);
-            finish();
-        }
         return true;
     }
 

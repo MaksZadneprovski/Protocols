@@ -72,14 +72,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     // Метод : Обрабатывает нажатия пунктов меню
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuList){
-
-            // Переход на экран списка протоколов
-            Intent i = new Intent(ViewSilovoyTrans.this, ViewingProtokolsList.class);
-            startActivity(i);
-            finish();
-        }
-        else if (item.getItemId() == R.id.menuEdit){
+        if (item.getItemId() == R.id.menuEdit){
 
             // Переход на экран создания объекта, с отправкой id объекта, который нужно редактировать
             Intent i = new Intent(ViewSilovoyTrans.this, MainSilovoyTrans.class);
