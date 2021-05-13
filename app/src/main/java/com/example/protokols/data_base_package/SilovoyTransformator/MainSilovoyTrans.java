@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -81,6 +82,9 @@ public class MainSilovoyTrans extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_silovoy_trans);
 
+        //Отключение анимации перехода
+        overridePendingTransition(0,0);
+
         /////////////////////////////////////////////////////////////////////////////////////////////
         // 1.1 Создание объекта  DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
@@ -146,6 +150,30 @@ public class MainSilovoyTrans extends AppCompatActivity {
             finish();
         }
         return true;
+    }
+
+    // Методы обработки кнопки назад
+//    @Override
+//    public void onBackPressed() {
+//        // super.onBackPressed();
+//        Intent i = new Intent(ViewSilovoyTrans.this, ViewingProtokolsList.class);
+//        startActivity(i);
+//    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK==keyCode){
+            if (MainActivity.isEditSilovoyTrans){
+                Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
+                startActivity(i);
+                finish();
+            }
+            else {
+                finish();
+            }
+
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -615,6 +643,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
         tableRpnHvBC25.setVisibility(tableRpnHvBC25.GONE);
         tableRpnHvCA25.setVisibility(tableRpnHvCA25.GONE);
     }
+
+
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////

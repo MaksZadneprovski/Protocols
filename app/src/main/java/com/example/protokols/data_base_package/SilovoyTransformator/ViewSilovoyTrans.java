@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,6 +43,9 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_silovoy_trans);
+
+        //Отключение анимации перехода
+        overridePendingTransition(0,0);
 
         init();
 
@@ -100,6 +104,24 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         SilovoyTrans silovoyTrans = silovoyTransDao.getSilovoyTransTableById(idOfSelectedItem);
 
         return silovoyTrans;
+    }
+
+    // Методы обработки кнопки назад
+//    @Override
+//    public void onBackPressed() {
+//        // super.onBackPressed();
+//        Intent i = new Intent(ViewSilovoyTrans.this, ViewingProtokolsList.class);
+//        startActivity(i);
+//    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK==keyCode){
+            Intent i = new Intent(ViewSilovoyTrans.this, ViewingProtokolsList.class);
+            startActivity(i);
+            finish();
+        }
+        return super.onKeyDown(keyCode, event);
     }
     private void setTextToEditTextFromSilovoyTrans(SilovoyTrans silovoyTrans){
 

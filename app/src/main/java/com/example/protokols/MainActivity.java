@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Отключение анимации перехода
+        overridePendingTransition(0,0);
+
         // Для меню обязательно вызвать setSupportActionBar
         toolbarMain = findViewById(R.id.toolbarMain);
         setSupportActionBar(toolbarMain);

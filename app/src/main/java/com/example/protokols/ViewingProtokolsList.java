@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -29,6 +30,9 @@ public class ViewingProtokolsList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewing_protokols_list);
+
+        //Отключение анимации перехода
+        overridePendingTransition(0,0);
 
         // Статичная переменная, чтобы определить, хочу ли я редактировать объект или создаю новый
         // Так как с этого экрана нельзя нажать кнопку редактировать, то переменная false
@@ -90,5 +94,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
         }
         return arrayList;
     }
+
 
 }
