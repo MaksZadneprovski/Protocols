@@ -2,6 +2,7 @@ package com.example.protokols.data_base_package.FreeForm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.example.protokols.MainActivity;
 import com.example.protokols.R;
@@ -22,15 +22,26 @@ import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.utils.ConstantsForSilovoyTrans;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class MainFreeForm extends AppCompatActivity {
-private TextView tvWork;
-private EditText etObject, etDate, etNotes;
-private Toolbar toolbarMain;
+    private Date currentDate = new Date();
+    private TextView tvWork;
+    private EditText etObject, etDate, etNotes;
+    private Toolbar toolbarMain;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_free_form);
+
+        init();
     }
+
+
 
     // Метод : Создает меню в тулбаре из указанного ресурса
     @Override
@@ -328,5 +339,18 @@ private Toolbar toolbarMain;
         etRpnLvCn.setText(silovoyTrans.getRpnLvCn().toString());
         etRpnLvBn.setText(silovoyTrans.getRpnLvBn().toString());
         etRpnLvAn.setText(silovoyTrans.getRpnLvAn().toString());
+    }
+
+    private void init() {
+        tvWork= findViewById(R.id.tvWork);
+        etObject = findViewById(R.id.etObjectV);
+        etDate = findViewById(R.id.etDate);
+        // Date setting
+        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
+        etDate.setText(dateFormat.format(currentDate));
+        etNotes = findViewById(R.id.etNotes);
+        // Для меню обязательно вызвать setSupportActionBar
+        toolbarMain = findViewById(R.id.toolbarMainFreeForm);
+        setSupportActionBar(toolbarMain);
     }
 }
