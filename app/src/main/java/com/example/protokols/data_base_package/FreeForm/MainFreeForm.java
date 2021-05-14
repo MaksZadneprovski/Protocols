@@ -342,9 +342,9 @@ public class MainFreeForm extends AppCompatActivity {
     }
 
     private void init() {
-        tvWork= findViewById(R.id.tvWork);
-        etObject = findViewById(R.id.etObjectV);
-        etDate = findViewById(R.id.etDate);
+        tvWork= findViewById(R.id.tvWorkFreeForm);
+        etObject = findViewById(R.id.etObjectFreeForm);
+        etDate = findViewById(R.id.etDateFreeForm);
         // Date setting
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         etDate.setText(dateFormat.format(currentDate));

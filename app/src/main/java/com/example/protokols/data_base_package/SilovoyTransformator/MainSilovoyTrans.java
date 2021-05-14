@@ -518,7 +518,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         // Date setting
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         // EditText
-         etObject = findViewById(R.id.etObjectV);
+         etObject = findViewById(R.id.etObject);
          etDate = findViewById(R.id.etDate);
          etDate.setText(dateFormat.format(currentDate));
          etTemperature = findViewById(R.id.etTemperature);
