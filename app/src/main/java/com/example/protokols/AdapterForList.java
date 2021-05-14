@@ -41,13 +41,13 @@ public class AdapterForList extends BaseAdapter {
     // Метод : возвращает размер списка silovoyTransArrayList
     @Override
     public int getCount() {
-        return silovoyTransArrayList.size();
+        return classForViewingListProtocolsArrayList.size();
     }
 
     // Метод : возвращает объект из списка silovoyTransArrayList по заданной позиции
     @Override
     public Object getItem(int position) {
-        return silovoyTransArrayList.get(position);
+        return classForViewingListProtocolsArrayList.get(position);
     }
 
     // Метод : возвращает позицию по заданной позиции (не понимаю)
@@ -63,17 +63,17 @@ public class AdapterForList extends BaseAdapter {
         if (view == null) {
             view = layoutInflater.inflate(R.layout.item_for_list_view, parent, false);
         }
-        SilovoyTrans silovoyTrans = getsilovoyTrans(position);
+        ClassForViewingListProtocols classForViewingListProtocolsArrayList = getclassForViewingListProtocolsArrayList(position);
         // ((TextView) view.findViewById(R.id.tvItem1)).setText(Integer.toString(silovoyTrans.getPasportType()));
-        ((TextView) view.findViewById(R.id.tvItem1)).setText(silovoyTrans.getWork());
-        ((TextView) view.findViewById(R.id.tvItem2)).setText(silovoyTrans.getObject());
-        ((TextView) view.findViewById(R.id.tvItem3)).setText(silovoyTrans.getDate());
+        ((TextView) view.findViewById(R.id.tvItem1)).setText(classForViewingListProtocolsArrayList.getWork());
+        ((TextView) view.findViewById(R.id.tvItem2)).setText(classForViewingListProtocolsArrayList.getObject());
+        ((TextView) view.findViewById(R.id.tvItem3)).setText(classForViewingListProtocolsArrayList.getDate());
         return view;
     }
 
     // Метод : из списка silovoyTransArrayList по позиции из объекта класса Object делает объект класса SilovoyTrans
-    private SilovoyTrans getsilovoyTrans(int position) {
-        return   (SilovoyTrans) getItem(position);
+    private ClassForViewingListProtocols getclassForViewingListProtocolsArrayList(int position) {
+        return   (ClassForViewingListProtocols) getItem(position);
     }
 
 

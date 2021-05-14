@@ -21,10 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ViewingProtokolsList extends AppCompatActivity {
-    private List <SilovoyTrans> silovoyTransList;
-    private List <FreeForm> freeFormList;
     private ListView lv;
     private Toolbar toolbarMain;
+    private List<SilovoyTrans> silovoyTransList;
+    private List <FreeForm> freeFormList;
 
 
     @Override
@@ -39,9 +39,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
         // Так как с этого экрана нельзя нажать кнопку редактировать, то переменная false
         MainActivity.isEditSilovoyTrans= false;
 
-        // Создание  объекта DAO для работы с БД
-        SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
-        FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
 
         // Инициализация
         lv = findViewById(R.id.lv);
@@ -50,13 +47,17 @@ public class ViewingProtokolsList extends AppCompatActivity {
         toolbarMain = findViewById(R.id.toolbarViewProtocols);
         setSupportActionBar(toolbarMain);
 
+        // Создание  объекта DAO для работы с БД
+        SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
+        FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
+
         // По запросу возвращается список всех объектов из таблицы БД SilovoyTrans
         silovoyTransList = silovoyTransDao.getAll();
         // По запросу возвращается список всех объектов из таблицы БД FreeForm
         freeFormList = freeFormDao.getAll();
 
         // Конструктор адаптера
-        AdapterForList adapter = new AdapterForList(this, getArrayList(silovoyTransList));
+        AdapterForList adapter = new AdapterForList(this, getArrayList(silovoyTransList, freeFormList));
 
         // Установка адаптера для ListView
         lv.setAdapter(adapter);
@@ -91,10 +92,17 @@ public class ViewingProtokolsList extends AppCompatActivity {
     }
 
     // Метод : делает ArrayList из приходящего из БД  List-а, т.к. для адаптера нужен ArrayList
-    private ArrayList<SilovoyTrans> getArrayList(List<SilovoyTrans> silovoyTransList) {
-        ArrayList<SilovoyTrans> arrayList = new ArrayList<SilovoyTrans>(silovoyTransList.size());
+    private ArrayList<ClassForViewingListProtocols> getArrayList(List<SilovoyTrans> silovoyTransList, List <FreeForm> freeFormList ) {
+
+        ArrayList<ClassForViewingListProtocols> arrayList = new ArrayList<ClassForViewingListProtocols>();
+
         for (int i = 0; i< silovoyTransList.size(); i++){
-            arrayList.add(i, silovoyTransList.get(i));
+            String object = silovoyTransList.get(i).getObject();
+            String work = silovoyTransList.get(i).getWork();
+            String date = silovoyTransList.get(i).getDate();
+
+            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(work,object,date);
+            arrayList(i)
         }
         return arrayList;
     }

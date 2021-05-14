@@ -1,11 +1,21 @@
 package com.example.protokols;
 
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class ClassForViewingListProtocols {
+import com.example.protokols.data_base_package.AppDelegateBd;
+import com.example.protokols.data_base_package.FreeForm.FreeForm;
+import com.example.protokols.data_base_package.FreeForm.FreeFormDao;
+import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
+import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
+
+import java.util.List;
+
+public class ClassForViewingListProtocols extends AppCompatActivity {
     private String work, object, date;
     private Toolbar toolbarMain;
+
 
     public ClassForViewingListProtocols(String work, String object, String date) {
         this.work = work;
@@ -13,5 +23,27 @@ public class ClassForViewingListProtocols {
         this.date = date;
     }
 
+    public String getWork() {
+        return work;
+    }
 
+    public String getObject() {
+        return object;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+
+    public void setObject(String object) {
+        this.object = object;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
 }
