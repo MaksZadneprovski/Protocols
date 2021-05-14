@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.protokols.data_base_package.AppDelegateBd;
+import com.example.protokols.data_base_package.FreeForm.FreeForm;
+import com.example.protokols.data_base_package.FreeForm.FreeFormDao;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.data_base_package.SilovoyTransformator.ViewSilovoyTrans;
@@ -20,6 +22,7 @@ import java.util.List;
 
 public class ViewingProtokolsList extends AppCompatActivity {
     private List <SilovoyTrans> silovoyTransList;
+    private List <FreeForm> freeFormList;
     private ListView lv;
     private Toolbar toolbarMain;
 
@@ -38,16 +41,19 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
         // Создание  объекта DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
+        FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
 
         // Инициализация
         lv = findViewById(R.id.lv);
+
         // Для меню обязательно вызвать setSupportActionBar
         toolbarMain = findViewById(R.id.toolbarViewProtocols);
         setSupportActionBar(toolbarMain);
-        toolbarMain.setTitle("Application");
 
         // По запросу возвращается список всех объектов из таблицы БД SilovoyTrans
         silovoyTransList = silovoyTransDao.getAll();
+        // По запросу возвращается список всех объектов из таблицы БД FreeForm
+        freeFormList = freeFormDao.getAll();
 
         // Конструктор адаптера
         AdapterForList adapter = new AdapterForList(this, getArrayList(silovoyTransList));

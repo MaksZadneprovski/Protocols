@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class AdapterForList extends BaseAdapter {
     Context context;
     LayoutInflater layoutInflater;
-    ArrayList<SilovoyTrans> silovoyTransArrayList;
+    ArrayList<ClassForViewingListProtocols> classForViewingListProtocolsArrayList;
 
     // Конструктор
 
@@ -33,9 +33,9 @@ public class AdapterForList extends BaseAdapter {
 
 
     // Конструктор
-    AdapterForList(Context context, ArrayList<SilovoyTrans> silovoyTransArrayList){
+    AdapterForList(Context context, ArrayList<ClassForViewingListProtocols> classForViewingListProtocolsArrayList){
         this.context = context;
-        this.silovoyTransArrayList = silovoyTransArrayList;
+        this.classForViewingListProtocolsArrayList = classForViewingListProtocolsArrayList;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
     // Метод : возвращает размер списка silovoyTransArrayList
