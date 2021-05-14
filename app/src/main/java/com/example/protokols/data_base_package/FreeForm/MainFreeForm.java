@@ -40,8 +40,6 @@ public class MainFreeForm extends AppCompatActivity {
         init();
     }
 
-
-
     // Метод : Создает меню в тулбаре из указанного ресурса
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,7 +78,7 @@ public class MainFreeForm extends AppCompatActivity {
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
-    // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createSilovoyTransFromEditText()
+    // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createFreeFormFromEditText()
     private void insertToBd() {
 
         // Создание объекта  DAO для работы с БД
@@ -127,7 +125,7 @@ public class MainFreeForm extends AppCompatActivity {
         return freeForm;
     }
 
-    // 6 Метод : Заполняет EditText-ы данными из объекта silovoyTrans в случае редактирования
+    // 6 Метод : Заполняет EditText-ы данными из объекта freeform в случае редактирования
     private void setTextToEditTextFromFreeForm(FreeForm freeForm){
         etObject.setText(freeForm.getmObjectOrPodstancia().toString());
         etDate.setText(freeForm.getmDate().toString());
@@ -138,10 +136,12 @@ public class MainFreeForm extends AppCompatActivity {
         tvWork= findViewById(R.id.tvWorkFreeForm);
         etObject = findViewById(R.id.etObjectFreeForm);
         etDate = findViewById(R.id.etDateFreeForm);
+
         // Date setting
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         etDate.setText(dateFormat.format(currentDate));
-        etNotes = findViewById(R.id.etNotes);
+        etNotes = findViewById(R.id.etNotesFreeForm);
+
         // Для меню обязательно вызвать setSupportActionBar
         toolbarMain = findViewById(R.id.toolbarMainFreeForm);
         setSupportActionBar(toolbarMain);
