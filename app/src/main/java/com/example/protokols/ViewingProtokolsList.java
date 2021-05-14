@@ -5,17 +5,15 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.protokols.data_base_package.AppDelegateBd;
-import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.data_base_package.SilovoyTransformator.ViewSilovoyTrans;
-import com.example.protokols.utils.ConstantsForSilovoyTrans;
+import com.example.protokols.utils.ConstantsMy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,7 +62,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
                 Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
                 SilovoyTrans silovoyTrans = silovoyTransList.get(position);
                 int idOfSelectedItem = silovoyTrans.getId();
-                i.putExtra(ConstantsForSilovoyTrans.ID_KEY,idOfSelectedItem );
+                i.putExtra(ConstantsMy.ID_KEY,idOfSelectedItem );
                 startActivity(i);
                 finish();
             }

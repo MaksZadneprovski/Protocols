@@ -17,10 +17,8 @@ import com.example.protokols.MainActivity;
 import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
-import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
-import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
-import com.example.protokols.utils.ConstantsForSilovoyTrans;
+import com.example.protokols.utils.ConstantsMy;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -53,7 +51,7 @@ public class MainFreeForm extends AppCompatActivity {
     // Метод : Обрабатывает нажатия пунктов меню
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
+        Intent i = new Intent(MainFreeForm.this, ViewingProtokolsList.class);
         if (item.getItemId() == R.id.menuSave){
             insertToBd();
             startActivity(i);
@@ -67,7 +65,7 @@ public class MainFreeForm extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (KeyEvent.KEYCODE_BACK==keyCode){
             if (MainActivity.isEditSilovoyTrans){
-                Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
+                Intent i = new Intent(MainFreeForm.this, ViewingProtokolsList.class);
                 startActivity(i);
                 finish();
             }
@@ -85,7 +83,7 @@ public class MainFreeForm extends AppCompatActivity {
     private void insertToBd() {
 
         // Создание объекта  DAO для работы с БД
-        SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
+        FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
 
         // Проверяем поля Объект и Дата на заполненность
         if (!(etObject.getText().toString().equals("")) & !(etDate.getText().toString().equals(""))){
@@ -94,26 +92,30 @@ public class MainFreeForm extends AppCompatActivity {
             if (!MainActivity.isEditSilovoyTrans){
 
                 // Записываем в БД
-                silovoyTransDao.insertSilovoyTrans(createSilovoyTransFromEditText());
+                freeFormDao.insertFreeForm(createFreeFormFromEditText());
 
                 // Показываем Toast
-                Toast.makeText(MainSilovoyTrans.this, "Сохранено", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainFreeForm.this, "Сохранено", Toast.LENGTH_LONG).show();
             }
             else {
                 // Создаем объект по полям для обновления БД
-                SilovoyTrans silovoyTransUpdate = createSilovoyTransFromEditText();
+                FreeForm freeFormUpdate = createFreeFormFromEditText();
 
                 // Получение id  объекта для перезаписи в БД из экрана ViewSilovoyTrans
                 Intent i = getIntent();
-                int idSilovoyTrans = i.getIntExtra(ConstantsForSilovoyTrans.ID_KEY, 0);
+                int idFreeForm = i.getIntExtra(ConstantsMy.ID_KEY, 0);
 
-                silovoyTransUpdate.setId(idSilovoyTrans);
-                silovoyTransDao.updateSilovoyTrans(silovoyTransUpdate);
+                freeFormUpdate.setId(idFreeForm);
+                freeFormDao.updateFreeForm(freeFormUpdate);
 
-                Toast.makeText(MainSilovoyTrans.this, "Обновлено", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainFreeForm.this, "Обновлено", Toast.LENGTH_LONG).show();
             }
 
         }
+    }
+
+    private FreeForm createFreeFormFromEditText() {
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////

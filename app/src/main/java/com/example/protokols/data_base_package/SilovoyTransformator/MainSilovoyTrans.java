@@ -24,7 +24,7 @@ import com.example.protokols.MainActivity;
 import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
-import com.example.protokols.utils.ConstantsForSilovoyTrans;
+import com.example.protokols.utils.ConstantsMy;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -200,7 +200,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
                 // Получение id  объекта для перезаписи в БД из экрана ViewSilovoyTrans
                 Intent i = getIntent();
-                int idSilovoyTrans = i.getIntExtra(ConstantsForSilovoyTrans.ID_KEY, 0);
+                int idSilovoyTrans = i.getIntExtra(ConstantsMy.ID_KEY, 0);
 
                 silovoyTransUpdate.setId(idSilovoyTrans);
                 silovoyTransDao.updateSilovoyTrans(silovoyTransUpdate);
@@ -628,7 +628,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
             // Получаем id объекта SilovoyTrans
             Intent i = getIntent();
-            int idSilovoyTrans = i.getIntExtra(ConstantsForSilovoyTrans.ID_KEY, 0);
+            int idSilovoyTrans = i.getIntExtra(ConstantsMy.ID_KEY, 0);
 
             // По id создается объект silovoyTrans, данные для которого берутся из БД
             SilovoyTrans silovoyTrans = silovoyTransDao.getSilovoyTransTableById(idSilovoyTrans);

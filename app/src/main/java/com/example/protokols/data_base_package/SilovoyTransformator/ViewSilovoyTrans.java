@@ -9,19 +9,14 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.protokols.MainActivity;
 import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
-import com.example.protokols.utils.ConstantsForSilovoyTrans;
-
-import java.util.Date;
+import com.example.protokols.utils.ConstantsMy;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
     private Toolbar toolbarMain;
@@ -82,7 +77,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
 
             // Переход на экран создания объекта, с отправкой id объекта, который нужно редактировать
             Intent i = new Intent(ViewSilovoyTrans.this, MainSilovoyTrans.class);
-            i.putExtra(ConstantsForSilovoyTrans.ID_KEY,idSilovoyTrans );
+            i.putExtra(ConstantsMy.ID_KEY,idSilovoyTrans );
 
             startActivity(i);
             finish();
@@ -98,7 +93,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         Intent i = getIntent();
 
         // Получаем id объекта SilovoyTrans, по элементу из списка  ViewingProtokolsList, который был нажат
-        int idOfSelectedItem = i.getIntExtra(ConstantsForSilovoyTrans.ID_KEY, 0);
+        int idOfSelectedItem = i.getIntExtra(ConstantsMy.ID_KEY, 0);
 
         // По id создается объект silovoyTrans, данные для которого берутся из БД
         SilovoyTrans silovoyTrans = silovoyTransDao.getSilovoyTransTableById(idOfSelectedItem);
