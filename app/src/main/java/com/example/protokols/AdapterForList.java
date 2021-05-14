@@ -68,6 +68,10 @@ public class AdapterForList extends BaseAdapter {
         ((TextView) view.findViewById(R.id.tvItem1)).setText(classForViewingListProtocolsArrayList.getWork());
         ((TextView) view.findViewById(R.id.tvItem2)).setText(classForViewingListProtocolsArrayList.getObject());
         ((TextView) view.findViewById(R.id.tvItem3)).setText(classForViewingListProtocolsArrayList.getDate());
+        switch (classForViewingListProtocolsArrayList.getWork().toString()){
+            case "Неустановленная форма" :
+                view.findViewById(R.id.imgIcon).sour
+        }
         return view;
     }
 
