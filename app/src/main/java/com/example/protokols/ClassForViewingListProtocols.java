@@ -13,11 +13,13 @@ import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans
 import java.util.List;
 
 public class ClassForViewingListProtocols extends AppCompatActivity {
+    private int id;
     private String work, object, date;
     private Toolbar toolbarMain;
 
 
-    public ClassForViewingListProtocols(String work, String object, String date) {
+    public ClassForViewingListProtocols(int id, String work, String object, String date) {
+        this.id = id;
         this.work = work;
         this.object = object;
         this.date = date;
@@ -45,5 +47,13 @@ public class ClassForViewingListProtocols extends AppCompatActivity {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

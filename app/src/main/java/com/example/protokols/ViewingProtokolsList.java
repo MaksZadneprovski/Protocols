@@ -66,12 +66,16 @@ public class ViewingProtokolsList extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
-                SilovoyTrans silovoyTrans = silovoyTransList.get(position);
-                int idOfSelectedItem = silovoyTrans.getId();
-                i.putExtra(ConstantsMy.ID_KEY,idOfSelectedItem );
-                startActivity(i);
-                finish();
+                ClassForViewingListProtocols classForViewingListProtocols = getArrayList(silovoyTransList, freeFormList).get(position);
+                String work =classForViewingListProtocols.getWork();
+                if (work.equals("Испытание силового трансформатора")){
+                    Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
+                    int idOfSelectedItem = classForViewingListProtocols.getId();
+                    i.putExtra(ConstantsMy.ID_KEY,idOfSelectedItem );
+                    startActivity(i);
+                    finish();
+                }
+
             }
         });
 
@@ -99,19 +103,21 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
         //  Проход по списку silovoyTransList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
         for (int i = 0; i< silovoyTransList.size(); i++){
+            int id = silovoyTransList.get(i).getId();
             String object = silovoyTransList.get(i).getObject();
             String work = silovoyTransList.get(i).getWork();
             String date = silovoyTransList.get(i).getDate();
-            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(work,object,date);
+            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id,work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
 
         //  Проход по списку freeFormList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
         for (int i = 0; i< freeFormList.size(); i++){
+            int id = freeFormList.get(i).getId();
             String object = freeFormList.get(i).getmObjectOrPodstancia();
             String work = freeFormList.get(i).getmWork();
             String date = freeFormList.get(i).getmDate();
-            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(work,object,date);
+            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id, work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
 
