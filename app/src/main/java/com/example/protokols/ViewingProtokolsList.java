@@ -83,27 +83,38 @@ public class ViewingProtokolsList extends AppCompatActivity {
                 silovoyTransDao.deleteSilovoyTrans(silovoyTransList.get(position));
                 // Заново берем данные из БД
                 silovoyTransList =silovoyTransDao.getAll();
+                freeFormList = freeFormDao.getAll();
                 // Обновляем адаптер
-                AdapterForList adapter = new AdapterForList(ViewingProtokolsList.this, getArrayList(silovoyTransList));
+                AdapterForList adapter = new AdapterForList(ViewingProtokolsList.this, getArrayList(silovoyTransList, freeFormList));
                 lv.setAdapter(adapter);
                 return false;
             }
         });
     }
 
-    // Метод : делает ArrayList из приходящего из БД  List-а, т.к. для адаптера нужен ArrayList
+    // Метод : Создает ArrayList из приходящих в параметры List-ов
     private ArrayList<ClassForViewingListProtocols> getArrayList(List<SilovoyTrans> silovoyTransList, List <FreeForm> freeFormList ) {
 
         ArrayList<ClassForViewingListProtocols> arrayList = new ArrayList<ClassForViewingListProtocols>();
 
+        //  Проход по списку silovoyTransList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
         for (int i = 0; i< silovoyTransList.size(); i++){
             String object = silovoyTransList.get(i).getObject();
             String work = silovoyTransList.get(i).getWork();
             String date = silovoyTransList.get(i).getDate();
-
             ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(work,object,date);
-            arrayList(i)
+            arrayList.add(i,classForViewingListProtocols);
         }
+
+        //  Проход по списку freeFormList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
+        for (int i = 0; i< freeFormList.size(); i++){
+            String object = freeFormList.get(i).getmObjectOrPodstancia();
+            String work = freeFormList.get(i).getmWork();
+            String date = freeFormList.get(i).getmDate();
+            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(work,object,date);
+            arrayList.add(i,classForViewingListProtocols);
+        }
+
         return arrayList;
     }
 
