@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.protokols.data_base_package.FreeForm.MainFreeForm;
 import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 
 // Добавил Resource Directory в res и выбрал  menu
@@ -56,6 +57,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickCreateProtocol(View view) {
         Intent i = new Intent(MainActivity.this, MainSilovoyTrans.class);
+        startActivity(i);
+    }
+
+    public void onClickCreateProtocolFreeForm(View view) {
+        Intent i = new Intent(MainActivity.this, MainFreeForm.class);
         startActivity(i);
     }
 }

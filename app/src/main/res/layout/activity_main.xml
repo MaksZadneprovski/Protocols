@@ -28,6 +28,14 @@
             android:layout_height="wrap_content"
             android:onClick="onClickCreateProtocol"
             android:text="Испытание силового трансформатора" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickCreateProtocolFreeForm"
+            android:text="Неустановленная форма" />
+
     </LinearLayout>
 
 

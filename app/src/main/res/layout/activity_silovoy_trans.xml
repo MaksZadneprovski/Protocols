@@ -44,7 +44,7 @@
                 android:textSize="@dimen/text16" />
 
             <EditText
-                android:id="@+id/etObjectV"
+                android:id="@+id/etObject"
                 style="@style/EtForData"
                 android:hint="РП-1 яч.№1 Т01.01" />
 
