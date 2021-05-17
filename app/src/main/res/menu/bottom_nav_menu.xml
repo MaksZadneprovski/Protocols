@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bottomNavIc1"
+        android:title="icon1"
+        android:icon="@drawable/ic_save"/>
+
+    <item android:id="@+id/bottomNavIc2"
+        android:title="icon2"
+        android:icon="@drawable/ic_save"/>
+
+    <item android:id="@+id/bottomNavIc3"
+        android:title="icon3"
+        android:icon="@drawable/ic_save"/>
+
+    <item android:id="@+id/bottomNavIc4"
+        android:title="icon4"
+        android:icon="@drawable/ic_save"/>
+</menu>
