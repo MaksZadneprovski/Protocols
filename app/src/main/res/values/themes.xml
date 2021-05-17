@@ -52,6 +52,21 @@
         <item name="android:inputType">textPersonName|textCapCharacters</item>
         <item name="android:layout_marginBottom">24dp</item>
     </style>
+
+    <style name="EtForDataNew" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">250dp</item>
+        <item name="elevation">5dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textSize">@dimen/text14</item>
+        <item name="android:inputType">textPersonName|textCapCharacters</item>
+        <item name="android:layout_marginBottom">24dp</item>
+    </style>
+
     <!-- Линия подчеркивания -->
     <style name="Line" parent="Theme.AppCompat.Light">
         <item name="android:layout_width">match_parent</item>

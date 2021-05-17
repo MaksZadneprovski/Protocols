@@ -76,11 +76,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv3" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tiLayout1"
+                style="@style/EtForDataNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTemperature">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <LinearLayout
                 android:id="@+id/LL2"
                 style="@style/Line"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
+                app:layout_constraintTop_toBottomOf="@+id/tiLayout1" />
 
             <TextView
                 style="@style/TvForEt"
