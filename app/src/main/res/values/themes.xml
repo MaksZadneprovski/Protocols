@@ -22,7 +22,7 @@
         <item name="android:gravity">center</item>
         <item name="android:letterSpacing">0.2</item>
         <item name="fontFamily">sans-serif-light</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">26sp</item>
         <item name="android:textColor">@color/c2</item>
         <item name="android:textAllCaps">true</item>
     </style>
@@ -41,7 +41,7 @@
                <!-- et -->
     <style name="EtForData" parent="Theme.AppCompat.Light">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_width">250dp</item>
         <item name="elevation">5dp</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:background">@drawable/edit_text_background</item>

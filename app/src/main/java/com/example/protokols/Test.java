@@ -18,5 +18,6 @@ public class Test extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
     }
 }

@@ -8,6 +8,9 @@
         android:title="icon2"
         android:icon="@drawable/ic_save"/>
 
+    <item android:id="@+id/placeholder"
+        android:title="icon2"/>
+
     <item android:id="@+id/bottomNavIc3"
         android:title="icon3"
         android:icon="@drawable/ic_save"/>
