@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvWork"
+                style="@style/Title"
+                android:text="Испытание силового трансформатора"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout style="@style/Line"
+                android:id="@+id/LL1"
+                app:layout_constraintTop_toBottomOf="@+id/tvWork"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@+id/LL1"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/TvForEt"
+                android:id="@+id/tv1"
+                android:text="Объект"
+                android:textSize="@dimen/text16" />
+
+            <EditText
+                app:layout_constraintTop_toBottomOf="@+id/tv1"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/etObject"
+                style="@style/EtForData"
+                android:hint="РП-1 яч.№1 Т01.01" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
