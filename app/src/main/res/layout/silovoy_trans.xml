@@ -8,45 +8,93 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="#E6E6E6">
 
             <TextView
                 android:id="@+id/tvWork"
                 style="@style/Title"
                 android:background="@drawable/bg_title"
-                android:letterSpacing="0.2"
                 android:text="Испытание\nсилового\nтрансформатора"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout style="@style/Line"
+            <LinearLayout
                 android:id="@+id/LL1"
-                app:layout_constraintTop_toBottomOf="@+id/tvWork"
-                app:layout_constraintStart_toStartOf="parent"/>
+                style="@style/Line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvWork" />
 
             <TextView
-                app:layout_constraintTop_toBottomOf="@+id/LL1"
-                app:layout_constraintStart_toStartOf="parent"
-                style="@style/TvForEt"
                 android:id="@+id/tv1"
+                style="@style/TvForEt"
+                android:layout_marginTop="16dp"
                 android:text="Объект"
-                android:textSize="@dimen/text16" />
+                android:textSize="@dimen/text16"
+                app:layout_constraintStart_toStartOf="@id/etObject"
+                app:layout_constraintTop_toBottomOf="@+id/LL1" />
 
             <EditText
-                app:layout_constraintTop_toBottomOf="@+id/tv1"
-                app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/etObject"
                 style="@style/EtForData"
-                android:hint="РП-1 яч.№1 Т01.01" />
+                android:gravity="center_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+            <TextView
+                android:id="@+id/tv2"
+                style="@style/TvForEt"
+                android:text="Дата"
+                android:textSize="@dimen/text16"
+                app:layout_constraintStart_toStartOf="@id/etObject"
+                app:layout_constraintTop_toBottomOf="@+id/etObject" />
+
+            <EditText
+                android:id="@+id/etDate"
+                style="@style/EtForData"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+            <TextView
+                android:id="@+id/tv3"
+                style="@style/TvForEt"
+                android:text="Температура, °С"
+                android:textSize="@dimen/text16"
+                app:layout_constraintStart_toStartOf="@id/etObject"
+                app:layout_constraintTop_toBottomOf="@+id/etDate" />
+
+            <EditText
+                android:id="@+id/etTemperature"
+                style="@style/EtForData"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+            <LinearLayout
+                android:id="@+id/LL2"
+                style="@style/Line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
+
+            <TextView
+                style="@style/TvForEt"
+                android:gravity="center"
+                android:text="Паспортные данные"
+                android:textSize="@dimen/text18"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LL2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

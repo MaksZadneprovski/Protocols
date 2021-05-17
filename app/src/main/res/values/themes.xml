@@ -21,8 +21,9 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:letterSpacing">0.2</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#E6E6E6</item>
+        <item name="fontFamily">sans-serif-light</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/c2</item>
         <item name="android:textAllCaps">true</item>
     </style>
                <!-- tv -->
@@ -31,19 +32,25 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:letterSpacing">0.1</item>
         <item name="android:textSize">@dimen/text14</item>
+        <item name="android:layout_marginBottom">16dp</item>
     </style>
                <!-- et -->
     <style name="EtForData" parent="Theme.AppCompat.Light">
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="elevation">2dp</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="elevation">5dp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:background">@drawable/edit_text_background</item>
-        <item name="android:ems">15</item>
         <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/c2</item>
+        <item name="android:letterSpacing">0.1</item>
         <item name="android:textSize">@dimen/text14</item>
-        <item name="android:inputType">textPersonName</item>
+        <item name="android:inputType">textPersonName|textCapCharacters</item>
+        <item name="android:layout_marginBottom">24dp</item>
     </style>
     <!-- Линия подчеркивания -->
     <style name="Line" parent="Theme.AppCompat.Light">
@@ -52,7 +59,7 @@
         <item name="android:layout_marginLeft">40dp</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginRight">40dp</item>
-        <item name="android:background">@color/grey</item>
+        <item name="android:background">@drawable/edit_text_background</item>
         <item name="android:orientation">vertical</item>
     </style>
     <!-- radio -->
