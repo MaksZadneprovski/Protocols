@@ -15,7 +15,7 @@ import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyT
 
 // Добавил Resource Directory в res и выбрал  menu
 // Добавил в menu Resource Menu File
-public class MainActivity extends AppCompatActivity {
+public class    MainActivity extends AppCompatActivity {
     private Toolbar toolbarMain;
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый

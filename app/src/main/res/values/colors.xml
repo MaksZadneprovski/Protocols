@@ -14,5 +14,4 @@
     <color name="c2">#E6E6E6</color>
     <color name="c3_light">#2CAEAE</color>
     <color name="c4">#F0D879</color>
-    <color name="mtr1_textinput_default_box_stroke_color" tools:override="true">#2CAEAE</color>
 </resources>

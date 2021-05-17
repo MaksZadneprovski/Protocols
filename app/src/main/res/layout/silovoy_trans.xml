@@ -26,85 +26,58 @@
             <LinearLayout
                 android:id="@+id/LL1"
                 style="@style/Line"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvWork" />
 
-            <TextView
-                android:id="@+id/tv1"
-                style="@style/TvForEt"
-                android:layout_marginTop="16dp"
-                android:text="Объект"
-                android:textSize="@dimen/text16"
-                app:layout_constraintStart_toStartOf="@id/etObject"
-                app:layout_constraintTop_toBottomOf="@+id/LL1" />
-
-            <EditText
-                android:id="@+id/etObject"
-                style="@style/EtForData"
-                android:gravity="center_vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv1" />
-
-            <TextView
-                android:id="@+id/tv2"
-                style="@style/TvForEt"
-                android:text="Дата"
-                android:textSize="@dimen/text16"
-                app:layout_constraintStart_toStartOf="@id/etObject"
-                app:layout_constraintTop_toBottomOf="@+id/etObject" />
-
-            <EditText
-                android:id="@+id/etDate"
-                style="@style/EtForData"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv2" />
-
-            <TextView
-                android:id="@+id/tv3"
-                style="@style/TvForEt"
-                android:text="Температура, °С"
-                android:textSize="@dimen/text16"
-                app:layout_constraintStart_toStartOf="@id/etObject"
-                app:layout_constraintTop_toBottomOf="@+id/etDate" />
-
-            <EditText
-                android:id="@+id/etTemperature"
-                style="@style/EtForData"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv3" />
-
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tiLayout1"
-                style="@style/EtForDataNew"
-                android:elevation="0dp"
-                android:padding="0dp"
-                app:boxCornerRadiusBottomEnd="10dp"
-                app:boxCornerRadiusBottomStart="10dp"
-                app:boxCornerRadiusTopEnd="10dp"
-                app:boxCornerRadiusTopStart="10dp"
-                app:boxStrokeColor="@color/c1"
-                app:hintTextColor="@color/c1"
+                android:id="@+id/etLObject"
+                style="@style/inTextForData"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etTemperature">
+                app:layout_constraintTop_toBottomOf="@+id/LL1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:elegantTextHeight="false"
-                    android:fontFamily="sans-serif-light"
-                    android:hint="Температура, °С"
-                    android:inputType="textPersonName|textCapCharacters" />
+                    android:id="@+id/etObject"
+                    style="@style/textInputEt"
+                    android:hint="Объект" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etLDate"
+                style="@style/inTextForData"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLObject">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/textInputEt"
+                    android:id="@+id/etDate"
+                    android:hint="Дата" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etTemperature"
+                style="@style/inTextForData"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLDate">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/textInputEt"
+                    android:hint="Температура, °С" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:id="@+id/LL2"
                 style="@style/Line"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tiLayout1" />
+                app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
 
             <TextView
                 style="@style/TvForEt"
@@ -112,6 +85,7 @@
                 android:gravity="center"
                 android:text="Паспортные данные"
                 android:textSize="@dimen/text18"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LL2" />
@@ -140,10 +114,13 @@
     </com.google.android.material.bottomappbar.BottomAppBar>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabSilovoyTrans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_edit"
-        app:layout_anchor="@id/bottomAppBar"
-        android:id="@+id/fabSilovoyTrans"/>
+        android:background="@color/c1"
+        android:backgroundTint="@color/c3_light"
+        android:src="@drawable/ic_save"
+        app:backgroundTint="#FFFFFF"
+        app:layout_anchor="@id/bottomAppBar" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

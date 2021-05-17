@@ -53,15 +53,31 @@
         <item name="android:layout_marginBottom">24dp</item>
     </style>
 
-    <style name="EtForDataNew" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <style name="inTextForData" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">250dp</item>
-        <item name="elevation">5dp</item>
-        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/c2</item>
         <item name="boxStrokeColor">@color/c1</item>
         <item name="android:textSize">@dimen/text14</item>
+        <item name="hintTextColor">@color/c1</item>
+        <item name="boxCornerRadiusTopStart">10dp</item>
+        <item name="boxCornerRadiusTopEnd">10dp</item>
+        <item name="boxCornerRadiusBottomStart">10dp</item>
+        <item name="boxCornerRadiusBottomEnd">10dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+
+    </style>
+    <style name="textInputEt">
         <item name="android:inputType">textPersonName|textCapCharacters</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
     </style>
 
     <!-- Линия подчеркивания -->
@@ -69,7 +85,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1dp</item>
         <item name="android:layout_marginLeft">40dp</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">16dp</item>
         <item name="android:layout_marginRight">40dp</item>
         <item name="android:background">@drawable/edit_text_background</item>
         <item name="android:orientation">vertical</item>
