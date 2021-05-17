@@ -17,11 +17,13 @@
 
     <!-- Название протокола -->
     <style name="Title" parent="Theme.AppCompat.Light">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_height">300dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:letterSpacing">0.2</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#E6E6E6</item>
+        <item name="android:textAllCaps">true</item>
     </style>
                <!-- tv -->
     <style name="TvForEt" parent="Theme.AppCompat.Light">

@@ -20,7 +20,10 @@
             <TextView
                 android:id="@+id/tvWork"
                 style="@style/Title"
-                android:text="Испытание силового трансформатора"
+                android:background="@drawable/bg_title"
+                android:letterSpacing="0.2"
+                android:text="Испытание\nсилового\nтрансформатора"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
