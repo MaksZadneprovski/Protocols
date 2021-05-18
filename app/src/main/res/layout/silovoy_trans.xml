@@ -2,6 +2,7 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -15,27 +16,25 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/tvWork"
+                style="@style/Title"
+                android:background="@drawable/bg_title"
+                android:text="Испытание\nсилового\nтрансформатора"
+                android:textAlignment="center" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ConstrLayoutObject"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tvWork"
-                    style="@style/Title"
-                    android:background="@drawable/bg_title"
-                    android:text="Испытание\nсилового\nтрансформатора"
-                    android:textAlignment="center"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:id="@+id/LL1"
                     style="@style/Line"
                     android:layout_marginBottom="0dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="30dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/etLObject"
@@ -191,6 +190,15 @@
                         style="@style/textInputEt"
                         android:hint="Год изготовления" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ConstrLayoutMeterage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
