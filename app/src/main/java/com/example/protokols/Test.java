@@ -30,6 +30,7 @@ public class Test extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         cLObject = findViewById(R.id.ConstrLayoutObject);
+        cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
@@ -44,10 +45,12 @@ public class Test extends AppCompatActivity {
 
                 else  if (item.getItemId() == R.id.bottomNavIc3){
                     cLObject.setVisibility(View.VISIBLE);
+                    cLMeterage.setVisibility(View.GONE);
                 }
 
                 else  if (item.getItemId() == R.id.bottomNavIc4){
                     cLObject.setVisibility(View.GONE);
+                    cLMeterage.setVisibility(View.VISIBLE);
                 }
                 return true;
             }
