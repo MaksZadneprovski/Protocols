@@ -46,8 +46,6 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etLDate"
                 style="@style/inTextForData"
@@ -81,6 +79,7 @@
 
             <TextView
                 style="@style/TvForEt"
+                android:id="@+id/tv1"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:text="Паспортные данные"
@@ -89,6 +88,34 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LL2" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etLPasportType"
+                style="@style/inTextForData"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPasportType"
+                    style="@style/textInputEt"
+                    android:hint="Тип" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etLPasportZavNumber"
+                style="@style/inTextForData"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etLPasportType">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPasportZavNumber"
+                    style="@style/textInputEt"
+                    android:hint="Заводской номер" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
