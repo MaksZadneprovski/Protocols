@@ -84,13 +84,12 @@
                     app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
 
                 <TextView
-                    style="@style/TvForEt"
                     android:id="@+id/tv1"
+                    style="@style/TvForEt"
                     android:layout_marginTop="16dp"
                     android:gravity="center"
                     android:text="Паспортные данные"
                     android:textSize="@dimen/text18"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/LL2" />
@@ -123,6 +122,75 @@
                         android:hint="Заводской номер" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportPower"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLPasportZavNumber">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportPower"
+                        style="@style/textInputEt"
+                        android:hint="Мощность, кВА" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportVoltage"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLPasportPower">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportVoltage"
+                        style="@style/textInputEt"
+                        android:hint="Напряжение, кВ" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportCurrent"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLPasportVoltage">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportCurrent"
+                        style="@style/textInputEt"
+                        android:hint="Ток, А" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportVoltageKz"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLPasportCurrent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportVoltageKz"
+                        style="@style/textInputEt"
+                        android:hint="U, %" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportYearOfManufacture"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLPasportVoltageKz">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportYearOfManufacture"
+                        style="@style/textInputEt"
+                        android:hint="Год изготовления" />
+                </com.google.android.material.textfield.TextInputLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
