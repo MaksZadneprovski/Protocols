@@ -5,120 +5,127 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvWork"
-                style="@style/Title"
-                android:background="@drawable/bg_title"
-                android:text="Испытание\nсилового\nтрансформатора"
-                android:textAlignment="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <LinearLayout
-                android:id="@+id/LL1"
-                style="@style/Line"
-                android:layout_marginBottom="0dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvWork" />
+                <TextView
+                    android:id="@+id/tvWork"
+                    style="@style/Title"
+                    android:background="@drawable/bg_title"
+                    android:text="Испытание\nсилового\nтрансформатора"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etLObject"
-                style="@style/inTextForData"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LL1">
+                <LinearLayout
+                    android:id="@+id/LL1"
+                    style="@style/Line"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvWork" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etObject"
-                    style="@style/textInputEt"
-                    android:hint="Объект" />
-            </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLObject"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LL1">
 
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etLDate"
-                style="@style/inTextForData"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etLObject">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/textInputEt"
-                    android:id="@+id/etDate"
-                    android:hint="Дата" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etTemperature"
-                style="@style/inTextForData"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etLDate">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    style="@style/textInputEt"
-                    android:hint="Температура, °С" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:id="@+id/LL2"
-                style="@style/Line"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
-
-            <TextView
-                style="@style/TvForEt"
-                android:id="@+id/tv1"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:text="Паспортные данные"
-                android:textSize="@dimen/text18"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LL2" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etLPasportType"
-                style="@style/inTextForData"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv1">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPasportType"
-                    style="@style/textInputEt"
-                    android:hint="Тип" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etLPasportZavNumber"
-                style="@style/inTextForData"
-                android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etLPasportType">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPasportZavNumber"
-                    style="@style/textInputEt"
-                    android:hint="Заводской номер" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etObject"
+                        style="@style/textInputEt"
+                        android:hint="Объект" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLDate"
+                    style="@style/inTextForData"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLObject">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/textInputEt"
+                        android:id="@+id/etDate"
+                        android:hint="Дата" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etTemperature"
+                    style="@style/inTextForData"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLDate">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/textInputEt"
+                        android:hint="Температура, °С" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/LL2"
+                    style="@style/Line"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
+
+                <TextView
+                    style="@style/TvForEt"
+                    android:id="@+id/tv1"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Паспортные данные"
+                    android:textSize="@dimen/text18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LL2" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportType"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportType"
+                        style="@style/textInputEt"
+                        android:hint="Тип" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLPasportZavNumber"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLPasportType">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPasportZavNumber"
+                        style="@style/textInputEt"
+                        android:hint="Заводской номер" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
