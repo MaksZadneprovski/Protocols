@@ -26,13 +26,14 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ConstrLayoutObject"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="visible">
 
                 <LinearLayout
                     android:id="@+id/LL1"
                     style="@style/Line"
-                    android:layout_marginBottom="0dp"
                     android:layout_marginTop="30dp"
+                    android:layout_marginBottom="0dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,8 +60,8 @@
                     app:layout_constraintTop_toBottomOf="@+id/etLObject">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        style="@style/textInputEt"
                         android:id="@+id/etDate"
+                        style="@style/textInputEt"
                         android:hint="Дата" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -198,11 +199,88 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <TextView
+                    android:id="@+id/tv2"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"
+                    android:text="Сопротивление изоляции"
+                    android:textSize="@dimen/text18"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <LinearLayout
+                    android:id="@+id/LL3"
+                    style="@style/Line"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+                <TextView
+                    android:id="@+id/tv3"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:text="Схема измерения : ВН - (НН+бак) "
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="@+id/etLIzolHvR15"
+                    app:layout_constraintTop_toBottomOf="@id/LL3" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLIzolHvR15"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etIzolHvR15"
+                        style="@style/textInputEt"
+                        android:hint="R15, МОм" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLIzolHvR60"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLIzolHvR15">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etIzolHvR60"
+                        style="@style/textInputEt"
+                        android:hint="R60, МОм" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLIzolHvKoef"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLIzolHvR60">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etIzolHvKoef"
+                        style="@style/textInputEt"
+                        android:hint="Коэффициент абсорбции" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/LL4"
+                    style="@style/Line"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLIzolHvKoef" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
+
+
+
+
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:layout_width="match_parent"
