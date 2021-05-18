@@ -353,29 +353,13 @@
                 <TextView
                     android:id="@+id/tv5"
                     style="@style/TvForEt"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="32dp"
                     android:gravity="center"
-                    android:text="Сопротивление обмоток постоянному току"
+                    android:text="Сопротивление обмоток\nпостоянному току"
                     android:textSize="@dimen/text18"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="LL5" />
-
-                <LinearLayout
-                    android:id="@+id/LL6"
-                    style="@style/Line"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv5" />
-
-                <TextView
-                    android:id="@+id/tv6"
-                    style="@style/TvForEt"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginLeft="0dp"
-                    android:text="Обмотка AB"
-                    android:textSize="@dimen/text14"
-                    app:layout_constraintStart_toStartOf="@+id/etLIzolHvR15"
-                    app:layout_constraintTop_toBottomOf="@id/LL6" />
+                    app:layout_constraintTop_toBottomOf="@+id/LL5"/>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/etLQuantityRpnV"
@@ -383,7 +367,7 @@
                     android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv6">
+                    app:layout_constraintTop_toBottomOf="@+id/tv5">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etQuantityRpnV"
@@ -406,27 +390,33 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/ "
+                    android:id="@+id/etLSetConstantForRpn"
                     style="@style/inTextForData"
                     android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLIzolHvR60">
+                    app:layout_constraintTop_toBottomOf="@+id/etLSwitchOperatingPosition">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etIzolHvKoef"
+                        android:id="@+id/etSetConstantForRpn"
                         style="@style/textInputEt"
-                        android:hint="Коэффициент абсорбции" />
+                        android:hint="Установка начального значения" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
-                    android:id="@+id/LL4"
+                    android:id="@+id/LL7"
                     style="@style/Line"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLIzolHvKoef" />
+                    app:layout_constraintTop_toBottomOf="@+id/etLSetConstantForRpn" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp" />
+
         </LinearLayout>
     </ScrollView>
 
