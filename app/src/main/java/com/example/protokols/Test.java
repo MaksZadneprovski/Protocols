@@ -32,6 +32,9 @@ public class Test extends AppCompatActivity {
         cLObject = findViewById(R.id.ConstrLayoutObject);
         cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
 
+        cLObject.setVisibility(View.VISIBLE);
+        cLMeterage.setVisibility(View.GONE);
+
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
 

@@ -202,14 +202,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLPasportYearOfManufacture"/>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -399,8 +391,8 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etSetConstantForRpn"
-                        android:layout_marginBottom="24dp"
                         style="@style/textInputEt"
+                        android:layout_marginBottom="24dp"
                         android:hint="Установка начального значения" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -589,6 +581,96 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/etLRpnHvBC5" />
 
+
+
+
+
+
+                <TextView
+                    android:id="@+id/tv8"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:text="Обмотка CA высокого напряжения"
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
+                    app:layout_constraintTop_toBottomOf="@id/LL8" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvCA1"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv8">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvCA1"
+                        style="@style/textInputEt"
+                        android:hint="1-я ступень" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvCA2"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA1">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvCA2"
+                        style="@style/textInputEt"
+                        android:hint="2-я ступень" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvCA3"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvCA3"
+                        style="@style/textInputEt"
+                        android:hint="3-я ступень" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvCA4"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvCA4"
+                        style="@style/textInputEt"
+                        android:hint="4-я ступень" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvCA5"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA4">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvCA5"
+                        style="@style/textInputEt"
+                        android:hint="5-я ступень" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/LL9"
+                    style="@style/Line"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA5" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
