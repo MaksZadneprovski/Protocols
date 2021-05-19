@@ -494,7 +494,7 @@
                         android:id="@+id/etRpnHvAB6"
                         style="@style/textInputEt"
                         android:hint="Последующие"
-                        android:inputType="textPersonName|textImeMultiLine" />
+                        android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
@@ -595,8 +595,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRpnHvBC6"
                         style="@style/textInputEt"
-                        android:inputType="textPersonName|textImeMultiLine"
-                        android:hint="Последующие" />
+                        android:inputType="textMultiLine"                         android:hint="Последующие" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
@@ -701,7 +700,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRpnHvCA6"
                         style="@style/textInputEt"
-                        android:inputType="textPersonName|textImeMultiLine"
+                        android:inputType="textMultiLine"
                         android:hint="Последующие" />
                 </com.google.android.material.textfield.TextInputLayout>
 
