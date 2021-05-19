@@ -27,7 +27,7 @@
                 android:id="@+id/ConstrLayoutObject"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tv0"
@@ -482,17 +482,26 @@
                         android:hint="5-я ступень" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvAB6"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvAB5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvAB6"
+                        style="@style/textInputEt"
+                        android:hint="Последующие"
+                        android:inputType="textPersonName|textImeMultiLine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <LinearLayout
                     android:id="@+id/LL7"
                     style="@style/Line"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvAB5" />
-
-
-
-
-
-
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvAB6" />
 
 
                 <TextView
@@ -575,11 +584,26 @@
                         android:hint="5-я ступень" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvBC6"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvBC5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvBC6"
+                        style="@style/textInputEt"
+                        android:inputType="textPersonName|textImeMultiLine"
+                        android:hint="Последующие" />
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <LinearLayout
                     android:id="@+id/LL8"
                     style="@style/Line"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvBC5" />
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvBC6" />
 
 
 
@@ -666,11 +690,26 @@
                         android:hint="5-я ступень" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLRpnHvCA6"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA5">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etRpnHvCA6"
+                        style="@style/textInputEt"
+                        android:inputType="textPersonName|textImeMultiLine"
+                        android:hint="Последующие" />
+                </com.google.android.material.textfield.TextInputLayout>
+
                 <LinearLayout
                     android:id="@+id/LL9"
                     style="@style/Line"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA5" />
+                    app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA6" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
