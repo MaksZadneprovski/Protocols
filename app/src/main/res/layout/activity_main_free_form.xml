@@ -65,7 +65,7 @@
 
             <EditText
                 android:id="@+id/etNotesFreeForm"
-                style="@style/Notes"
+                style="@style/LNotes"
                 android:layout_height="match_parent"/>
 
         </LinearLayout>

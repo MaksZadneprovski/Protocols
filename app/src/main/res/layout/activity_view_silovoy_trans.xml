@@ -1569,7 +1569,7 @@
 
                 <EditText
                     android:id="@+id/etNotesV"
-                    style="@style/Notes" />
+                    style="@style/LNotes" />
 
             </LinearLayout>
         </LinearLayout>

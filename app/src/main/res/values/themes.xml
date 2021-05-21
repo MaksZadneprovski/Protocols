@@ -109,6 +109,7 @@
         <item name="android:padding">10dp</item>
         <item name="android:textSize">@dimen/text14</item>
     </style>
+
     <!-- Линия подчеркивания -->
     <style name="tvTableRow" parent="Theme.AppCompat.Light">
         <item name="android:layout_width">wrap_content</item>
@@ -117,6 +118,7 @@
         <item name="android:textSize">@dimen/text14</item>
         <item name="android:textAlignment">center</item>
     </style>
+
     <!--Кнопка выпадающего поля -->
     <style name="DropBtn" parent="Theme.AppCompat.Light">
         <item name="android:layout_width">wrap_content</item>
@@ -124,19 +126,8 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="srcCompat">@drawable/ic_baseline_arrow_drop_down_24</item>
     </style>
+
     <!-- Поле заметки-->
-    <style name="Notes" parent="Theme.AppCompat.Light">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">100dp</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:ems">15</item>
-        <item name="android:gravity">start|top</item>
-        <item name="android:inputType">textMultiLine</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:textAlignment">viewStart</item>
-        <item name="android:textSize">@dimen/text14</item>
-        <item name="android:background">@drawable/edit_text_background</item>
-    </style>
     <style name="Toolbar" parent="Theme.AppCompat.Light.NoActionBar">
         android:theme="?attr/actionBarTheme"
         <item name="android:layout_width">match_parent</item>
