@@ -104,9 +104,9 @@ public class ViewingProtokolsList extends AppCompatActivity {
         //  Проход по списку silovoyTransList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
         for (int i = 0; i< silovoyTransList.size(); i++){
             int id = silovoyTransList.get(i).getId();
-            String object = silovoyTransList.get(i).getObject();
-            String work = silovoyTransList.get(i).getWork();
-            String date = silovoyTransList.get(i).getDate();
+            String object = silovoyTransList.get(i).getmObjectOrPodstancia();
+            String work = silovoyTransList.get(i).getmWork();
+            String date = silovoyTransList.get(i).getmDate();
             ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id,work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }

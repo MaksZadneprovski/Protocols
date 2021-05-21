@@ -11,7 +11,7 @@ public class AppDelegateBd extends Application {
     public void onCreate() {
         super.onCreate();
 
-        appDatabaseClass = Room.databaseBuilder(getApplicationContext(), AppDatabaseClass.class, "protokols_db2")
+        appDatabaseClass = Room.databaseBuilder(getApplicationContext(), AppDatabaseClass.class, "protokols_db3")
                 .allowMainThreadQueries()
                 .build();
     }

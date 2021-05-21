@@ -21,10 +21,12 @@ import com.example.protokols.MainActivity;
 import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
+import com.example.protokols.data_base_package.FreeForm.MainFreeForm;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.utils.ConstantsMy;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -38,6 +40,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
+    private FloatingActionButton btnSetConstantForRpn, fabSave;
     private Date currentDate = new Date();
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
@@ -54,6 +57,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavView);
         cLObject = findViewById(R.id.ConstrLayoutObject);
         cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
+        fabSave = findViewById(R.id.fabSilovoyTrans);
 
         cLObject.setVisibility(View.VISIBLE);
         cLMeterage.setVisibility(View.GONE);
@@ -100,6 +104,15 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
         ////////////////////////////////////////////////////////////////////////////////////////////
 
+        fabSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
+                    insertToBd();
+                    startActivity(i);
+                    finish();
+            }
+        });
     }
 
 
@@ -202,7 +215,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
         String RpnHvCA5 = etRpnHvCA5.getText().toString();
         String RpnHvCA6 = etRpnHvCA6.getText().toString();
 
-        String WindingConnectionDiagramLv =getWindingConnectionDiagramLv();
         String RpnLvAn = etRpnLvAn.getText().toString();
         String RpnLvBn = etRpnLvBn.getText().toString();
         String RpnLvCn = etRpnLvCn.getText().toString();
@@ -210,17 +222,17 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
         SilovoyTrans silovoyTrans = new SilovoyTrans(object,work, date,temperature,PasportType, PasportZavNumber, PasportPower, PasportVoltage,
                 PasportCurrent, PasportVoltageKz, PasportYearOfManufacture, IzolHvR15, IzolHvR60, IzolHvKoef, IzolLvR15, IzolLvR60, IzolLvKoef,
-                QuantityRpn, SwitchOperationPosition, RpnHvAB1, RpnHvAB2, RpnHvAB3, RpnHvAB4, RpnHvAB5, RpnHvAB6,  RpnHvBC1, RpnHvBC2, RpnHvBC3,
-                RpnHvBC4, RpnHvBC5, RpnHvBC6,  RpnHvCA1, RpnHvCA2, RpnHvCA3, RpnHvCA4, RpnHvCA5, RpnHvCA6, WindingConnectionDiagramLv, RpnLvAn,
+                 SwitchOperationPosition, RpnHvAB1, RpnHvAB2, RpnHvAB3, RpnHvAB4, RpnHvAB5, RpnHvAB6,  RpnHvBC1, RpnHvBC2, RpnHvBC3,
+                RpnHvBC4, RpnHvBC5, RpnHvBC6,  RpnHvCA1, RpnHvCA2, RpnHvCA3, RpnHvCA4, RpnHvCA5, RpnHvCA6, RpnLvAn,
                 RpnLvBn, RpnLvCn, Notes);
         return silovoyTrans;
     }
 
     // 6 Метод : Заполняет EditText-ы данными из объекта silovoyTrans в случае редактирования
     private void setTextToEditTextFromSilovoyTrans(SilovoyTrans silovoyTrans){
-        etObject.setText(silovoyTrans.getObject().toString());
-        etDate.setText(silovoyTrans.getDate().toString());
-        etTemperature.setText(silovoyTrans.getTemperature().toString());
+        etObject.setText(silovoyTrans.getmObjectOrPodstancia().toString());
+        etDate.setText(silovoyTrans.getmDate().toString());
+        etTemperature.setText(silovoyTrans.getmTemperature().toString());
         etPasportCurrent.setText(silovoyTrans.getPasportCurrent().toString());
         etPasportPower.setText(silovoyTrans.getPasportPower().toString());
         etPasportType.setText(silovoyTrans.getPasportType().toString());
