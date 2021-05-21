@@ -68,7 +68,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ClassForViewingListProtocols classForViewingListProtocols = getArrayList(silovoyTransList, freeFormList).get(position);
                 String work =classForViewingListProtocols.getWork();
-                if (work.equals("Испытание силового трансформатора")){
+                if (work.equals("Испытание\nсилового\nтрансформатора")){
                     Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
                     int idOfSelectedItem = classForViewingListProtocols.getId();
                     i.putExtra(ConstantsMy.ID_KEY,idOfSelectedItem );

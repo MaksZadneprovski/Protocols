@@ -13,10 +13,13 @@
         <activity android:name=".data_base_package.FreeForm.MainFreeForm"></activity>
         <activity android:name=".data_base_package.SilovoyTransformator.ViewSilovoyTrans" />
         <activity android:name=".ViewingProtokolsList" />
-        <activity android:name=".MainActivity">
-
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".data_base_package.SilovoyTransformator.MainSilovoyTrans" />
+        <activity android:name=".data_base_package.SilovoyTransformator.MainSilovoyTrans" android:windowSoftInputMode="adjustPan"/>
     </application>
 
 </manifest>

@@ -27,7 +27,7 @@
                 android:id="@+id/ConstrLayoutObject"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/tv0"
@@ -75,13 +75,14 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/etTemperature"
+                    android:id="@+id/etLTemperature"
                     style="@style/inTextForData"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/etLDate">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etTemperature"
                         style="@style/textInputEt"
                         android:hint="Температура, °С" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -90,7 +91,7 @@
                     android:id="@+id/LL2"
                     style="@style/Line"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etTemperature" />
+                    app:layout_constraintTop_toBottomOf="@+id/etLTemperature" />
 
                 <TextView
                     android:id="@+id/tv1"

@@ -3,6 +3,7 @@ package com.example.protokols.data_base_package.SilovoyTransformator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,22 +18,31 @@ import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
 import com.example.protokols.utils.ConstantsMy;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.Date;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
-    private Toolbar toolbarMain;
-    private TextView tvWorkV, tvAV, tvBV, tvCV;
-    private EditText etObjectV, etDateV, etPasportCurrentV, etPasportPowerV, etPasportTypeV, etPasportVoltageV, etPasportVoltageKzV, etPasportYearOfManufactureV,
-            etPasportZavNumberV, etTemperatureV, etIzolHvKoefV, etIzolHvR15V, etIzolHvR60V, etIzolLvKoefV, etIzolLvR15V, etIzolLvR60V,
-            etSwitchOperatingPositionV, etRpnHvAB1V, etRpnHvAB2V, etRpnHvAB3V, etRpnHvAB4V, etRpnHvAB5V, etRpnHvAB6V, etRpnHvBC1V, etRpnHvBC2V, etRpnHvBC3V,
-            etRpnHvBC4V, etRpnHvBC5V, etRpnHvBC6V, etRpnHvCA1V, etRpnHvCA2V, etRpnHvCA3V, etRpnHvCA4V, etRpnHvCA5V, etRpnHvCA6V,
-            etNotesV, etRpnLvCnV,etRpnLvBnV,etRpnLvAnV,etWindingConnectionDiagramLvV;
+    private TextView tvWork;
+    BottomNavigationView bottomNavigationView;
+    private ConstraintLayout cLObject;
+    private ConstraintLayout cLMeterage;
+    private FloatingActionButton btnSetConstantForRpn, fabSave;
+    private Date currentDate = new Date();
+    private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
+            etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
+            etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,
+            etRpnHvBC4, etRpnHvBC5, etRpnHvBC6, etRpnHvCA1, etRpnHvCA2, etRpnHvCA3, etRpnHvCA4, etRpnHvCA5, etRpnHvCA6,
+            etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etSetConstantForRpn;
     private int idSilovoyTrans;
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_silovoy_trans);
+        setContentView(R.layout.silovoy_trans);
 
         //Отключение анимации перехода
         overridePendingTransition(0,0);
@@ -58,12 +68,6 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Метод : Создает меню в тулбаре из указанного ресурса
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_view_silovoy_trans, menu);
-        return true;
-    }
 
     // Метод : Обрабатывает нажатия пунктов меню
     @Override
@@ -116,227 +120,221 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     private void setTextToEditTextFromSilovoyTrans(SilovoyTrans silovoyTrans){
 
         // Заполняем EditText-ы данными из объекта silovoyTrans
-        etObjectV.setText(silovoyTrans.getmObjectOrPodstancia().toString());
-        etDateV.setText(silovoyTrans.getmDate().toString());
-        etTemperatureV.setText(silovoyTrans.getmTemperature().toString());
-        etPasportCurrentV.setText(silovoyTrans.getPasportCurrent().toString());
-        etPasportPowerV.setText(silovoyTrans.getPasportPower().toString());
-        etPasportTypeV.setText(silovoyTrans.getPasportType().toString());
-        etPasportVoltageV.setText(silovoyTrans.getPasportVoltage().toString());
-        etPasportVoltageKzV.setText(silovoyTrans.getPasportVoltageKz().toString());
-        etPasportYearOfManufactureV.setText(silovoyTrans.getPasportYearOfManufacture().toString());
-        etPasportZavNumberV.setText(silovoyTrans.getPasportZavNumber().toString());
-        etIzolHvKoefV.setText(silovoyTrans.getIzolHvKoef().toString());
-        etIzolHvR15V.setText(silovoyTrans.getIzolHvR15().toString());
-        etIzolHvR60V.setText(silovoyTrans.getIzolHvR60().toString());
-        etIzolLvKoefV.setText(silovoyTrans.getIzolLvKoef().toString());
-        etIzolLvR15V.setText(silovoyTrans.getIzolLvR15().toString());
-        etIzolLvR60V.setText(silovoyTrans.getIzolLvR60().toString());
-        etSwitchOperatingPositionV.setText(silovoyTrans.getSwitchOperationPosition().toString());
-        etRpnHvAB1V.setText(silovoyTrans.getRpnHvAB1().toString());
-        etRpnHvAB2V.setText(silovoyTrans.getRpnHvAB2().toString());
-        etRpnHvAB3V.setText(silovoyTrans.getRpnHvAB3().toString());
-        etRpnHvAB4V.setText(silovoyTrans.getRpnHvAB4().toString());
-        etRpnHvAB5V.setText(silovoyTrans.getRpnHvAB5().toString());
-        etRpnHvAB6V.setText(silovoyTrans.getRpnHvAB6().toString());
-        etRpnHvBC1V.setText(silovoyTrans.getRpnHvBC1().toString());
-        etRpnHvBC2V.setText(silovoyTrans.getRpnHvBC2().toString());
-        etRpnHvBC3V.setText(silovoyTrans.getRpnHvBC3().toString());
-        etRpnHvBC4V.setText(silovoyTrans.getRpnHvBC4().toString());
-        etRpnHvBC5V.setText(silovoyTrans.getRpnHvBC5().toString());
-        etRpnHvBC6V.setText(silovoyTrans.getRpnHvBC6().toString());
-        etRpnHvCA1V.setText(silovoyTrans.getRpnHvCA1().toString());
-        etRpnHvCA2V.setText(silovoyTrans.getRpnHvCA2().toString());
-        etRpnHvCA3V.setText(silovoyTrans.getRpnHvCA3().toString());
-        etRpnHvCA4V.setText(silovoyTrans.getRpnHvCA4().toString());
-        etRpnHvCA5V.setText(silovoyTrans.getRpnHvCA5().toString());
-        etRpnHvCA6V.setText(silovoyTrans.getRpnHvCA6().toString());
-        etNotesV.setText(silovoyTrans.getNotes().toString());
-        etRpnLvCnV.setText(silovoyTrans.getRpnLvCn().toString());
-        etRpnLvBnV.setText(silovoyTrans.getRpnLvBn().toString());
-        etRpnLvAnV.setText(silovoyTrans.getRpnLvAn().toString());
+        etObject.setText(silovoyTrans.getmObjectOrPodstancia().toString());
+        etDate.setText(silovoyTrans.getmDate().toString());
+        etTemperature.setText(silovoyTrans.getmTemperature().toString());
+        etPasportCurrent.setText(silovoyTrans.getPasportCurrent().toString());
+        etPasportPower.setText(silovoyTrans.getPasportPower().toString());
+        etPasportType.setText(silovoyTrans.getPasportType().toString());
+        etPasportVoltage.setText(silovoyTrans.getPasportVoltage().toString());
+        etPasportVoltageKz.setText(silovoyTrans.getPasportVoltageKz().toString());
+        etPasportYearOfManufacture.setText(silovoyTrans.getPasportYearOfManufacture().toString());
+        etPasportZavNumber.setText(silovoyTrans.getPasportZavNumber().toString());
+        etIzolHvKoef.setText(silovoyTrans.getIzolHvKoef().toString());
+        etIzolHvR15.setText(silovoyTrans.getIzolHvR15().toString());
+        etIzolHvR60.setText(silovoyTrans.getIzolHvR60().toString());
+        etIzolLvKoef.setText(silovoyTrans.getIzolLvKoef().toString());
+        etIzolLvR15.setText(silovoyTrans.getIzolLvR15().toString());
+        etIzolLvR60.setText(silovoyTrans.getIzolLvR60().toString());
+        etSwitchOperatingPosition.setText(silovoyTrans.getSwitchOperationPosition().toString());
+        etRpnHvAB1.setText(silovoyTrans.getRpnHvAB1().toString());
+        etRpnHvAB2.setText(silovoyTrans.getRpnHvAB2().toString());
+        etRpnHvAB3.setText(silovoyTrans.getRpnHvAB3().toString());
+        etRpnHvAB4.setText(silovoyTrans.getRpnHvAB4().toString());
+        etRpnHvAB5.setText(silovoyTrans.getRpnHvAB5().toString());
+        etRpnHvAB6.setText(silovoyTrans.getRpnHvAB6().toString());
+        etRpnHvBC1.setText(silovoyTrans.getRpnHvBC1().toString());
+        etRpnHvBC2.setText(silovoyTrans.getRpnHvBC2().toString());
+        etRpnHvBC3.setText(silovoyTrans.getRpnHvBC3().toString());
+        etRpnHvBC4.setText(silovoyTrans.getRpnHvBC4().toString());
+        etRpnHvBC5.setText(silovoyTrans.getRpnHvBC5().toString());
+        etRpnHvBC6.setText(silovoyTrans.getRpnHvBC6().toString());
+        etRpnHvCA1.setText(silovoyTrans.getRpnHvCA1().toString());
+        etRpnHvCA2.setText(silovoyTrans.getRpnHvCA2().toString());
+        etRpnHvCA3.setText(silovoyTrans.getRpnHvCA3().toString());
+        etRpnHvCA4.setText(silovoyTrans.getRpnHvCA4().toString());
+        etRpnHvCA5.setText(silovoyTrans.getRpnHvCA5().toString());
+        etRpnHvCA6.setText(silovoyTrans.getRpnHvCA6().toString());
+        etNotes.setText(silovoyTrans.getNotes().toString());
+        etRpnLvCn.setText(silovoyTrans.getRpnLvCn().toString());
+        etRpnLvBn.setText(silovoyTrans.getRpnLvBn().toString());
+        etRpnLvAn.setText(silovoyTrans.getRpnLvAn().toString());
     }
 
     private void setUneditableEt(){
-    etObjectV.setClickable(false);
-    etDateV.setClickable(false);
-        etTemperatureV.setClickable(false);
-        etPasportCurrentV.setClickable(false);
-        etPasportPowerV.setClickable(false);
-        etPasportTypeV.setClickable(false);
-        etPasportVoltageV.setClickable(false);
-        etPasportVoltageKzV.setClickable(false);
-        etPasportYearOfManufactureV.setClickable(false);
-        etPasportZavNumberV.setClickable(false);
-        etIzolHvKoefV.setClickable(false);
-        etIzolHvR15V.setClickable(false);
-        etIzolHvR60V.setClickable(false);
-        etIzolLvKoefV.setClickable(false);
-        etIzolLvR15V.setClickable(false);
-        etIzolLvR60V.setClickable(false);
-        etSwitchOperatingPositionV.setClickable(false);
-        etRpnHvAB1V.setClickable(false);
-        etRpnHvAB2V.setClickable(false);
-        etRpnHvAB3V.setClickable(false);
-        etRpnHvAB4V.setClickable(false);
-        etRpnHvAB5V.setClickable(false);
-        etRpnHvAB6V.setClickable(false);
+    etObject.setClickable(false);
+    etDate.setClickable(false);
+        etTemperature.setClickable(false);
+        etPasportCurrent.setClickable(false);
+        etPasportPower.setClickable(false);
+        etPasportType.setClickable(false);
+        etPasportVoltage.setClickable(false);
+        etPasportVoltageKz.setClickable(false);
+        etPasportYearOfManufacture.setClickable(false);
+        etPasportZavNumber.setClickable(false);
+        etIzolHvKoef.setClickable(false);
+        etIzolHvR15.setClickable(false);
+        etIzolHvR60.setClickable(false);
+        etIzolLvKoef.setClickable(false);
+        etIzolLvR15.setClickable(false);
+        etIzolLvR60.setClickable(false);
+        etSwitchOperatingPosition.setClickable(false);
+        etRpnHvAB1.setClickable(false);
+        etRpnHvAB2.setClickable(false);
+        etRpnHvAB3.setClickable(false);
+        etRpnHvAB4.setClickable(false);
+        etRpnHvAB5.setClickable(false);
+        etRpnHvAB6.setClickable(false);
 
-        etRpnHvBC1V.setClickable(false);
-        etRpnHvBC2V.setClickable(false);
-        etRpnHvBC3V.setClickable(false);
-        etRpnHvBC4V.setClickable(false);
-        etRpnHvBC5V.setClickable(false);
-        etRpnHvBC6V.setClickable(false);
+        etRpnHvBC1.setClickable(false);
+        etRpnHvBC2.setClickable(false);
+        etRpnHvBC3.setClickable(false);
+        etRpnHvBC4.setClickable(false);
+        etRpnHvBC5.setClickable(false);
+        etRpnHvBC6.setClickable(false);
 
-        etRpnHvCA1V.setClickable(false);
-        etRpnHvCA2V.setClickable(false);
-        etRpnHvCA3V.setClickable(false);
-        etRpnHvCA4V.setClickable(false);
-        etRpnHvCA5V.setClickable(false);
-        etRpnHvCA6V.setClickable(false);
+        etRpnHvCA1.setClickable(false);
+        etRpnHvCA2.setClickable(false);
+        etRpnHvCA3.setClickable(false);
+        etRpnHvCA4.setClickable(false);
+        etRpnHvCA5.setClickable(false);
+        etRpnHvCA6.setClickable(false);
 
-        etNotesV.setClickable(false);
-        etRpnLvCnV.setClickable(false);
-        etRpnLvBnV.setClickable(false);
-        etRpnLvAnV.setClickable(false);
+        etNotes.setClickable(false);
+        etRpnLvCn.setClickable(false);
+        etRpnLvBn.setClickable(false);
+        etRpnLvAn.setClickable(false);
 
-        etObjectV.setFocusable(false);
-        etDateV.setFocusable(false);
-        etTemperatureV.setFocusable(false);
-        etPasportCurrentV.setFocusable(false);
-        etPasportPowerV.setFocusable(false);
-        etPasportTypeV.setFocusable(false);
-        etPasportVoltageV.setFocusable(false);
-        etPasportVoltageKzV.setFocusable(false);
-        etPasportYearOfManufactureV.setFocusable(false);
-        etPasportZavNumberV.setFocusable(false);
-        etIzolHvKoefV.setFocusable(false);
-        etIzolHvR15V.setFocusable(false);
-        etIzolHvR60V.setFocusable(false);
-        etIzolLvKoefV.setFocusable(false);
-        etIzolLvR15V.setFocusable(false);
-        etIzolLvR60V.setFocusable(false);
-        etSwitchOperatingPositionV.setFocusable(false);
-        etRpnHvAB1V.setFocusable(false);
-        etRpnHvAB2V.setFocusable(false);
-        etRpnHvAB3V.setFocusable(false);
-        etRpnHvAB4V.setFocusable(false);
-        etRpnHvAB5V.setFocusable(false);
-        etRpnHvAB6V.setFocusable(false);
-        etRpnHvBC1V.setFocusable(false);
-        etRpnHvBC2V.setFocusable(false);
-        etRpnHvBC3V.setFocusable(false);
-        etRpnHvBC4V.setFocusable(false);
-        etRpnHvBC5V.setFocusable(false);
-        etRpnHvBC6V.setFocusable(false);
-        etRpnHvCA1V.setFocusable(false);
-        etRpnHvCA2V.setFocusable(false);
-        etRpnHvCA3V.setFocusable(false);
-        etRpnHvCA4V.setFocusable(false);
-        etRpnHvCA5V.setFocusable(false);
-        etRpnHvCA6V.setFocusable(false);
-        etNotesV.setFocusable(false);
-        etRpnLvCnV.setFocusable(false);
-        etRpnLvBnV.setFocusable(false);
-        etRpnLvAnV.setFocusable(false);
+        etObject.setFocusable(false);
+        etDate.setFocusable(false);
+        etTemperature.setFocusable(false);
+        etPasportCurrent.setFocusable(false);
+        etPasportPower.setFocusable(false);
+        etPasportType.setFocusable(false);
+        etPasportVoltage.setFocusable(false);
+        etPasportVoltageKz.setFocusable(false);
+        etPasportYearOfManufacture.setFocusable(false);
+        etPasportZavNumber.setFocusable(false);
+        etIzolHvKoef.setFocusable(false);
+        etIzolHvR15.setFocusable(false);
+        etIzolHvR60.setFocusable(false);
+        etIzolLvKoef.setFocusable(false);
+        etIzolLvR15.setFocusable(false);
+        etIzolLvR60.setFocusable(false);
+        etSwitchOperatingPosition.setFocusable(false);
+        etRpnHvAB1.setFocusable(false);
+        etRpnHvAB2.setFocusable(false);
+        etRpnHvAB3.setFocusable(false);
+        etRpnHvAB4.setFocusable(false);
+        etRpnHvAB5.setFocusable(false);
+        etRpnHvAB6.setFocusable(false);
+        etRpnHvBC1.setFocusable(false);
+        etRpnHvBC2.setFocusable(false);
+        etRpnHvBC3.setFocusable(false);
+        etRpnHvBC4.setFocusable(false);
+        etRpnHvBC5.setFocusable(false);
+        etRpnHvBC6.setFocusable(false);
+        etRpnHvCA1.setFocusable(false);
+        etRpnHvCA2.setFocusable(false);
+        etRpnHvCA3.setFocusable(false);
+        etRpnHvCA4.setFocusable(false);
+        etRpnHvCA5.setFocusable(false);
+        etRpnHvCA6.setFocusable(false);
+        etNotes.setFocusable(false);
+        etRpnLvCn.setFocusable(false);
+        etRpnLvBn.setFocusable(false);
+        etRpnLvAn.setFocusable(false);
 
-        etObjectV.setFocusableInTouchMode(false);
-        etDateV.setFocusableInTouchMode(false);
-        etTemperatureV.setFocusableInTouchMode(false);
-        etPasportCurrentV.setFocusableInTouchMode(false);
-        etPasportPowerV.setFocusableInTouchMode(false);
-        etPasportTypeV.setFocusableInTouchMode(false);
-        etPasportVoltageV.setFocusableInTouchMode(false);
-        etPasportVoltageKzV.setFocusableInTouchMode(false);
-        etPasportYearOfManufactureV.setFocusableInTouchMode(false);
-        etPasportZavNumberV.setFocusableInTouchMode(false);
-        etIzolHvKoefV.setFocusableInTouchMode(false);
-        etIzolHvR15V.setFocusableInTouchMode(false);
-        etIzolHvR60V.setFocusableInTouchMode(false);
-        etIzolLvKoefV.setFocusableInTouchMode(false);
-        etIzolLvR15V.setFocusableInTouchMode(false);
-        etIzolLvR60V.setFocusableInTouchMode(false);
-        etSwitchOperatingPositionV.setFocusableInTouchMode(false);
-        etRpnHvAB1V.setFocusableInTouchMode(false);
-        etRpnHvAB2V.setFocusableInTouchMode(false);
-        etRpnHvAB3V.setFocusableInTouchMode(false);
-        etRpnHvAB4V.setFocusableInTouchMode(false);
-        etRpnHvAB5V.setFocusableInTouchMode(false);
-        etRpnHvAB6V.setFocusableInTouchMode(false);
-        etRpnHvBC1V.setFocusableInTouchMode(false);
-        etRpnHvBC2V.setFocusableInTouchMode(false);
-        etRpnHvBC3V.setFocusableInTouchMode(false);
-        etRpnHvBC4V.setFocusableInTouchMode(false);
-        etRpnHvBC5V.setFocusableInTouchMode(false);
-        etRpnHvBC6V.setFocusableInTouchMode(false);
-        etRpnHvCA1V.setFocusableInTouchMode(false);
-        etRpnHvCA2V.setFocusableInTouchMode(false);
-        etRpnHvCA3V.setFocusableInTouchMode(false);
-        etRpnHvCA4V.setFocusableInTouchMode(false);
-        etRpnHvCA5V.setFocusableInTouchMode(false);
-        etRpnHvCA6V.setFocusableInTouchMode(false);
-        etNotesV.setFocusableInTouchMode(false);
-        etRpnLvCnV.setFocusableInTouchMode(false);
-        etRpnLvBnV.setFocusableInTouchMode(false);
-        etRpnLvAnV.setFocusableInTouchMode(false);
+        etObject.setFocusableInTouchMode(false);
+        etDate.setFocusableInTouchMode(false);
+        etTemperature.setFocusableInTouchMode(false);
+        etPasportCurrent.setFocusableInTouchMode(false);
+        etPasportPower.setFocusableInTouchMode(false);
+        etPasportType.setFocusableInTouchMode(false);
+        etPasportVoltage.setFocusableInTouchMode(false);
+        etPasportVoltageKz.setFocusableInTouchMode(false);
+        etPasportYearOfManufacture.setFocusableInTouchMode(false);
+        etPasportZavNumber.setFocusableInTouchMode(false);
+        etIzolHvKoef.setFocusableInTouchMode(false);
+        etIzolHvR15.setFocusableInTouchMode(false);
+        etIzolHvR60.setFocusableInTouchMode(false);
+        etIzolLvKoef.setFocusableInTouchMode(false);
+        etIzolLvR15.setFocusableInTouchMode(false);
+        etIzolLvR60.setFocusableInTouchMode(false);
+        etSwitchOperatingPosition.setFocusableInTouchMode(false);
+        etRpnHvAB1.setFocusableInTouchMode(false);
+        etRpnHvAB2.setFocusableInTouchMode(false);
+        etRpnHvAB3.setFocusableInTouchMode(false);
+        etRpnHvAB4.setFocusableInTouchMode(false);
+        etRpnHvAB5.setFocusableInTouchMode(false);
+        etRpnHvAB6.setFocusableInTouchMode(false);
+        etRpnHvBC1.setFocusableInTouchMode(false);
+        etRpnHvBC2.setFocusableInTouchMode(false);
+        etRpnHvBC3.setFocusableInTouchMode(false);
+        etRpnHvBC4.setFocusableInTouchMode(false);
+        etRpnHvBC5.setFocusableInTouchMode(false);
+        etRpnHvBC6.setFocusableInTouchMode(false);
+        etRpnHvCA1.setFocusableInTouchMode(false);
+        etRpnHvCA2.setFocusableInTouchMode(false);
+        etRpnHvCA3.setFocusableInTouchMode(false);
+        etRpnHvCA4.setFocusableInTouchMode(false);
+        etRpnHvCA5.setFocusableInTouchMode(false);
+        etRpnHvCA6.setFocusableInTouchMode(false);
+        etNotes.setFocusableInTouchMode(false);
+        etRpnLvCn.setFocusableInTouchMode(false);
+        etRpnLvBn.setFocusableInTouchMode(false);
+        etRpnLvAn.setFocusableInTouchMode(false);
 
 
 
     }
     private void init(){
-        // Для меню обязательно вызвать setSupportActionBar
-        toolbarMain = findViewById(R.id.toolbarViewSilovoyTrans);
-        setSupportActionBar(toolbarMain);
-        toolbarMain.setTitle("Application");
 
         // TextView
-        tvWorkV= findViewById(R.id.tvWorkV);
-        tvAV= findViewById(R.id.tvSchemaFazaAV);
-        tvBV= findViewById(R.id.tvSchemaFazaBV);
-        tvCV= findViewById(R.id.tvSchemaFazaCV);
+        tvWork= findViewById(R.id.tvWork);
+
         // EditText
-        etObjectV = findViewById(R.id.etObjectV);
-        etDateV = findViewById(R.id.etDateV);
-        etTemperatureV = findViewById(R.id.etTemperatureV);
-        etPasportCurrentV = findViewById(R.id.etPasportCurrentV);
-        etPasportPowerV = findViewById(R.id.etPasportPowerV);
-        etPasportTypeV = findViewById(R.id.etPasportTypeV);
-        etPasportVoltageV = findViewById(R.id.etPasportVoltageV);
-        etPasportVoltageKzV = findViewById(R.id.etPasportVoltageKzV);
-        etPasportYearOfManufactureV = findViewById(R.id.etPasportYearOfManufactureV);
-        etPasportZavNumberV = findViewById(R.id.etPasportZavNumberV);
-        etIzolHvKoefV = findViewById(R.id.etIzolHvKoefV);
-        etIzolHvR15V = findViewById(R.id.etIzolHvR15V);
-        etIzolHvR60V = findViewById(R.id.etIzolHvR60V);
-        etIzolLvKoefV = findViewById(R.id.etIzolLvKoefV);
-        etIzolLvR15V = findViewById(R.id.etIzolLvR15V);
-        etIzolLvR60V = findViewById(R.id.etIzolLvR60V);
-        etSwitchOperatingPositionV = findViewById(R.id.etSwitchOperatingPositionV);
-        etRpnHvAB1V = findViewById(R.id.etRpnHvAB1V);
-        etRpnHvAB2V = findViewById(R.id.etRpnHvAB2V);
-        etRpnHvAB3V = findViewById(R.id.etRpnHvAB3V);
-        etRpnHvAB4V = findViewById(R.id.etRpnHvAB4V);
-        etRpnHvAB5V = findViewById(R.id.etRpnHvAB5V);
-        etRpnHvAB6V = findViewById(R.id.etRpnHvAB6V);
+        etObject = findViewById(R.id.etObject);
+        etDate = findViewById(R.id.etDate);
+        etTemperature = findViewById(R.id.etTemperature);
+        etPasportCurrent = findViewById(R.id.etPasportCurrent);
+        etPasportPower = findViewById(R.id.etPasportPower);
+        etPasportType = findViewById(R.id.etPasportType);
+        etPasportVoltage = findViewById(R.id.etPasportVoltage);
+        etPasportVoltageKz = findViewById(R.id.etPasportVoltageKz);
+        etPasportYearOfManufacture = findViewById(R.id.etPasportYearOfManufacture);
+        etPasportZavNumber = findViewById(R.id.etPasportZavNumber);
+        etIzolHvKoef = findViewById(R.id.etIzolHvKoef);
+        etIzolHvR15 = findViewById(R.id.etIzolHvR15);
+        etIzolHvR60 = findViewById(R.id.etIzolHvR60);
+        etIzolLvKoef = findViewById(R.id.etIzolLvKoef);
+        etIzolLvR15 = findViewById(R.id.etIzolLvR15);
+        etIzolLvR60 = findViewById(R.id.etIzolLvR60);
+        etSwitchOperatingPosition = findViewById(R.id.etSwitchOperatingPosition);
+        etRpnHvAB1 = findViewById(R.id.etRpnHvAB1);
+        etRpnHvAB2 = findViewById(R.id.etRpnHvAB2);
+        etRpnHvAB3 = findViewById(R.id.etRpnHvAB3);
+        etRpnHvAB4 = findViewById(R.id.etRpnHvAB4);
+        etRpnHvAB5 = findViewById(R.id.etRpnHvAB5);
+        etRpnHvAB6 = findViewById(R.id.etRpnHvAB6);
 
-        etRpnHvBC1V = findViewById(R.id.etRpnHvBC1V);
-        etRpnHvBC2V = findViewById(R.id.etRpnHvBC2V);
-        etRpnHvBC3V = findViewById(R.id.etRpnHvBC3V);
-        etRpnHvBC4V = findViewById(R.id.etRpnHvBC4V);
-        etRpnHvBC5V = findViewById(R.id.etRpnHvBC5V);
-        etRpnHvBC6V = findViewById(R.id.etRpnHvBC6V);
+        etRpnHvBC1 = findViewById(R.id.etRpnHvBC1);
+        etRpnHvBC2 = findViewById(R.id.etRpnHvBC2);
+        etRpnHvBC3 = findViewById(R.id.etRpnHvBC3);
+        etRpnHvBC4 = findViewById(R.id.etRpnHvBC4);
+        etRpnHvBC5 = findViewById(R.id.etRpnHvBC5);
+        etRpnHvBC6 = findViewById(R.id.etRpnHvBC6);
 
-        etRpnHvCA1V = findViewById(R.id.etRpnHvCA1V);
-        etRpnHvCA2V = findViewById(R.id.etRpnHvCA2V);
-        etRpnHvCA3V = findViewById(R.id.etRpnHvCA3V);
-        etRpnHvCA4V = findViewById(R.id.etRpnHvCA4V);
-        etRpnHvCA5V = findViewById(R.id.etRpnHvCA5V);
-        etRpnHvCA6V = findViewById(R.id.etRpnHvCA6V);
+        etRpnHvCA1 = findViewById(R.id.etRpnHvCA1);
+        etRpnHvCA2 = findViewById(R.id.etRpnHvCA2);
+        etRpnHvCA3 = findViewById(R.id.etRpnHvCA3);
+        etRpnHvCA4 = findViewById(R.id.etRpnHvCA4);
+        etRpnHvCA5 = findViewById(R.id.etRpnHvCA5);
+        etRpnHvCA6 = findViewById(R.id.etRpnHvCA6);
 
-        etNotesV = findViewById(R.id.etNotesV);
-        etRpnLvCnV = findViewById(R.id.etRpnLvCnV);
-        etRpnLvBnV = findViewById(R.id.etRpnLvBnV);
-        etRpnLvAnV = findViewById(R.id.etRpnLvAnV);
+        etNotes = findViewById(R.id.etNotes);
+        etRpnLvCn = findViewById(R.id.etRpnLvCn);
+        etRpnLvBn = findViewById(R.id.etRpnLvBn);
+        etRpnLvAn = findViewById(R.id.etRpnLvAn);
     }
 }
