@@ -395,13 +395,14 @@
                     android:id="@+id/etLSetConstantForRpn"
                     style="@style/inTextForData"
                     android:layout_width="180dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/fabSetConstant"
                     app:layout_constraintStart_toStartOf="@+id/etLSwitchOperatingPosition"
-                    tools:layout_editor_absoluteY="741dp">
+                    app:layout_constraintTop_toBottomOf="@+id/tv10">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etSetConstantForRpn"
                         style="@style/textInputEt"
-                        android:layout_marginBottom="16dp"
+                        android:layout_marginTop="0dp"
                         android:hint="Значение" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -409,11 +410,11 @@
                     android:id="@+id/fabSetConstant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_dot_menu"
                     android:clickable="true"
-                    app:backgroundTint="#FFFFFF"
-                    app:layout_constraintTop_toBottomOf="@+id/tv10"
-                    tools:layout_editor_absoluteX="222dp" />
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="@+id/etLSwitchOperatingPosition"
+                    app:layout_constraintTop_toBottomOf="@+id/tv10" />
 
                 <LinearLayout
                     android:id="@+id/LL6"

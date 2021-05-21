@@ -21,10 +21,15 @@ import java.util.Date;
 
 public class Test extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
-    private TextInputEditText et;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
     private Date currentDate = new Date();
+    private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
+            etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
+            etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,
+            etRpnHvBC4, etRpnHvBC5, etRpnHvBC6, etRpnHvCA1, etRpnHvCA2, etRpnHvCA3, etRpnHvCA4, etRpnHvCA5, etRpnHvCA6,
+            etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etWindingConnectionDiagramLv,etSetConstantForRpn;
+    public final String TAG = "MyLogger";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
