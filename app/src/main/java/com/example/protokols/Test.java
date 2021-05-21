@@ -37,20 +37,25 @@ public class Test extends AppCompatActivity {
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(3).setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.bottomNavIc1){
+                    Intent i = new Intent(Test.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc2){
                     Intent i = new Intent(Test.this, ViewingProtokolsList.class);
                     startActivity(i);
+                    finish();
                 }
-
                 else  if (item.getItemId() == R.id.bottomNavIc3){
                     cLObject.setVisibility(View.VISIBLE);
                     cLMeterage.setVisibility(View.GONE);
                 }
-
                 else  if (item.getItemId() == R.id.bottomNavIc4){
                     cLObject.setVisibility(View.GONE);
                     cLMeterage.setVisibility(View.VISIBLE);
