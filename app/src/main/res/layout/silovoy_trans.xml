@@ -385,8 +385,7 @@
                     android:id="@+id/etLSetConstantForRpn"
                     style="@style/inTextForData"
                     android:layout_marginTop="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/etLSwitchOperatingPosition"
                     app:layout_constraintTop_toBottomOf="@+id/etLSwitchOperatingPosition">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -395,6 +394,16 @@
                         android:layout_marginBottom="24dp"
                         android:hint="Установка начального значения" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c1"
+                    android:clickable="true"
+                    app:layout_constraintEnd_toEndOf="@+id/etLSetConstantForRpn"
+                    app:layout_constraintStart_toStartOf="@+id/etLSetConstantForRpn"
+                    app:layout_constraintTop_toBottomOf="@+id/etLSetConstantForRpn" />
 
                 <LinearLayout
                     android:id="@+id/LL6"
@@ -785,6 +794,8 @@
                         android:textAllCaps="false"
                         android:hint="Заметки" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

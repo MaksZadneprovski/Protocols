@@ -17,11 +17,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Date;
+
 public class Test extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private TextInputEditText et;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
+    private Date currentDate = new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
