@@ -761,8 +761,6 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etRpnLvCn"
                         style="@style/textInputEt"
-                        android:inputType="textMultiLine"
-                        android:textAllCaps="false"
                         android:hint="c-n" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -783,6 +781,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etNotes"
                         style="@style/textInputEt"
+                        android:inputType="textMultiLine"
+                        android:textAllCaps="false"
                         android:hint="Заметки" />
                 </com.google.android.material.textfield.TextInputLayout>
 
