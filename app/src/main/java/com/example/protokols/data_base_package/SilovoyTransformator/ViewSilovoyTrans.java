@@ -162,8 +162,13 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     }
 
     private void setUneditableEt(){
-    etObject.setClickable(false);
-    etDate.setClickable(false);
+//        ndroid:longClickable="false"
+//        android:clickable="false"
+//        android:cursorVisible="false"
+//        android:editable="false"
+
+        etObject.setClickable(false);
+        etDate.setClickable(false);
         etTemperature.setClickable(false);
         etPasportCurrent.setClickable(false);
         etPasportPower.setClickable(false);
@@ -185,25 +190,62 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnHvAB4.setClickable(false);
         etRpnHvAB5.setClickable(false);
         etRpnHvAB6.setClickable(false);
-
         etRpnHvBC1.setClickable(false);
         etRpnHvBC2.setClickable(false);
         etRpnHvBC3.setClickable(false);
         etRpnHvBC4.setClickable(false);
         etRpnHvBC5.setClickable(false);
         etRpnHvBC6.setClickable(false);
-
         etRpnHvCA1.setClickable(false);
         etRpnHvCA2.setClickable(false);
         etRpnHvCA3.setClickable(false);
         etRpnHvCA4.setClickable(false);
         etRpnHvCA5.setClickable(false);
         etRpnHvCA6.setClickable(false);
-
         etNotes.setClickable(false);
         etRpnLvCn.setClickable(false);
         etRpnLvBn.setClickable(false);
         etRpnLvAn.setClickable(false);
+
+        etObject.setLongClickable(false);
+        etDate.setLongClickable(false);
+        etTemperature.setLongClickable(false);
+        etPasportCurrent.setLongClickable(false);
+        etPasportPower.setLongClickable(false);
+        etPasportType.setLongClickable(false);
+        etPasportVoltage.setLongClickable(false);
+        etPasportVoltageKz.setLongClickable(false);
+        etPasportYearOfManufacture.setLongClickable(false);
+        etPasportZavNumber.setLongClickable(false);
+        etIzolHvKoef.setLongClickable(false);
+        etIzolHvR15.setLongClickable(false);
+        etIzolHvR60.setLongClickable(false);
+        etIzolLvKoef.setLongClickable(false);
+        etIzolLvR15.setLongClickable(false);
+        etIzolLvR60.setLongClickable(false);
+        etSwitchOperatingPosition.setLongClickable(false);
+        etRpnHvAB1.setLongClickable(false);
+        etRpnHvAB2.setLongClickable(false);
+        etRpnHvAB3.setLongClickable(false);
+        etRpnHvAB4.setLongClickable(false);
+        etRpnHvAB5.setLongClickable(false);
+        etRpnHvAB6.setLongClickable(false);
+        etRpnHvBC1.setLongClickable(false);
+        etRpnHvBC2.setLongClickable(false);
+        etRpnHvBC3.setLongClickable(false);
+        etRpnHvBC4.setLongClickable(false);
+        etRpnHvBC5.setLongClickable(false);
+        etRpnHvBC6.setLongClickable(false);
+        etRpnHvCA1.setLongClickable(false);
+        etRpnHvCA2.setLongClickable(false);
+        etRpnHvCA3.setLongClickable(false);
+        etRpnHvCA4.setLongClickable(false);
+        etRpnHvCA5.setLongClickable(false);
+        etRpnHvCA6.setLongClickable(false);
+        etNotes.setLongClickable(false);
+        etRpnLvCn.setLongClickable(false);
+        etRpnLvBn.setLongClickable(false);
+        etRpnLvAn.setLongClickable(false);
 
         etObject.setFocusable(false);
         etDate.setFocusable(false);
@@ -284,6 +326,46 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setFocusableInTouchMode(false);
         etRpnLvBn.setFocusableInTouchMode(false);
         etRpnLvAn.setFocusableInTouchMode(false);
+
+        etObject.setCursorVisible(false);
+        etDate.setCursorVisible(false);
+        etTemperature.setCursorVisible(false);
+        etPasportCurrent.setCursorVisible(false);
+        etPasportPower.setCursorVisible(false);
+        etPasportType.setCursorVisible(false);
+        etPasportVoltage.setCursorVisible(false);
+        etPasportVoltageKz.setCursorVisible(false);
+        etPasportYearOfManufacture.setCursorVisible(false);
+        etPasportZavNumber.setCursorVisible(false);
+        etIzolHvKoef.setCursorVisible(false);
+        etIzolHvR15.setCursorVisible(false);
+        etIzolHvR60.setCursorVisible(false);
+        etIzolLvKoef.setCursorVisible(false);
+        etIzolLvR15.setCursorVisible(false);
+        etIzolLvR60.setCursorVisible(false);
+        etSwitchOperatingPosition.setCursorVisible(false);
+        etRpnHvAB1.setCursorVisible(false);
+        etRpnHvAB2.setCursorVisible(false);
+        etRpnHvAB3.setCursorVisible(false);
+        etRpnHvAB4.setCursorVisible(false);
+        etRpnHvAB5.setCursorVisible(false);
+        etRpnHvAB6.setCursorVisible(false);
+        etRpnHvBC1.setCursorVisible(false);
+        etRpnHvBC2.setCursorVisible(false);
+        etRpnHvBC3.setCursorVisible(false);
+        etRpnHvBC4.setCursorVisible(false);
+        etRpnHvBC5.setCursorVisible(false);
+        etRpnHvBC6.setCursorVisible(false);
+        etRpnHvCA1.setCursorVisible(false);
+        etRpnHvCA2.setCursorVisible(false);
+        etRpnHvCA3.setCursorVisible(false);
+        etRpnHvCA4.setCursorVisible(false);
+        etRpnHvCA5.setCursorVisible(false);
+        etRpnHvCA6.setCursorVisible(false);
+        etNotes.setCursorVisible(false);
+        etRpnLvCn.setCursorVisible(false);
+        etRpnLvBn.setCursorVisible(false);
+        etRpnLvAn.setCursorVisible(false);
 
 
 
