@@ -22,7 +22,6 @@ import java.util.List;
 
 public class ViewingProtokolsList extends AppCompatActivity {
     private ListView lv;
-    private Toolbar toolbarMain;
     private List<SilovoyTrans> silovoyTransList;
     private List <FreeForm> freeFormList;
 
@@ -42,10 +41,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
         // Инициализация
         lv = findViewById(R.id.lv);
-
-        // Для меню обязательно вызвать setSupportActionBar
-        toolbarMain = findViewById(R.id.toolbarViewProtocols);
-        setSupportActionBar(toolbarMain);
 
         // Создание  объекта DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();

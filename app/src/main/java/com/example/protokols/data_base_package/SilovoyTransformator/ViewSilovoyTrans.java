@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,11 +27,10 @@ import java.util.Date;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
     private TextView tvWork;
-    BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
-    private FloatingActionButton btnSetConstantForRpn, fabSave;
-    private Date currentDate = new Date();
+    private FloatingActionButton  fabEdit;
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,
@@ -64,25 +64,21 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Статичная переменная, чтобы определить, хочу ли я редактировать объект или создаю новый
         MainActivity.isEditSilovoyTrans= true;
 
+        fabEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Переход на экран создания объекта, с отправкой id объекта, который нужно редактировать
+                Intent i = new Intent(ViewSilovoyTrans.this, MainSilovoyTrans.class);
+                i.putExtra(ConstantsMy.ID_KEY,idSilovoyTrans );
+
+                startActivity(i);
+                finish();
+            }
+        });
+
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    // Метод : Обрабатывает нажатия пунктов меню
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuEdit){
-
-            // Переход на экран создания объекта, с отправкой id объекта, который нужно редактировать
-            Intent i = new Intent(ViewSilovoyTrans.this, MainSilovoyTrans.class);
-            i.putExtra(ConstantsMy.ID_KEY,idSilovoyTrans );
-
-            startActivity(i);
-            finish();
-        }
-        return true;
-    }
 
     SilovoyTrans getSilovoyTransFromBd(){
         // Создание объекта  DAO для работы с БД
@@ -162,10 +158,6 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     }
 
     private void setUneditableEt(){
-//        ndroid:longClickable="false"
-//        android:clickable="false"
-//        android:cursorVisible="false"
-//        android:editable="false"
 
         etObject.setClickable(false);
         etDate.setClickable(false);
@@ -206,6 +198,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setClickable(false);
         etRpnLvBn.setClickable(false);
         etRpnLvAn.setClickable(false);
+        etSetConstantForRpn.setClickable(false);
 
         etObject.setLongClickable(false);
         etDate.setLongClickable(false);
@@ -246,6 +239,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setLongClickable(false);
         etRpnLvBn.setLongClickable(false);
         etRpnLvAn.setLongClickable(false);
+        etSetConstantForRpn.setLongClickable(false);
 
         etObject.setFocusable(false);
         etDate.setFocusable(false);
@@ -286,6 +280,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setFocusable(false);
         etRpnLvBn.setFocusable(false);
         etRpnLvAn.setFocusable(false);
+        etSetConstantForRpn.setFocusable(false);
 
         etObject.setFocusableInTouchMode(false);
         etDate.setFocusableInTouchMode(false);
@@ -326,6 +321,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setFocusableInTouchMode(false);
         etRpnLvBn.setFocusableInTouchMode(false);
         etRpnLvAn.setFocusableInTouchMode(false);
+        etSetConstantForRpn.setFocusableInTouchMode(false);
 
         etObject.setCursorVisible(false);
         etDate.setCursorVisible(false);
@@ -366,6 +362,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setCursorVisible(false);
         etRpnLvBn.setCursorVisible(false);
         etRpnLvAn.setCursorVisible(false);
+        etSetConstantForRpn.setCursorVisible(false);
 
 
 
@@ -418,5 +415,17 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn = findViewById(R.id.etRpnLvCn);
         etRpnLvBn = findViewById(R.id.etRpnLvBn);
         etRpnLvAn = findViewById(R.id.etRpnLvAn);
+        etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
+        fabEdit = findViewById(R.id.fabSilovoyTrans);
+        bottomNavigationView = findViewById(R.id.bottomNavView);
+        cLObject = findViewById(R.id.ConstrLayoutObject);
+        cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
+
+        cLObject.setVisibility(View.VISIBLE);
+        cLMeterage.setVisibility(View.GONE);
+
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(3).setChecked(true);
     }
 }
