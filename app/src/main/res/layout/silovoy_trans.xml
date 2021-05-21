@@ -381,35 +381,45 @@
                         android:hint="Рабочее положение переключателя" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <TextView
+                    android:id="@+id/tv10"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:text="Установка начального значения"
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="@+id/etLSwitchOperatingPosition"
+                    app:layout_constraintTop_toBottomOf="@id/etLSwitchOperatingPosition" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/etLSetConstantForRpn"
                     style="@style/inTextForData"
-                    android:layout_marginTop="10dp"
+                    android:layout_width="180dp"
                     app:layout_constraintStart_toStartOf="@+id/etLSwitchOperatingPosition"
-                    app:layout_constraintTop_toBottomOf="@+id/etLSwitchOperatingPosition">
+                    tools:layout_editor_absoluteY="741dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etSetConstantForRpn"
                         style="@style/textInputEt"
-                        android:layout_marginBottom="24dp"
-                        android:hint="Установка начального значения" />
+                        android:layout_marginBottom="16dp"
+                        android:hint="Значение" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/floatingActionButton"
+                    android:id="@+id/fabSetConstant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/c1"
+                    android:background="@drawable/ic_dot_menu"
                     android:clickable="true"
-                    app:layout_constraintEnd_toEndOf="@+id/etLSetConstantForRpn"
-                    app:layout_constraintStart_toStartOf="@+id/etLSetConstantForRpn"
-                    app:layout_constraintTop_toBottomOf="@+id/etLSetConstantForRpn" />
+                    app:backgroundTint="#FFFFFF"
+                    app:layout_constraintTop_toBottomOf="@+id/tv10"
+                    tools:layout_editor_absoluteX="222dp" />
 
                 <LinearLayout
                     android:id="@+id/LL6"
                     style="@style/Line"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLSetConstantForRpn" />
+                    app:layout_constraintTop_toBottomOf="@+id/fabSetConstant" />
 
                 <TextView
                     android:id="@+id/tv6"
