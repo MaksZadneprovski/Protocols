@@ -68,7 +68,7 @@
         android:layout_height="wrap_content"
         android:background="@color/c1"
         android:backgroundTint="@color/c3_light"
-        android:src="@drawable/ic_save"
+        android:src="@drawable/ic_add"
         app:backgroundTint="#FFFFFF"
         app:layout_anchor="@id/bottomAppBar" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

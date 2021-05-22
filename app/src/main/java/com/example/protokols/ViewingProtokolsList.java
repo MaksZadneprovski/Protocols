@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.PopupMenu;
 
 import com.example.protokols.data_base_package.AppDelegateBd;
 import com.example.protokols.data_base_package.FreeForm.FreeForm;
@@ -28,7 +29,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
     private ListView lv;
     private List<SilovoyTrans> silovoyTransList;
     private List <FreeForm> freeFormList;
-    private FloatingActionButton fabSave;
+    private FloatingActionButton fabAdd;
     private BottomNavigationView bottomNavigationView;
 
 
@@ -65,7 +66,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
         lv.setAdapter(adapter);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
-        fabSave = findViewById(R.id.fabViewingProtocols);
+        fabAdd = findViewById(R.id.fabViewingProtocols);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.getMenu().getItem(3).setChecked(true);
@@ -90,6 +91,13 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
                 }
                 return true;
+            }
+        });
+
+        fabAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(ViewingProtokolsList.this, v);
             }
         });
 
