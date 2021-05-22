@@ -70,8 +70,8 @@ public class AdapterForList extends BaseAdapter {
         ((TextView) view.findViewById(R.id.tvItem2)).setText(classForViewingListProtocolsArrayList.getObject());
         ((TextView) view.findViewById(R.id.tvItem3)).setText(classForViewingListProtocolsArrayList.getDate());
         switch (classForViewingListProtocolsArrayList.getWork().toString()){
-            case "Неустановленная форма" :
-                ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_free_form);
+            case "Свободная форма" :
+                ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_freeform);
                 break;
             case "Испытание силового трансформатора" :
                 ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_transformer);
