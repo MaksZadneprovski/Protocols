@@ -3,6 +3,7 @@ package com.example.protokols;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -69,6 +70,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         fabAdd = findViewById(R.id.fabViewingProtocols);
+
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.getMenu().getItem(2).setIcon(R.drawable.dot_white);
@@ -87,12 +89,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
                     finish();
                 }
                 else  if (item.getItemId() == R.id.bottomNavIc2){
-
-                }
-                else  if (item.getItemId() == R.id.bottomNavIc3){
-
-                }
-                else  if (item.getItemId() == R.id.bottomNavIc4){
 
                 }
                 return true;

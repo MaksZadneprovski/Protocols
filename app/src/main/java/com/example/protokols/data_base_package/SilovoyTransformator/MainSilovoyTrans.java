@@ -55,8 +55,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
         setContentView(R.layout.silovoy_trans);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
-        cLObject = findViewById(R.id.ConstrLayoutObject);
-        cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
+            cLObject = findViewById(R.id.ConstrLayoutObject);
+            cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
         fabSave = findViewById(R.id.fabSilovoyTrans);
 
         cLObject.setVisibility(View.VISIBLE);
