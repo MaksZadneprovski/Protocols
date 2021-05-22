@@ -327,6 +327,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
 
 
+
         // Установка текста, если осуществляется редактирование
         if (MainActivity.isEditSilovoyTrans){
 
@@ -342,6 +343,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
             // Метод заполнения полей
             setTextToEditTextFromSilovoyTrans(silovoyTrans);
+
+
         }
     }
 

@@ -40,15 +40,18 @@ public class    MainActivity extends AppCompatActivity {
         fabSave = findViewById(R.id.fabMain);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
-        bottomNavigationView.getMenu().getItem(3).setChecked(true);
+        bottomNavigationView.getMenu().getItem(2).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(3).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(3).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(4).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(4).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(0).setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.bottomNavIc1){
-                    Intent i = new Intent(MainActivity.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
+
                 }
                 else  if (item.getItemId() == R.id.bottomNavIc2){
                     Intent i = new Intent(MainActivity.this, ViewingProtokolsList.class);
@@ -66,30 +69,5 @@ public class    MainActivity extends AppCompatActivity {
         });
 
     }
-    // Метод : Создает меню в тулбаре из указанного ресурса
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.list_menu, menu);
-        return true;
-    }
 
-    // Метод : Обрабатывает нажатия пунктов меню
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuList){
-            Intent i = new Intent(MainActivity.this, ViewingProtokolsList.class);
-            startActivity(i);
-        }
-        return true;
-    }
-
-    public void onClickCreateProtocol(View view) {
-        Intent i = new Intent(MainActivity.this, MainSilovoyTrans.class);
-        startActivity(i);
-    }
-
-    public void onClickCreateProtocolFreeForm(View view) {
-        Intent i = new Intent(MainActivity.this, MainFreeForm.class);
-        startActivity(i);
-    }
 }

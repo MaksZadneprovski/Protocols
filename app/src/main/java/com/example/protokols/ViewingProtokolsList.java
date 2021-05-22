@@ -71,13 +71,20 @@ public class ViewingProtokolsList extends AppCompatActivity {
         fabAdd = findViewById(R.id.fabViewingProtocols);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(2).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(3).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(3).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(4).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(4).setIcon(R.drawable.dot_white);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.bottomNavIc1){
-
+                    Intent i = new Intent( ViewingProtokolsList.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
                 }
                 else  if (item.getItemId() == R.id.bottomNavIc2){
 

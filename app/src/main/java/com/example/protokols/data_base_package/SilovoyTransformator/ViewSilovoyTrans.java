@@ -64,6 +64,9 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Статичная переменная, чтобы определить, хочу ли я редактировать объект или создаю новый
         MainActivity.isEditSilovoyTrans= true;
 
+        // Меняем значок fab
+        fabEdit.setImageResource(R.drawable.ic_edit);
+
         fabEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
