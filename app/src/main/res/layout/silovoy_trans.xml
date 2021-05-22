@@ -355,19 +355,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/LL5"/>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/etLQuantityRpnV"
-                    style="@style/inTextForData"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv5">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/etQuantityRpnV"
-                        style="@style/textInputEt"
-                        android:hint="Кол-во ступеней РПН/ПБВ" />
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/etLSwitchOperatingPosition"
@@ -375,7 +362,7 @@
                     android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etLQuantityRpnV">
+                    app:layout_constraintTop_toBottomOf="@+id/tv5">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etSwitchOperatingPosition"
@@ -412,10 +399,9 @@
                     android:id="@+id/fabSetConstant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ic_ok"
                     android:clickable="true"
-                    android:layout_marginBottom="16dp"
-                    android:layout_marginTop="16dp"
-                    app:backgroundTint="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="@+id/etLSwitchOperatingPosition"
                     app:layout_constraintTop_toBottomOf="@+id/tv10" />
 

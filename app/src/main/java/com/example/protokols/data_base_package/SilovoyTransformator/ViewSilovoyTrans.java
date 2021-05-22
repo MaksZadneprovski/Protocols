@@ -26,11 +26,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Date;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
-    private TextView tvWork;
+    private TextView tvWork, tv10;
     private BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
-    private FloatingActionButton  fabEdit;
+    private FloatingActionButton  fabEdit ,fabSetConstant;
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,
@@ -399,6 +399,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
 
         // TextView
         tvWork= findViewById(R.id.tvWork);
+        tv10= findViewById(R.id.tv10);
 
         // EditText
         etObject = findViewById(R.id.etObject);
@@ -445,12 +446,16 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvAn = findViewById(R.id.etRpnLvAn);
         etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
         fabEdit = findViewById(R.id.fabSilovoyTrans);
+        fabSetConstant = findViewById(R.id.fabSetConstant);
         bottomNavigationView = findViewById(R.id.bottomNavView);
         cLObject = findViewById(R.id.ConstrLayoutObject);
         cLMeterage = findViewById(R.id.ConstrLayoutMeterage);
 
         cLObject.setVisibility(View.VISIBLE);
         cLMeterage.setVisibility(View.GONE);
+        etSetConstantForRpn.setVisibility(View.GONE);
+        fabSetConstant.setVisibility(View.GONE);
+        tv10.setVisibility(View.GONE);
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
