@@ -29,7 +29,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
     private List<SilovoyTrans> silovoyTransList;
     private List <FreeForm> freeFormList;
     private FloatingActionButton fabSave;
-     private BottomNavigationView bottomNavigationView;
+    private BottomNavigationView bottomNavigationView;
 
 
 
@@ -65,7 +65,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
         lv.setAdapter(adapter);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
-        fabSave = findViewById(R.id.fabSilovoyTrans);
+        fabSave = findViewById(R.id.fabViewingProtocols);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.getMenu().getItem(3).setChecked(true);
