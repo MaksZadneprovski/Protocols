@@ -15,6 +15,8 @@ import android.widget.PopupMenu;
 import com.example.protokols.data_base_package.AppDelegateBd;
 import com.example.protokols.data_base_package.FreeForm.FreeForm;
 import com.example.protokols.data_base_package.FreeForm.FreeFormDao;
+import com.example.protokols.data_base_package.FreeForm.MainFreeForm;
+import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.data_base_package.SilovoyTransformator.ViewSilovoyTrans;
@@ -69,20 +71,16 @@ public class ViewingProtokolsList extends AppCompatActivity {
         fabAdd = findViewById(R.id.fabViewingProtocols);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
-        bottomNavigationView.getMenu().getItem(3).setChecked(true);
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.bottomNavIc1){
-                    Intent i = new Intent(ViewingProtokolsList.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
+
                 }
                 else  if (item.getItemId() == R.id.bottomNavIc2){
-                    Intent i = new Intent(ViewingProtokolsList.this, ViewingProtokolsList.class);
-                    startActivity(i);
-                    finish();
+
                 }
                 else  if (item.getItemId() == R.id.bottomNavIc3){
 
@@ -98,6 +96,25 @@ public class ViewingProtokolsList extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 PopupMenu popupMenu = new PopupMenu(ViewingProtokolsList.this, v);
+                popupMenu.getMenuInflater().inflate(R.menu.popup_menu,popupMenu.getMenu());
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.menuAddSilovoyTrans:
+                                Intent i = new Intent(ViewingProtokolsList.this, MainSilovoyTrans.class);
+                                startActivity(i);
+                                break;
+                            case R.id.menuAddFreeform:
+                                Intent b = new Intent(ViewingProtokolsList.this, MainFreeForm.class);
+                                startActivity(b);
+                                break;
+
+                        }
+                        return true;
+                    }
+                });
+                popupMenu.show();
             }
         });
 
