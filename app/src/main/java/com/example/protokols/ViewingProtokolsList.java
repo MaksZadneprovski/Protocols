@@ -1,10 +1,12 @@
 package com.example.protokols;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -142,15 +144,32 @@ public class ViewingProtokolsList extends AppCompatActivity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                // Удаляем объект из БД
-                silovoyTransDao.deleteSilovoyTrans(silovoyTransList.get(position));
-                // Заново берем данные из БД
-                silovoyTransList =silovoyTransDao.getAll();
-                freeFormList = freeFormDao.getAll();
-                // Обновляем адаптер
-                AdapterForList adapter = new AdapterForList(ViewingProtokolsList.this, getArrayList(silovoyTransList, freeFormList));
-                lv.setAdapter(adapter);
-                return false;
+                // Диалог
+                AlertDialog.Builder builder = new AlertDialog.Builder(ViewingProtokolsList.this);
+                builder.setTitle("Удаление");
+                builder.setMessage("Вы действительно хотите удалить элемент из списка?");
+                builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Удаляем объект из БД
+                        silovoyTransDao.deleteSilovoyTrans(silovoyTransList.get(position));
+                        // Заново берем данные из БД
+                        silovoyTransList =silovoyTransDao.getAll();
+                        freeFormList = freeFormDao.getAll();
+                        // Обновляем адаптер
+                        AdapterForList adapter = new AdapterForList(ViewingProtokolsList.this, getArrayList(silovoyTransList, freeFormList));
+                        lv.setAdapter(adapter);
+                    }
+                });
+                builder.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                AlertDialog dialog = builder.create();
+                dialog.show();
+                return true;
             }
         });
     }
