@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/bottomNavIc1"
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottomNavIc1"
+        android:icon="@drawable/ic_home"
         android:title="Home"
-        android:icon="@drawable/ic_dot_menu"/>
+        android:visible="true" />
 
-    <item android:id="@+id/bottomNavIc2"
-        android:title="List"
-        android:icon="@drawable/ic_dot_menu"/>
+    <item
+        android:id="@+id/bottomNavIc2"
+        android:icon="@drawable/outline_format_list_bulleted_24"
+        android:title="List" />
 
     <item android:id="@+id/placeholder"
         android:title="qwerty"/>

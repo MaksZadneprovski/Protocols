@@ -13,50 +13,53 @@
         android:layout_marginRight="8dp"
         android:background="@drawable/bg_for_item_listview"
         android:elevation="2dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imgIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="4dp"
             android:elevation="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/tvItem3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tvItem1"
-            app:srcCompat="@drawable/ic_transformator" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_transformer" />
 
         <TextView
             android:id="@+id/tvItem1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
+            android:fontFamily="sans-serif-light"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgIcon"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+            app:layout_constraintTop_toTopOf="@+id/imgIcon"></TextView>
 
         <TextView
             android:id="@+id/tvItem2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-light"
+            android:maxLength="15"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/tvItem1"
-            app:layout_constraintTop_toBottomOf="@+id/tvItem1"></TextView>
+            app:layout_constraintBottom_toBottomOf="@+id/imgIcon"
+            app:layout_constraintStart_toStartOf="@+id/tvItem1"></TextView>
 
         <TextView
             android:id="@+id/tvItem3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="sans-serif-light"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvItem1"></TextView>
+            app:layout_constraintBottom_toBottomOf="@+id/imgIcon"
+            app:layout_constraintEnd_toEndOf="parent"></TextView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

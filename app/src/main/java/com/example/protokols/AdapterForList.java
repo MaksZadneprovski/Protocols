@@ -74,7 +74,7 @@ public class AdapterForList extends BaseAdapter {
                 ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_free_form);
                 break;
             case "Испытание силового трансформатора" :
-                ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_transformator);
+                ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_transformer);
                 break;
         }
         return view;

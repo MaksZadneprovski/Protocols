@@ -19,6 +19,7 @@
             <TextView
                 android:id="@+id/tvWork"
                 style="@style/Title"
+                android:layout_height="150dp"
                 android:background="@drawable/bg_title"
                 android:text="Испытание\nсилового\nтрансформатора"
                 android:textAlignment="center" />
