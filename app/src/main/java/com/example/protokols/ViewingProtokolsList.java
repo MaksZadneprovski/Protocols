@@ -1,10 +1,12 @@
 package com.example.protokols;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,6 +18,8 @@ import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.data_base_package.SilovoyTransformator.ViewSilovoyTrans;
 import com.example.protokols.utils.ConstantsMy;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +28,9 @@ public class ViewingProtokolsList extends AppCompatActivity {
     private ListView lv;
     private List<SilovoyTrans> silovoyTransList;
     private List <FreeForm> freeFormList;
+    private FloatingActionButton fabSave;
+     private BottomNavigationView bottomNavigationView;
+
 
 
     @Override
@@ -56,6 +63,35 @@ public class ViewingProtokolsList extends AppCompatActivity {
 
         // Установка адаптера для ListView
         lv.setAdapter(adapter);
+
+        bottomNavigationView = findViewById(R.id.bottomNavView);
+        fabSave = findViewById(R.id.fabSilovoyTrans);
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(3).setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.bottomNavIc1){
+                    Intent i = new Intent(ViewingProtokolsList.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc2){
+                    Intent i = new Intent(ViewingProtokolsList.this, ViewingProtokolsList.class);
+                    startActivity(i);
+                    finish();
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc3){
+
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc4){
+
+                }
+                return true;
+            }
+        });
 
         // Нажатие на ListView
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -66,7 +66,7 @@ public class AdapterForList extends BaseAdapter {
         }
         ClassForViewingListProtocols classForViewingListProtocolsArrayList = getclassForViewingListProtocolsArrayList(position);
         // ((TextView) view.findViewById(R.id.tvItem1)).setText(Integer.toString(silovoyTrans.getPasportType()));
-        ((TextView) view.findViewById(R.id.tvItem1)).setText(classForViewingListProtocolsArrayList.getWork());
+        ((TextView) view.findViewById(R.id.tvItem1)).setText(classForViewingListProtocolsArrayList.getWork().replace("\n", " "));
         ((TextView) view.findViewById(R.id.tvItem2)).setText(classForViewingListProtocolsArrayList.getObject());
         ((TextView) view.findViewById(R.id.tvItem3)).setText(classForViewingListProtocolsArrayList.getDate());
         switch (classForViewingListProtocolsArrayList.getWork().toString()){
