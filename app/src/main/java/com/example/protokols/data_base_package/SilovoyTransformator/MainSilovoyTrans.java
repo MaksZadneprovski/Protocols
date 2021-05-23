@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
-    private FloatingActionButton btnSetConstantForRpn, fabSave;
+    private ImageButton btnSetConstantForRpn;
+    private FloatingActionButton  fabSave;
     private Date currentDate = new Date();
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
@@ -149,7 +151,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
                 silovoyTransDao.insertSilovoyTrans(createSilovoyTransFromEditText());
 
                 // Показываем Toast
-                Toast.makeText(MainSilovoyTrans.this, "Сохранено", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainSilovoyTrans.this, "Протокол сохранён", Toast.LENGTH_LONG).show();
             }
             else {
                 // Создаем объект по полям для обновления БД
@@ -162,7 +164,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
                 silovoyTransUpdate.setId(idSilovoyTrans);
                 silovoyTransDao.updateSilovoyTrans(silovoyTransUpdate);
 
-                Toast.makeText(MainSilovoyTrans.this, "Обновлено", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainSilovoyTrans.this, "Протокол обновлён", Toast.LENGTH_LONG).show();
             }
             Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
             startActivity(i);

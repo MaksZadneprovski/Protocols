@@ -151,8 +151,14 @@ public class ViewingProtokolsList extends AppCompatActivity {
                 builder.setPositiveButton("Да", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        // Удаляем объект из БД
-                        silovoyTransDao.deleteSilovoyTrans(silovoyTransList.get(position));
+
+                        ClassForViewingListProtocols classForViewingListProtocols = getArrayList(silovoyTransList, freeFormList).get(position);
+                        String work =classForViewingListProtocols.getWork();
+                        if (work.equals("Испытание\nсилового\nтрансформатора")){
+                            // Удаляем объект из БД
+                            silovoyTransDao.deleteSilovoyTrans(silovoyTransList.get(classForViewingListProtocols.getId()));
+                        }
+
                         // Заново берем данные из БД
                         silovoyTransList =silovoyTransDao.getAll();
                         freeFormList = freeFormDao.getAll();

@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.protokols.MainActivity;
@@ -30,7 +31,8 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
-    private FloatingActionButton  fabEdit ,fabSetConstant;
+    private ImageButton fabSetConstant;
+    private FloatingActionButton  fabEdit ;
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,

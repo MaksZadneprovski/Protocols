@@ -395,15 +395,14 @@
                         android:hint="Значение" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/fabSetConstant"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/ic_ok"
-                    android:clickable="true"
                     app:layout_constraintEnd_toEndOf="@+id/etLSwitchOperatingPosition"
-                    app:layout_constraintTop_toBottomOf="@+id/tv10" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv10"/>
 
                 <LinearLayout
                     android:id="@+id/LL6"
@@ -800,7 +799,6 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp" />
 
