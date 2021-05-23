@@ -107,10 +107,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
                     insertToBd();
-                    startActivity(i);
-                    finish();
             }
         });
     }
@@ -167,7 +164,21 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
                 Toast.makeText(MainSilovoyTrans.this, "Обновлено", Toast.LENGTH_LONG).show();
             }
+            Intent i = new Intent(MainSilovoyTrans.this, ViewingProtokolsList.class);
+            startActivity(i);
+            finish();
 
+        }
+        else  {
+            if(etObject.getText().toString().equals("")& (etDate.getText().toString().equals(""))){
+                Toast.makeText(MainSilovoyTrans.this, "Введите наименование объекта и дату", Toast.LENGTH_LONG).show();
+            }
+            else if(etDate.getText().toString().equals("")) {
+                Toast.makeText(MainSilovoyTrans.this, "Введите дату", Toast.LENGTH_LONG).show();
+            }
+            else if(etObject.getText().toString().equals("")) {
+                Toast.makeText(MainSilovoyTrans.this, "Введите наименование объекта", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -176,7 +187,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     // 3 Метод : создает объект SilovoyTrans по введенным данным в EditText-ы
     private SilovoyTrans createSilovoyTransFromEditText() {
         String object = etObject.getText().toString();
-        String work = tvWork.getText().toString();
+        String work = "Испытание\nсилового\nтрансформатора";
         String date = etDate.getText().toString();
         String temperature = etTemperature.getText().toString();
         String PasportType = etPasportType.getText().toString();
@@ -230,6 +241,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
     // 6 Метод : Заполняет EditText-ы данными из объекта silovoyTrans в случае редактирования
     private void setTextToEditTextFromSilovoyTrans(SilovoyTrans silovoyTrans){
+        tvWork.setText("Редактирование\nпротокола");
         etObject.setText(silovoyTrans.getmObjectOrPodstancia().toString());
         etDate.setText(silovoyTrans.getmDate().toString());
         etTemperature.setText(silovoyTrans.getmTemperature().toString());

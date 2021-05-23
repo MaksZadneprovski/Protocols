@@ -457,6 +457,8 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         fabSetConstant.setVisibility(View.GONE);
         tv10.setVisibility(View.GONE);
 
+        tvWork.setText("Просмотр\nпротокола");
+
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.getMenu().getItem(3).setChecked(true);
