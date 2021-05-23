@@ -51,7 +51,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
         // Так как с этого экрана нельзя нажать кнопку редактировать, то переменная false
         MainActivity.isEditSilovoyTrans= false;
 
-
         // Инициализация
         lv = findViewById(R.id.lv);
 
