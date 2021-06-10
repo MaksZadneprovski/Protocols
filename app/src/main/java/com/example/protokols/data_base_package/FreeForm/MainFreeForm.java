@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +23,8 @@ import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyT
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.utils.ConstantsMy;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -30,20 +34,67 @@ import java.util.Locale;
 public class MainFreeForm extends AppCompatActivity {
     private Date currentDate = new Date();
     private TextView tvWork;
+    private FloatingActionButton fabSave;
     private EditText etObject, etDate, etNotes;
+    public SharedPreferences sharedPreferences;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_free_form);
 
+        // 1.1 Отключение анимации перехода
+        overridePendingTransition(0,0);
+
         init();
+
+        bottomNavigationView = findViewById(R.id.bottomNavView);
+        fabSave = findViewById(R.id.fabFreeForm);
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(2).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(2).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(3).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(3).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(4).setEnabled(false);
+        bottomNavigationView.getMenu().getItem(4).setIcon(R.drawable.dot_white);
+        bottomNavigationView.getMenu().getItem(0).setChecked(true);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.bottomNavIc1){
+                    Intent i = new Intent(MainFreeForm.this, MainActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc2){
+                    Intent i = new Intent(MainFreeForm.this, ViewingProtokolsList.class);
+                    startActivity(i);
+                    finish();
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc3){
+
+                }
+                else  if (item.getItemId() == R.id.bottomNavIc4){
+
+                }
+                return true;
+            }
+        });
+
+        fabSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                insertToBd(true);
+            }
+        });
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        insertToBd();
+        insertToBd(false);
     }
 
 
@@ -67,7 +118,7 @@ public class MainFreeForm extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createFreeFormFromEditText()
-    private void insertToBd() {
+    private void insertToBd(Boolean save) {
 
         // Создание объекта  DAO для работы с БД
         FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
@@ -102,14 +153,16 @@ public class MainFreeForm extends AppCompatActivity {
             }
 
         }else  {
-            if(etObject.getText().toString().equals("")& (etDate.getText().toString().equals(""))){
-                Toast.makeText(MainFreeForm.this, "Введите наименование объекта и дату", Toast.LENGTH_LONG).show();
-            }
-            else if(etDate.getText().toString().equals("")) {
-                Toast.makeText(MainFreeForm.this, "Введите дату", Toast.LENGTH_LONG).show();
-            }
-            else if(etObject.getText().toString().equals("")) {
-                Toast.makeText(MainFreeForm.this, "Введите наименование объекта", Toast.LENGTH_LONG).show();
+            if (save) {
+                if(etObject.getText().toString().equals("")& (etDate.getText().toString().equals(""))){
+                    Toast.makeText(MainFreeForm.this, "Введите наименование объекта и дату", Toast.LENGTH_LONG).show();
+                }
+                else if(etDate.getText().toString().equals("")) {
+                    Toast.makeText(MainFreeForm.this, "Введите дату", Toast.LENGTH_LONG).show();
+                }
+                else if(etObject.getText().toString().equals("")) {
+                    Toast.makeText(MainFreeForm.this, "Введите наименование объекта", Toast.LENGTH_LONG).show();
+                }
             }
         }
 
@@ -144,6 +197,8 @@ public class MainFreeForm extends AppCompatActivity {
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         etDate.setText(dateFormat.format(currentDate));
         etNotes = findViewById(R.id.etNotesFreeForm);
+        fabSave = findViewById(R.id.fabSilovoyTrans);
+
 
 
         // Установка текста, если осуществляется редактирование
