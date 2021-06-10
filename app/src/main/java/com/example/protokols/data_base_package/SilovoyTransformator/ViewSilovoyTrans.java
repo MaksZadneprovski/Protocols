@@ -58,9 +58,6 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Получение объекта из БД
         SilovoyTrans silovoyTrans = getSilovoyTransFromBd();
 
-        // fklsvlkdfvkl
-        Toast.makeText(this, silovoyTrans.getIdForDB()+"", Toast.LENGTH_LONG).show();
-
         // Заполнение полей данными из объекта
         setTextToEditTextFromSilovoyTrans(silovoyTrans);
 
