@@ -466,4 +466,5 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.getMenu().getItem(3).setChecked(true);
     }
+
 }

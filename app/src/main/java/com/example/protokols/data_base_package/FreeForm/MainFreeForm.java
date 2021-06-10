@@ -151,6 +151,10 @@ public class MainFreeForm extends AppCompatActivity {
 
                 Toast.makeText(MainFreeForm.this, "Протокол обновлён", Toast.LENGTH_SHORT).show();
             }
+            Intent i = new Intent(MainFreeForm.this, ViewingProtokolsList.class);
+            startActivity(i);
+            finish();
+
 
         }else  {
             if (save) {

@@ -110,6 +110,12 @@ public class MainSilovoyTrans extends AppCompatActivity {
                     insertToBd(true);
             }
         });
+        btnSetConstantForRpn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setConstant(etSetConstantForRpn.getText().toString());
+            }
+        });
     }
 
     @Override
@@ -297,6 +303,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etRpnLvAn.setText(silovoyTrans.getRpnLvAn().toString());
     }
 
+
+
     private void init() {
         // Buttons
         btnSetConstantForRpn =findViewById(R.id.fabSetConstant);
@@ -376,7 +384,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
 
     //  Методы : Получают String и вставляют ее в поля сопротивления
-    private void setConstant5 (String constantForEt) {
+    private void setConstant (String constantForEt) {
         etRpnHvAB1.setText(constantForEt);
         etRpnHvAB1.setSelection(etRpnHvAB1.getText().length());
         etRpnHvAB2.setText(constantForEt);
