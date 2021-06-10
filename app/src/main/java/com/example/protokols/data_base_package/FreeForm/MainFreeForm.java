@@ -58,7 +58,7 @@ public class MainFreeForm extends AppCompatActivity {
         bottomNavigationView.getMenu().getItem(3).setIcon(R.drawable.dot_white);
         bottomNavigationView.getMenu().getItem(4).setEnabled(false);
         bottomNavigationView.getMenu().getItem(4).setIcon(R.drawable.dot_white);
-        bottomNavigationView.getMenu().getItem(0).setChecked(true);
+        bottomNavigationView.getMenu().getItem(3).setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

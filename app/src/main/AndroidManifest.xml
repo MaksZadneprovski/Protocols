@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Protokols">
-        <activity android:name=".data_base_package.FreeForm.MainFreeForm"></activity>
+        <activity android:name=".data_base_package.FreeForm.MainFreeForm" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".data_base_package.SilovoyTransformator.ViewSilovoyTrans" />
         <activity android:name=".ViewingProtokolsList" />
         <activity android:name=".MainActivity" >
