@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,6 +26,7 @@ public class    MainActivity extends AppCompatActivity {
     private Toolbar toolbarMain;
     private FloatingActionButton fabSave;
     private BottomNavigationView bottomNavigationView;
+    public static SharedPreferences sharedPreferences;
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
@@ -40,6 +42,13 @@ public class    MainActivity extends AppCompatActivity {
         overridePendingTransition(0,0);
 
         isEditSilovoyTrans = false;
+
+        sharedPreferences = getSharedPreferences("IdPreferences",MODE_PRIVATE);
+        if (sharedPreferences.contains("ID")){
+            idForDB=sharedPreferences.getInt("ID",0);
+            Toast.makeText(this, idForDB, Toast.LENGTH_LONG).show();
+        }
+
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         fabSave = findViewById(R.id.fabMain);
@@ -73,6 +82,13 @@ public class    MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public static void incrementId(){
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        idForDB++;
+        editor.putInt("ID",MainActivity.idForDB);
+        editor.apply();
     }
 
 }

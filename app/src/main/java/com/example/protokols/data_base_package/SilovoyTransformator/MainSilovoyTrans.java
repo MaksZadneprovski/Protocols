@@ -2,6 +2,7 @@ package com.example.protokols.data_base_package.SilovoyTransformator;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.KeyEvent;
@@ -44,6 +45,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     private ImageButton btnSetConstantForRpn;
     private FloatingActionButton  fabSave;
     private Date currentDate = new Date();
+    public SharedPreferences sharedPreferences;
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,
@@ -149,6 +151,9 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
                 // Записываем в БД
                 silovoyTransDao.insertSilovoyTrans(createSilovoyTransFromEditText());
+
+                // Инкрементируем ID
+                MainActivity.incrementId();
 
                 // Показываем Toast
                 Toast.makeText(MainSilovoyTrans.this, "Протокол сохранён", Toast.LENGTH_LONG).show();
@@ -339,6 +344,8 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etRpnLvBn = findViewById(R.id.etRpnLvBn);
         etRpnLvAn = findViewById(R.id.etRpnLvAn);
         etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
+
+        sharedPreferences = getSharedPreferences("IdPreferences",MODE_PRIVATE);
 
 
 
