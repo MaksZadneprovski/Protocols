@@ -36,7 +36,7 @@ public class ViewFreeForm extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.silovoy_trans);
+        setContentView(R.layout.activity_main_free_form);
 
         //Отключение анимации перехода
         overridePendingTransition(0,0);

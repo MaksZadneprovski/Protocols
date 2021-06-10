@@ -12,6 +12,7 @@
         android:theme="@style/Theme.Protokols">
         <activity android:name=".data_base_package.FreeForm.MainFreeForm" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".data_base_package.SilovoyTransformator.ViewSilovoyTrans" />
+        <activity android:name=".data_base_package.FreeForm.ViewFreeForm" />
         <activity android:name=".ViewingProtokolsList" />
         <activity android:name=".MainActivity" >
             <intent-filter>

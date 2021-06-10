@@ -21,6 +21,7 @@ import com.example.protokols.data_base_package.AppDelegateBd;
 import com.example.protokols.data_base_package.FreeForm.FreeForm;
 import com.example.protokols.data_base_package.FreeForm.FreeFormDao;
 import com.example.protokols.data_base_package.FreeForm.MainFreeForm;
+import com.example.protokols.data_base_package.FreeForm.ViewFreeForm;
 import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
@@ -132,8 +133,15 @@ public class ViewingProtokolsList extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ClassForViewingListProtocols classForViewingListProtocols = getArrayList(silovoyTransList, freeFormList).get(position);
                 String work =classForViewingListProtocols.getWork();
+
                 if (work.equals("Испытание\nсилового\nтрансформатора")){
                     Intent i = new Intent(ViewingProtokolsList.this, ViewSilovoyTrans.class);
+                    int idOfSelectedItem = classForViewingListProtocols.getId();
+                    i.putExtra(ConstantsMy.ID_KEY,idOfSelectedItem );
+                    startActivity(i);
+                    finish();
+                }else if (work.equals("Свободная форма")){
+                    Intent i = new Intent(ViewingProtokolsList.this, ViewFreeForm.class);
                     int idOfSelectedItem = classForViewingListProtocols.getId();
                     i.putExtra(ConstantsMy.ID_KEY,idOfSelectedItem );
                     startActivity(i);
