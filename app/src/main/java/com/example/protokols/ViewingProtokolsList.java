@@ -159,7 +159,10 @@ public class ViewingProtokolsList extends AppCompatActivity {
                         String work =classForViewingListProtocols.getWork();
                         if (work.equals("Испытание\nсилового\nтрансформатора")){
                             // Удаляем объект из БД
-                            silovoyTransDao.deleteSilovoyTrans(silovoyTransList.get(classForViewingListProtocols.getId()));
+                            silovoyTransDao.deleteSilovoyTransbyID(classForViewingListProtocols.getId());
+                        } else if (work.equals("\nсилового\nтрансформатора")) {
+                            // Удаляем объект из БД
+                            silovoyTransDao.deleteSilovoyTransbyID(classForViewingListProtocols.getId());
                         }
 
                         // Заново берем данные из БД
@@ -182,6 +185,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
             }
         });
     }
+
 
     // Метод : Создает ArrayList из приходящих в параметры List-ов
     private ArrayList<ClassForViewingListProtocols> getArrayList(List<SilovoyTrans> silovoyTransList, List <FreeForm> freeFormList ) {
