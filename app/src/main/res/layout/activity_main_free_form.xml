@@ -1,75 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".data_base_package.FreeForm.MainFreeForm">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarMainFreeForm"
-        android:layout_width="0dp"
-        style="@style/Toolbar"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ScrollView
-        android:id="@+id/scrollView4"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarMainFreeForm"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvWorkFreeForm"
                 style="@style/Title"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_title"
+                android:textAlignment="center"
                 android:text="Свободная форма" />
 
-            <LinearLayout style="@style/Line"></LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ConstrLayoutObject"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
 
-            <TextView
-                style="@style/TvForEt"
-                android:text="Объект"
-                android:textSize="@dimen/text16" />
 
-            <EditText
-                android:id="@+id/etObjectFreeForm"
-                style="@style/EtForData"
-                android:hint="РП-1 яч.№1 Т01.01" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLObjectFreeForm"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                style="@style/TvForEt"
-                android:text="Дата"
-                android:textSize="@dimen/text16" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etObjectFreeForm"
+                        style="@style/textInputEt"
+                        android:hint="Наименование объекта" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/etDateFreeForm"
-                style="@style/EtForData" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLDateFreeForm"
+                    style="@style/inTextForData"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLObjectFreeForm">
 
-            <TextView
-                style="@style/TvForEt"
-                android:text="Заметки" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etDateFreeForm"
+                        style="@style/textInputEt"
+                        android:hint="Дата" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/etNotesFreeForm"
-                style="@style/LNotes"
-                android:layout_height="match_parent"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etLNotesFreeForm"
+                    style="@style/inTextForData"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etLDateFreeForm">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNotesFreeForm"
+                        style="@style/textInputEt"
+                        android:inputType="textMultiLine"
+                        android:textAllCaps="false"
+                        android:hint="Заметки" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         </LinearLayout>
 
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

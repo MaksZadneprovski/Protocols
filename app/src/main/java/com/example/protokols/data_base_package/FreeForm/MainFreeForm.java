@@ -31,7 +31,6 @@ public class MainFreeForm extends AppCompatActivity {
     private Date currentDate = new Date();
     private TextView tvWork;
     private EditText etObject, etDate, etNotes;
-    private Toolbar toolbarMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,24 +46,6 @@ public class MainFreeForm extends AppCompatActivity {
         insertToBd();
     }
 
-    // Метод : Создает меню в тулбаре из указанного ресурса
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main_create_protocol, menu);
-        return true;
-    }
-
-    // Метод : Обрабатывает нажатия пунктов меню
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        Intent i = new Intent(MainFreeForm.this, ViewingProtokolsList.class);
-        if (item.getItemId() == R.id.menuSave){
-            insertToBd();
-            startActivity(i);
-            finish();
-        }
-        return true;
-    }
 
     // Метод обработки кнопки назад
     @Override
@@ -164,9 +145,6 @@ public class MainFreeForm extends AppCompatActivity {
         etDate.setText(dateFormat.format(currentDate));
         etNotes = findViewById(R.id.etNotesFreeForm);
 
-        // Для меню обязательно вызвать setSupportActionBar
-        toolbarMain = findViewById(R.id.toolbarMainFreeForm);
-        setSupportActionBar(toolbarMain);
 
         // Установка текста, если осуществляется редактирование
         if (MainActivity.isEditSilovoyTrans){
