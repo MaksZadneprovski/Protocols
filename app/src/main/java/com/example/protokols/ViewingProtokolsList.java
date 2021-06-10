@@ -30,6 +30,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -183,7 +184,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
     }
 
     // Метод : Создает ArrayList из приходящих в параметры List-ов
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private ArrayList<ClassForViewingListProtocols> getArrayList(List<SilovoyTrans> silovoyTransList, List <FreeForm> freeFormList ) {
 
         ArrayList<ClassForViewingListProtocols> arrayList = new ArrayList<ClassForViewingListProtocols>();
@@ -208,10 +208,10 @@ public class ViewingProtokolsList extends AppCompatActivity {
             arrayList.add(i,classForViewingListProtocols);
         }
         // Сортировка по единому ID
-        arrayList.sort(new Comparator<ClassForViewingListProtocols>() {
+        Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-                //
+                return 1;
             }
         });
 

@@ -46,7 +46,7 @@ public class    MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("IdPreferences",MODE_PRIVATE);
         if (sharedPreferences.contains("ID")){
             idForDB=sharedPreferences.getInt("ID",0);
-            Toast.makeText(this, idForDB, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, idForDB+"", Toast.LENGTH_LONG).show();
         }
 
 

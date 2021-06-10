@@ -193,6 +193,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 3 Метод : создает объект SilovoyTrans по введенным данным в EditText-ы
     private SilovoyTrans createSilovoyTransFromEditText() {
+        int idForBd = MainActivity.idForDB;
         String object = etObject.getText().toString();
         String work = "Испытание\nсилового\nтрансформатора";
         String date = etDate.getText().toString();
@@ -238,7 +239,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         String RpnLvCn = etRpnLvCn.getText().toString();
         String Notes = etNotes.getText().toString();
 
-        SilovoyTrans silovoyTrans = new SilovoyTrans(object,work, date,temperature,PasportType, PasportZavNumber, PasportPower, PasportVoltage,
+        SilovoyTrans silovoyTrans = new SilovoyTrans(idForBd,object,work, date,temperature,PasportType, PasportZavNumber, PasportPower, PasportVoltage,
                 PasportCurrent, PasportVoltageKz, PasportYearOfManufacture, IzolHvR15, IzolHvR60, IzolHvKoef, IzolLvR15, IzolLvR60, IzolLvKoef,
                  SwitchOperationPosition, RpnHvAB1, RpnHvAB2, RpnHvAB3, RpnHvAB4, RpnHvAB5, RpnHvAB6,  RpnHvBC1, RpnHvBC2, RpnHvBC3,
                 RpnHvBC4, RpnHvBC5, RpnHvBC6,  RpnHvCA1, RpnHvCA2, RpnHvCA3, RpnHvCA4, RpnHvCA5, RpnHvCA6, RpnLvAn,
