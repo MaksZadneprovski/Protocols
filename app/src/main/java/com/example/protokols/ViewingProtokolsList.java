@@ -191,27 +191,31 @@ public class ViewingProtokolsList extends AppCompatActivity {
         //  Проход по списку silovoyTransList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
         for (int i = 0; i< silovoyTransList.size(); i++){
             int id = silovoyTransList.get(i).getId();
+            int idForDB = silovoyTransList.get(i).getIdForDB();
             String object = silovoyTransList.get(i).getmObjectOrPodstancia();
             String work = silovoyTransList.get(i).getmWork();
             String date = silovoyTransList.get(i).getmDate();
-            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id,work,object,date);
+            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id,idForDB,work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
 
         //  Проход по списку freeFormList, создание объекта ClassForViewingListProtocols с такими же полями и занесение его в список
         for (int i = 0; i< freeFormList.size(); i++){
             int id = freeFormList.get(i).getId();
+            int idForDB = freeFormList.get(i).getIdForDB();
             String object = freeFormList.get(i).getmObjectOrPodstancia();
             String work = freeFormList.get(i).getmWork();
             String date = freeFormList.get(i).getmDate();
-            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id, work,object,date);
+            ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id, idForDB, work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
         // Сортировка по единому ID
         Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-                return 1;
+                if (o1.getIdForBD()<o2.getIdForBD()) return 1;
+                else if (o1.getIdForBD()>o2.getIdForBD()) return -1;
+                else return 0;
             }
         });
 
