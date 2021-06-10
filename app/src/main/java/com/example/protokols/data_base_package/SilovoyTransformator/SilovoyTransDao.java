@@ -17,6 +17,9 @@ public interface SilovoyTransDao {
     @Query("SELECT * FROM SilovoyTrans WHERE id = :id")
     SilovoyTrans getSilovoyTransTableById(int id);
 
+    @Query("SELECT idForDB FROM SilovoyTrans")
+    int[] getSilovoyTransColumnIdForDB();
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertSilovoyTransList(List<SilovoyTrans> silovoyTransList);
 

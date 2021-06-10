@@ -1,6 +1,7 @@
 package com.example.protokols;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +30,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ViewingProtokolsList extends AppCompatActivity {
@@ -180,6 +183,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
     }
 
     // Метод : Создает ArrayList из приходящих в параметры List-ов
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private ArrayList<ClassForViewingListProtocols> getArrayList(List<SilovoyTrans> silovoyTransList, List <FreeForm> freeFormList ) {
 
         ArrayList<ClassForViewingListProtocols> arrayList = new ArrayList<ClassForViewingListProtocols>();
@@ -203,6 +207,13 @@ public class ViewingProtokolsList extends AppCompatActivity {
             ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id, work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
+        // Сортировка по единому ID
+        arrayList.sort(new Comparator<ClassForViewingListProtocols>() {
+            @Override
+            public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
+                //
+            }
+        });
 
         return arrayList;
     }

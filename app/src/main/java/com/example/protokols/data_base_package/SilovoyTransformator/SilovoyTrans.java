@@ -14,6 +14,9 @@ public class SilovoyTrans {
     @ColumnInfo(name = "id")
     public int id;
     ////////////////////////////////////////////////////////////////////////////////////////////////
+    @ColumnInfo(name = "idForDB")
+    public int idForDB;
+
     @ColumnInfo(name = "Object")
     public String mObjectOrPodstancia;
 

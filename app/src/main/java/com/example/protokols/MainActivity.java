@@ -9,9 +9,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import com.example.protokols.data_base_package.AppDelegateBd;
+import com.example.protokols.data_base_package.FreeForm.FreeFormDao;
 import com.example.protokols.data_base_package.FreeForm.MainFreeForm;
 import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
+import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -24,6 +28,7 @@ public class    MainActivity extends AppCompatActivity {
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
+    public static int idForDB =0;
 
 
     @Override
