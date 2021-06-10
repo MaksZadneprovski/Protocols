@@ -126,12 +126,12 @@ public class ViewFreeForm extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-    private void setTextToEditTextFromSilovoyTrans(SilovoyTrans silovoyTrans) {
+    private void setTextToEditTextFromSilovoyTrans(FreeForm freeForm) {
 
         // Заполняем EditText-ы данными из объекта silovoyTrans
-        etObject.setText(silovoyTrans.getmObjectOrPodstancia().toString());
-        etDate.setText(silovoyTrans.getmDate().toString());
-        etNotes.setText(silovoyTrans.getNotes().toString());
+        etObject.setText(freeForm.getmObjectOrPodstancia().toString());
+        etDate.setText(freeForm.getmDate().toString());
+        etNotes.setText(freeForm.getNotes().toString());
     }
 
     private void setUneditableEt(){
