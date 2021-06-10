@@ -17,6 +17,7 @@ import com.example.protokols.MainActivity;
 import com.example.protokols.R;
 import com.example.protokols.ViewingProtokolsList;
 import com.example.protokols.data_base_package.AppDelegateBd;
+import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.example.protokols.utils.ConstantsMy;
@@ -93,8 +94,11 @@ public class MainFreeForm extends AppCompatActivity {
                 // Записываем в БД
                 freeFormDao.insertFreeForm(createFreeFormFromEditText());
 
+                // Инкрементируем ID
+                MainActivity.incrementId();
+
                 // Показываем Toast
-                Toast.makeText(MainFreeForm.this, "Сохранено", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainFreeForm.this, "Протокол сохранён", Toast.LENGTH_SHORT).show();
             }
             else {
                 // Создаем объект по полям для обновления БД
@@ -107,21 +111,33 @@ public class MainFreeForm extends AppCompatActivity {
                 freeFormUpdate.setId(idFreeForm);
                 freeFormDao.updateFreeForm(freeFormUpdate);
 
-                Toast.makeText(MainFreeForm.this, "Обновлено", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainFreeForm.this, "Протокол обновлён", Toast.LENGTH_SHORT).show();
             }
 
+        }else  {
+            if(etObject.getText().toString().equals("")& (etDate.getText().toString().equals(""))){
+                Toast.makeText(MainFreeForm.this, "Введите наименование объекта и дату", Toast.LENGTH_LONG).show();
+            }
+            else if(etDate.getText().toString().equals("")) {
+                Toast.makeText(MainFreeForm.this, "Введите дату", Toast.LENGTH_LONG).show();
+            }
+            else if(etObject.getText().toString().equals("")) {
+                Toast.makeText(MainFreeForm.this, "Введите наименование объекта", Toast.LENGTH_LONG).show();
+            }
         }
+
     }
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 3 Метод : создает объект FreeForm по введенным данным в EditText-ы
     private FreeForm createFreeFormFromEditText() {
+        int idForBD = MainActivity.idForDB;
         String object = etObject.getText().toString();
         String work = tvWork.getText().toString();
         String date = etDate.getText().toString();
         String notes = etNotes.getText().toString();
 
-        FreeForm freeForm = new FreeForm(object,work,date,notes);
+        FreeForm freeForm = new FreeForm(idForBD, object,work,date,notes);
         return freeForm;
     }
 
@@ -152,11 +168,11 @@ public class MainFreeForm extends AppCompatActivity {
             // Создание объекта  DAO для работы с БД
             FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
 
-            // Получаем id объекта SilovoyTrans
+            // Получаем id объекта freeForm
             Intent i = getIntent();
             int idFreeForm = i.getIntExtra(ConstantsMy.ID_KEY, 0);
 
-            // По id создается объект silovoyTrans, данные для которого берутся из БД
+            // По id создается объект freeForm, данные для которого берутся из БД
             FreeForm freeForm = freeFormDao.getFreeFormById(idFreeForm);
 
             // Метод заполнения полей

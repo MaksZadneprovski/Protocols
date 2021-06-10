@@ -156,7 +156,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
                 MainActivity.incrementId();
 
                 // Показываем Toast
-                Toast.makeText(MainSilovoyTrans.this, "Протокол сохранён", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainSilovoyTrans.this, "Протокол сохранён", Toast.LENGTH_SHORT).show();
             }
             else {
                 // Создаем объект по полям для обновления БД

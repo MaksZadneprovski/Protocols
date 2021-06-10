@@ -11,6 +11,9 @@ public class FreeForm {
     @ColumnInfo(name = "id")
     public int id;
     ////////////////////////////////////////////////////////////////////////////////////////////////
+    @ColumnInfo(name = "idForDB")
+    public int idForDB;
+
     @ColumnInfo(name = "Object")
     public String mObjectOrPodstancia;
 
@@ -26,8 +29,9 @@ public class FreeForm {
     public FreeForm() {
     }
 
-    public FreeForm(int id, String mObjectOrPodstancia, String mWork, String mDate, String notes) {
+    public FreeForm(int id,int idForDB, String mObjectOrPodstancia, String mWork, String mDate, String notes) {
         this.id = id;
+        this.idForDB = idForDB;
         this.mObjectOrPodstancia = mObjectOrPodstancia;
         this.mWork = mWork;
         this.mDate = mDate;
@@ -35,7 +39,8 @@ public class FreeForm {
     }
 
     @Ignore
-    public FreeForm(String mObjectOrPodstancia, String mWork, String mDate, String notes) {
+    public FreeForm(int idForDB, String mObjectOrPodstancia, String mWork, String mDate, String notes) {
+        this.idForDB = idForDB;
         this.mObjectOrPodstancia = mObjectOrPodstancia;
         this.mWork = mWork;
         this.mDate = mDate;
@@ -48,6 +53,14 @@ public class FreeForm {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdForDB() {
+        return idForDB;
+    }
+
+    public void setIdForDB(int idForDB) {
+        this.idForDB = idForDB;
     }
 
     public String getmObjectOrPodstancia() {
