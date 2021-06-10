@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.protokols.MainActivity;
 import com.example.protokols.R;
@@ -56,6 +57,9 @@ public class ViewSilovoyTrans extends AppCompatActivity {
 
         // Получение объекта из БД
         SilovoyTrans silovoyTrans = getSilovoyTransFromBd();
+
+        // fklsvlkdfvkl
+        Toast.makeText(this, silovoyTrans.getIdForDB()+"", Toast.LENGTH_LONG).show();
 
         // Заполнение полей данными из объекта
         setTextToEditTextFromSilovoyTrans(silovoyTrans);
