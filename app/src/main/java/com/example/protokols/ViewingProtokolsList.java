@@ -160,9 +160,9 @@ public class ViewingProtokolsList extends AppCompatActivity {
                         if (work.equals("Испытание\nсилового\nтрансформатора")){
                             // Удаляем объект из БД
                             silovoyTransDao.deleteSilovoyTransbyID(classForViewingListProtocols.getId());
-                        } else if (work.equals("\nсилового\nтрансформатора")) {
+                        } else if (work.equals("Свободная форма")) {
                             // Удаляем объект из БД
-                            silovoyTransDao.deleteSilovoyTransbyID(classForViewingListProtocols.getId());
+                            freeFormDao.deleteFreeFormbyID(classForViewingListProtocols.getId());
                         }
 
                         // Заново берем данные из БД

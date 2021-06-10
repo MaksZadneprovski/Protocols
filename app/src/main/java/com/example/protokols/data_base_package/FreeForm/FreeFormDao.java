@@ -18,6 +18,9 @@ public interface FreeFormDao {
     @Query("SELECT * FROM FreeForm WHERE id = :id")
     FreeForm getFreeFormById(int id);
 
+    @Query("DELETE FROM FreeForm WHERE id = :id")
+    int deleteFreeFormbyID(int id);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertFreeFormList(List<FreeForm> freeFormList);
 
