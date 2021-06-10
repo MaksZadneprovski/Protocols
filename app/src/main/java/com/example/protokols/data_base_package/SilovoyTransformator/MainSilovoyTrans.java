@@ -111,7 +111,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    insertToBd();
+                    insertToBd(true);
             }
         });
     }
@@ -119,7 +119,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        insertToBd();
+        insertToBd(false);
     }
 
     // Метод обработки кнопки назад
@@ -142,7 +142,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createSilovoyTransFromEditText()
-    private void insertToBd() {
+    private void insertToBd(boolean save) {
 
         // Создание объекта  DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
@@ -181,14 +181,16 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
         }
         else  {
-            if(etObject.getText().toString().equals("")& (etDate.getText().toString().equals(""))){
-                Toast.makeText(MainSilovoyTrans.this, "Введите наименование объекта и дату", Toast.LENGTH_LONG).show();
-            }
-            else if(etDate.getText().toString().equals("")) {
-                Toast.makeText(MainSilovoyTrans.this, "Введите дату", Toast.LENGTH_LONG).show();
-            }
-            else if(etObject.getText().toString().equals("")) {
-                Toast.makeText(MainSilovoyTrans.this, "Введите наименование объекта", Toast.LENGTH_LONG).show();
+            if (save) {
+                if(etObject.getText().toString().equals("")& (etDate.getText().toString().equals(""))){
+                    Toast.makeText(MainSilovoyTrans.this, "Введите наименование объекта и дату", Toast.LENGTH_LONG).show();
+                }
+                else if(etDate.getText().toString().equals("")) {
+                    Toast.makeText(MainSilovoyTrans.this, "Введите дату", Toast.LENGTH_LONG).show();
+                }
+                else if(etObject.getText().toString().equals("")) {
+                    Toast.makeText(MainSilovoyTrans.this, "Введите наименование объекта", Toast.LENGTH_LONG).show();
+                }
             }
         }
     }
