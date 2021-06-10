@@ -7,9 +7,4 @@
     <item android:id="@+id/menuAddFreeform"
         android:title="Свободная форма"/>
 
-    <item android:id="@+id/qwe"
-        android:title="Object" />
-
-    <item android:id="@+id/ken"
-        android:title="Meterage " />
 </menu>

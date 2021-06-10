@@ -41,6 +41,12 @@ public class MainFreeForm extends AppCompatActivity {
         init();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        insertToBd();
+    }
+
     // Метод : Создает меню в тулбаре из указанного ресурса
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -116,7 +116,11 @@ public class MainSilovoyTrans extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    protected void onPause() {
+        super.onPause();
+        insertToBd();
+    }
 
     // Метод обработки кнопки назад
     @Override
