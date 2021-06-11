@@ -34,6 +34,7 @@ import java.util.Locale;
 public class MainFreeForm extends AppCompatActivity {
     private Date currentDate = new Date();
     private TextView tvWork;
+    private boolean flagForSave=true;
     private FloatingActionButton fabSave;
     private EditText etObject, etDate, etNotes;
     public SharedPreferences sharedPreferences;
@@ -86,6 +87,7 @@ public class MainFreeForm extends AppCompatActivity {
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                flagForSave = false;
                 insertToBd(true);
             }
         });
@@ -94,8 +96,9 @@ public class MainFreeForm extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        insertToBd(false);
-    }
+        if (flagForSave) {
+            insertToBd(false);
+        }}
 
 
     // Метод обработки кнопки назад

@@ -41,6 +41,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     TextView tvWork ,tvDiscrepancy1, tvDiscrepancy2;
     BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
+    private boolean flagForSave= true;
     private ConstraintLayout cLMeterage;
     private ImageButton btnSetConstantForRpn;
     private FloatingActionButton  fabSave;
@@ -107,9 +108,12 @@ public class MainSilovoyTrans extends AppCompatActivity {
         fabSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    insertToBd(true);
+                flagForSave = false;
+                insertToBd(true);
+
             }
         });
+
         btnSetConstantForRpn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,7 +125,9 @@ public class MainSilovoyTrans extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        insertToBd(false);
+        if (flagForSave) {
+            insertToBd(false);
+        }
     }
 
     // Метод обработки кнопки назад
