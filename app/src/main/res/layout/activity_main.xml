@@ -54,6 +54,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/min1"
                     style="@style/textInputEt"
+                    android:inputType="numberDecimal"
                     android:hint="min" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,6 +69,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/max1"
+                    android:inputType="numberDecimal"
                     style="@style/textInputEt"
                     android:hint="max" />
             </com.google.android.material.textfield.TextInputLayout>
