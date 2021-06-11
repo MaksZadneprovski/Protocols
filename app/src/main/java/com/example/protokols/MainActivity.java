@@ -127,12 +127,11 @@ public class    MainActivity extends AppCompatActivity {
 
         }
         tvDiscrepancyMain2.setText(
-                "1 ступень "+ s[0]+"%"+
-                        "\n\n2 ступень "+ s[1]+"%"+
-                        "\n\n3 ступень "+ s[2]+"%"+
-                        "\n\n4 ступень "+ s[3]+"%"+
-                        "\n\n5 ступень "+ s[4]+"%"+
-                        "\n\nОбмотки НН "+ s1+"%"
+                        "1  "+ result[0]+"%"+
+                        "\n\n2  "+ result[1]+"%"+
+                        "\n\n3  "+ result[2]+"%"+
+                        "\n\n4  "+ result[3]+"%"+
+                        "\n\n5  "+ result[4]+"%");
 
     }
 
