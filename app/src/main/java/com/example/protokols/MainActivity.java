@@ -30,7 +30,7 @@ public class    MainActivity extends AppCompatActivity {
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
-    public static int idForDB =0;
+    public static int idForDB;
 
 
     @Override
