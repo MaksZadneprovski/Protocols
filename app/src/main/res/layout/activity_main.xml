@@ -74,7 +74,137 @@
                     android:hint="max" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/min2L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min1L">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/min2"
+                    style="@style/textInputEt"
+                    android:inputType="numberDecimal"
+                    android:hint="min" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/max2L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min1L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/max2"
+                    android:inputType="numberDecimal"
+                    style="@style/textInputEt"
+                    android:hint="max" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/min3L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min2L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/min3"
+                    style="@style/textInputEt"
+                    android:inputType="numberDecimal"
+                    android:hint="min" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/max3L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min2L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/max3"
+                    android:inputType="numberDecimal"
+                    style="@style/textInputEt"
+                    android:hint="max" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/min4L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min3L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/min4"
+                    style="@style/textInputEt"
+                    android:inputType="numberDecimal"
+                    android:hint="min" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/max4L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min3L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/max4"
+                    android:inputType="numberDecimal"
+                    style="@style/textInputEt"
+                    android:hint="max" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/min5L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min4L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/min5"
+                    style="@style/textInputEt"
+                    android:inputType="numberDecimal"
+                    android:hint="min" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/max5L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min4L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/max5"
+                    android:inputType="numberDecimal"
+                    style="@style/textInputEt"
+                    android:hint="max" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
 
