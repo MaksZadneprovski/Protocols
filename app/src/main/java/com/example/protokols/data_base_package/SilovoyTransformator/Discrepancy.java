@@ -32,10 +32,10 @@ public class Discrepancy {
         double[] BC = transformationArr(phaseBC);
         double[] CA = transformationArr(phaseCA);
 
-        String[] result = new String[3];
+        String[] result = new String[5];
 
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 5; i++) {
             double max;
             double min;
             min = AB[i];
@@ -63,7 +63,7 @@ public class Discrepancy {
         double[] trans = new double[5];
         double d=0;
         String s;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             if (phase[i]!=null) {
                 d = Double.parseDouble(phase[i]);
                 s = String.format("%.3f",d);
