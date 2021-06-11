@@ -725,7 +725,7 @@
                     style="@style/TvForEt"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="0dp"
-                    android:text="Обмотки низкого напряжения"
+                    android:text="Расхождение"
                     android:textSize="@dimen/text14"
                     app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
                     app:layout_constraintTop_toBottomOf="@id/LL9" />
@@ -733,8 +733,9 @@
                 <TextView
                     android:id="@+id/tvDiscrepancy2"
                     style="@style/TvForEt"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="0dp"
+                    android:textColor="@color/grey"
                     android:text="Обмотки низкого напряжения"
                     android:textSize="@dimen/text14"
                     app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
