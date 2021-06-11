@@ -234,7 +234,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnSetMain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -242,6 +242,27 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/constL"/>
+
+                <TextView
+                    android:id="@+id/tvDiscrepancyMain1"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Процентное расхождение составило :"
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSetMain" />
+
+                <TextView
+                    android:id="@+id/tvDiscrepancyMain2"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="50dp"
+                    android:text=""
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvDiscrepancyMain1" />
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

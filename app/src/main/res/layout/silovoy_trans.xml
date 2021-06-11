@@ -777,7 +777,7 @@
                     style="@style/TvForEt"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="0dp"
-                    android:text="Процентное расхождение"
+                    android:text="Процентное расхождение составило :"
                     android:textSize="@dimen/text14"
                     app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
                     app:layout_constraintTop_toBottomOf="@id/etLRpnLvCn" />
