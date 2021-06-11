@@ -787,7 +787,6 @@
                     style="@style/TvForEt"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="0dp"
-                    android:textColor="@color/grey"
                     android:text=""
                     android:textSize="@dimen/text14"
                     app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
