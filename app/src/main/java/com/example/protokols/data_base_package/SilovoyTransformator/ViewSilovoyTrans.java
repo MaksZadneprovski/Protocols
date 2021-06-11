@@ -107,13 +107,14 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Расчет расхождения
         Discrepancy discrepancy = new Discrepancy();
         String[] s = discrepancy.countingDiscrepancy(silovoyTrans);
+        String s1 = discrepancy.countingDiscrepancyLV(silovoyTrans);
         tvDiscrepancy2.setText(
                 "1 ступень "+ s[0]+"%"+
                 "\n\n2 ступень "+ s[1]+"%"+
                 "\n\n3 ступень "+ s[2]+"%"+
                 "\n\n4 ступень "+ s[3]+"%"+
                 "\n\n5 ступень "+ s[4]+"%"+
-                "\n\nОбмотки НН "+ s[4]+"%"
+                "\n\nОбмотки НН "+ s1+"%"
         );
 
     } // Конец onCreate

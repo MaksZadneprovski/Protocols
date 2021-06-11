@@ -77,29 +77,36 @@ public class Discrepancy {
     }
 
     public String countingDiscrepancyLV(SilovoyTrans silovoyTrans){
-        String resultLV ;
-        double max;
-        double min;
-        double a = Double.parseDouble(silovoyTrans.getRpnLvAn());
-        double b = Double.parseDouble(silovoyTrans.getRpnLvBn());
-        double c = Double.parseDouble(silovoyTrans.getRpnLvCn());
-        min =a;
-        if (a>=b){
-            min = b;
-            if (b>=c) min = c;
-        }else {
-            if (a>c) min = c;
-        }
+        if (
+                !silovoyTrans.getRpnLvAn().isEmpty() &
+                !silovoyTrans.getRpnLvBn().isEmpty() &
+                !silovoyTrans.getRpnLvCn().isEmpty()
+        ){
+            String resultLV ;
+            double max;
+            double min;
+            double a = Double.parseDouble(silovoyTrans.getRpnLvAn());
+            double b = Double.parseDouble(silovoyTrans.getRpnLvBn());
+            double c = Double.parseDouble(silovoyTrans.getRpnLvCn());
+            min =a;
+            if (a>=b){
+                min = b;
+                if (b>=c) min = c;
+            }else {
+                if (a>c) min = c;
+            }
 
-        max = a;
-        if (a<=b){
-            max = b;
-            if (b<=c) max = c;
-        }else {
-            if (a<c) max = c;
+            max = a;
+            if (a<=b){
+                max = b;
+                if (b<=c) max = c;
+            }else {
+                if (a<c) max = c;
+            }
+            double res = (max-min)/min*100;
+            resultLV= String.format ("%.3f",res);
+            return resultLV;
         }
-        double res = (max-min)/min*100;
-         resultLV= String.format ("%.3f",res);
-         return resultLV;
+        return "0";
     }
 }
