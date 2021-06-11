@@ -113,20 +113,21 @@ public class    MainActivity extends AppCompatActivity {
 
     public void calculate(){
         double[] min={
-                Double.parseDouble(String.valueOf(min1.getText())),
-                Double.parseDouble(String.valueOf(min2.getText())),
-                Double.parseDouble(String.valueOf(min3.getText())),
-                Double.parseDouble(String.valueOf(min4.getText())),
-                Double.parseDouble(String.valueOf(min5.getText())),
-        };
+                Double.parseDouble((min1.getText()).toString()),
+                Double.parseDouble((min2.getText()).toString()),
+                Double.parseDouble((min3.getText()).toString()),
+                Double.parseDouble((min4.getText()).toString()),
+                Double.parseDouble((min5.getText()).toString())
+               };
         double[] max={
-                Double.parseDouble(String.valueOf(max1.getText())),
-                Double.parseDouble(String.valueOf(max2.getText())),
-                Double.parseDouble(String.valueOf(max3.getText())),
-                Double.parseDouble(String.valueOf(max4.getText())),
-                Double.parseDouble(String.valueOf(max5.getText())),
+                Double.parseDouble((max1.getText()).toString()),
+                Double.parseDouble((max2.getText()).toString()),
+                Double.parseDouble((max3.getText()).toString()),
+                Double.parseDouble((max4.getText()).toString()),
+                Double.parseDouble((max5.getText()).toString())
+
         };
-        String result[] = new String[4];
+        String result[] = new String[5];
 
         for (int i = 0; i < 5; i++) {
             double res = (max[i]-min[i])/min[i]*100;
