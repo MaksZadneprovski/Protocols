@@ -26,6 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Date;
+import java.util.List;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
     private TextView tvWork, tv10;
@@ -186,7 +187,14 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         etRpnLvCn.setText(silovoyTrans.getRpnLvCn().toString());
         etRpnLvBn.setText(silovoyTrans.getRpnLvBn().toString());
         etRpnLvAn.setText(silovoyTrans.getRpnLvAn().toString());
+
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    // Расчет расхождения
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////
 
     private void setUneditableEt(){
 
