@@ -64,7 +64,7 @@ public class Discrepancy {
         double d=0;
         String s;
         for (int i = 0; i < 5; i++) {
-            if (phase[i]!=null) {
+            if (phase[i]!=null & !phase[i].isEmpty()) {
                 d = Double.parseDouble(phase[i]);
                 s = String.format("%.3f",d);
                 if (s.indexOf(',')!=-1 ) s = s.replace(",",".");
