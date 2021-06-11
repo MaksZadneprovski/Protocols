@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.protokols.data_base_package.AppDelegateBd;
@@ -19,6 +20,7 @@ import com.example.protokols.data_base_package.SilovoyTransformator.MainSilovoyT
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTransDao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 // Добавил Resource Directory в res и выбрал  menu
 // Добавил в menu Resource Menu File
@@ -27,6 +29,8 @@ public class    MainActivity extends AppCompatActivity {
     private FloatingActionButton fabSave;
     private BottomNavigationView bottomNavigationView;
     public static SharedPreferences sharedPreferences;
+    private TextView tvDiscrepancyMain2;
+    private TextInputEditText min1,min2,min3,min4,min5,max1, max2,max3,max4,max5;
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
@@ -48,6 +52,16 @@ public class    MainActivity extends AppCompatActivity {
             idForDB=sharedPreferences.getInt("ID",0);
         }
 
+        max1 = findViewById(R.id.max1);
+        min1 =findViewById(R.id.min1);
+        max2 = findViewById(R.id.max2);
+        min2 =findViewById(R.id.min2);
+        max3 = findViewById(R.id.max3);
+        min3 =findViewById(R.id.min3);
+        max4 = findViewById(R.id.max4);
+        min4 =findViewById(R.id.min4);
+        max5 = findViewById(R.id.max5);
+        min5 =findViewById(R.id.min5);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         fabSave = findViewById(R.id.fabMain);
@@ -88,6 +102,38 @@ public class    MainActivity extends AppCompatActivity {
         idForDB++;
         editor.putInt("ID",MainActivity.idForDB);
         editor.apply();
+    }
+
+    public void calculate(){
+        double[] min={
+                Double.parseDouble(String.valueOf(min1.getText())),
+                Double.parseDouble(String.valueOf(min2.getText())),
+                Double.parseDouble(String.valueOf(min3.getText())),
+                Double.parseDouble(String.valueOf(min4.getText())),
+                Double.parseDouble(String.valueOf(min5.getText())),
+        };
+        double[] max={
+                Double.parseDouble(String.valueOf(max1.getText())),
+                Double.parseDouble(String.valueOf(max2.getText())),
+                Double.parseDouble(String.valueOf(max3.getText())),
+                Double.parseDouble(String.valueOf(max4.getText())),
+                Double.parseDouble(String.valueOf(max5.getText())),
+        };
+        String result[] = new String[4];
+
+        for (int i = 0; i < 5; i++) {
+            double res = (max[i]-min[i])/min[i]*100;
+             result[i] = String.format ("%.3f",res);
+
+        }
+        tvDiscrepancyMain2.setText(
+                "1 ступень "+ s[0]+"%"+
+                        "\n\n2 ступень "+ s[1]+"%"+
+                        "\n\n3 ступень "+ s[2]+"%"+
+                        "\n\n4 ступень "+ s[3]+"%"+
+                        "\n\n5 ступень "+ s[4]+"%"+
+                        "\n\nОбмотки НН "+ s1+"%"
+
     }
 
 }
