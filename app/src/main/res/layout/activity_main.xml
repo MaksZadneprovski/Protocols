@@ -47,7 +47,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LL1">
 
@@ -63,7 +63,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LL1">
 
@@ -79,7 +79,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min1L">
 
@@ -95,7 +95,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min1L">
 
@@ -113,7 +113,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min2L">
 
@@ -129,7 +129,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min2L">
 
@@ -147,7 +147,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min3L">
 
@@ -163,7 +163,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min3L">
 
@@ -179,7 +179,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min4L">
 
@@ -195,7 +195,7 @@
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="30dp"
+                android:layout_marginRight="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/min4L">
 
@@ -206,6 +206,30 @@
                     android:hint="max" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/constL"
+                style="@style/inTextForData"
+                android:layout_width="270dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/min5L">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/consta"
+                    android:inputType="numberDecimal"
+                    style="@style/textInputEt"
+                    android:hint="Установить значение полям" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Установить"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constL"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -243,6 +267,8 @@
         android:src="@drawable/ic_calculator"
         app:backgroundTint="#FFFFFF"
         app:layout_anchor="@id/bottomAppBar" />
+
+
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
