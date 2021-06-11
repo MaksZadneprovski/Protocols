@@ -43,19 +43,35 @@
                 app:layout_constraintTop_toBottomOf="@id/tv13" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/etLObject"
+                android:id="@+id/min1L"
                 style="@style/inTextForData"
                 android:layout_width="100dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginLeft="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LL1">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etObject"
+                    android:id="@+id/min1"
                     style="@style/textInputEt"
                     android:hint="min" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/max1L"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LL1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/max1"
+                    style="@style/textInputEt"
+                    android:hint="max" />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
 
 
