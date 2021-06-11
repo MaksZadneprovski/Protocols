@@ -107,7 +107,6 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Расчет расхождения
         Discrepancy discrepancy = new Discrepancy();
         String[] s = discrepancy.countingDiscrepancy(silovoyTrans);
-        Toast.makeText(this, s[0]+"   "+s[1]+"   "+s[2]+"   "+s[3]+"   "+s[4], Toast.LENGTH_LONG).show();
 
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////

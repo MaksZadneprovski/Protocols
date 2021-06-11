@@ -720,6 +720,27 @@
                     app:layout_constraintTop_toBottomOf="@+id/etLRpnHvCA6" />
 
 
+                <TextView
+                    android:id="@+id/tvDiscrepancy1"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:text="Обмотки низкого напряжения"
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
+                    app:layout_constraintTop_toBottomOf="@id/LL9" />
+
+                <TextView
+                    android:id="@+id/tvDiscrepancy2"
+                    style="@style/TvForEt"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="0dp"
+                    android:text="Обмотки низкого напряжения"
+                    android:textSize="@dimen/text14"
+                    app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
+                    app:layout_constraintTop_toBottomOf="@id/tvDiscrepancy1" />
+
+
 
                 <TextView
                     android:id="@+id/tv9"
@@ -729,7 +750,7 @@
                     android:text="Обмотки низкого напряжения"
                     android:textSize="@dimen/text14"
                     app:layout_constraintStart_toStartOf="@+id/etLRpnHvCA1"
-                    app:layout_constraintTop_toBottomOf="@id/LL9" />
+                    app:layout_constraintTop_toBottomOf="@id/tvDiscrepancy2" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/etLRpnLvAn"
