@@ -2,16 +2,13 @@ package com.example.protokols.data_base_package.SilovoyTransformator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,9 +21,6 @@ import com.example.protokols.utils.ConstantsMy;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
-
-import java.util.Date;
-import java.util.List;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
     private TextView tvWork, tv10;
@@ -107,6 +101,11 @@ public class ViewSilovoyTrans extends AppCompatActivity {
                 return true;
             }
         });
+
+        // Расчет расхождения
+        Discrepancy discrepancy = new Discrepancy();
+        double[] d = discrepancy.countingDiscrepancy(silovoyTrans);
+        Toast.makeText(this,d.toString()+"yo", Toast.LENGTH_LONG).show();
 
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -191,7 +190,6 @@ public class ViewSilovoyTrans extends AppCompatActivity {
     }
     ///////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////
-    // Расчет расхождения
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////

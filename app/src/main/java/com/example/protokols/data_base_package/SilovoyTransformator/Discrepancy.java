@@ -1,8 +1,8 @@
 package com.example.protokols.data_base_package.SilovoyTransformator;
 
-public class CountingDiscrepancy {
+public class Discrepancy {
 
-    private double[] countingDiscrepancy(SilovoyTrans silovoyTrans){
+    public double[] countingDiscrepancy(SilovoyTrans silovoyTrans){
 
         String[] phaseAB = {
                 silovoyTrans.getRpnHvAB1(),
@@ -37,17 +37,17 @@ public class CountingDiscrepancy {
             double max;
             double min;
             min = AB[i];
-            if (AB[i]>BC[i]){
+            if (AB[i]>=BC[i]){
                 min = BC[i];
-                if (BC[i]>CA[i]) min = CA[i];
+                if (BC[i]>=CA[i]) min = CA[i];
             }else {
                 if (AB[i]>CA[i]) min = CA[i];
             }
 
             max = AB[i];
-            if (AB[i]<BC[i]){
+            if (AB[i]<=BC[i]){
                 max = BC[i];
-                if (BC[i]<CA[i]) max = CA[i];
+                if (BC[i]<=CA[i]) max = CA[i];
             }else {
                 if (AB[i]<CA[i]) max = CA[i];
             }
@@ -60,7 +60,11 @@ public class CountingDiscrepancy {
     private double[] transformationArr(String[] phase){
         double[] trans = new double[5];
         for (int i = 0; i < 4; i++) {
-            trans[i] = Double.parseDouble(phase[i]);
+            if (phase[i]!=null) {
+                trans[i] = Double.parseDouble(phase[i]);
+            } else {
+                trans[i]=1;
+            }
         }
         return trans;
     }
