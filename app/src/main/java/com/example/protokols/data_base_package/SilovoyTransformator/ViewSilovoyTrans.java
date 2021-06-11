@@ -25,7 +25,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Arrays;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
-    private TextView tvWork, tv10;
+    private TextView tvWork, tv10,tvDiscrepancy1, tvDiscrepancy2;
     private BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
@@ -107,6 +107,13 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // Расчет расхождения
         Discrepancy discrepancy = new Discrepancy();
         String[] s = discrepancy.countingDiscrepancy(silovoyTrans);
+        tvDiscrepancy2.setText(
+                "1 ступень"+ s[0]+
+                "\n2 ступень"+ s[1]+
+                "\n3 ступень"+ s[2]+
+                "\n4 ступень"+ s[3]+
+                "\n5 ступень"+ s[4]
+        );
 
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -410,6 +417,11 @@ public class ViewSilovoyTrans extends AppCompatActivity {
         // TextView
         tvWork= findViewById(R.id.tvWork);
         tv10= findViewById(R.id.tv10);
+        tvDiscrepancy1= findViewById(R.id.tvDiscrepancy1);
+        tvDiscrepancy2= findViewById(R.id.tvDiscrepancy2);
+        tvDiscrepancy1.setVisibility(View.GONE);
+        tvDiscrepancy2.setVisibility(View.GONE);
+
 
         // EditText
         etObject = findViewById(R.id.etObject);

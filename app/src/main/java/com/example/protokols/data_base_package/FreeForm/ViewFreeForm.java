@@ -89,6 +89,7 @@ public class ViewFreeForm extends AppCompatActivity {
             }
         });
 
+
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -161,6 +162,7 @@ public class ViewFreeForm extends AppCompatActivity {
 
         // TextView
         tvWork= findViewById(R.id.tvWorkFreeForm);
+
 
         // EditText
         etObject = findViewById(R.id.etObjectFreeForm);
