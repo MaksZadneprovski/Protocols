@@ -32,7 +32,7 @@ public class Discrepancy {
         double[] BC = transformationArr(phaseBC);
         double[] CA = transformationArr(phaseCA);
 
-        String[] result = new String[5];
+        String[] resultHV = new String[5];
 
 
         for (int i = 0; i < 5; i++) {
@@ -54,9 +54,9 @@ public class Discrepancy {
                 if (AB[i]<CA[i]) max = CA[i];
             }
             double res = (max-min)/min*100;
-            result[i] = String.format ("%.3f",res);
+            resultHV[i] = String.format ("%.3f",res);
         }
-        return result;
+        return resultHV;
     }
 
     private double[] transformationArr(String[] phase){
@@ -74,5 +74,32 @@ public class Discrepancy {
             }
         }
         return trans;
+    }
+
+    public String countingDiscrepancyLV(SilovoyTrans silovoyTrans){
+        String resultLV ;
+        double max;
+        double min;
+        double a = Double.parseDouble(silovoyTrans.getRpnLvAn());
+        double b = Double.parseDouble(silovoyTrans.getRpnLvBn());
+        double c = Double.parseDouble(silovoyTrans.getRpnLvCn());
+        min =a;
+        if (a>=b){
+            min = b;
+            if (b>=c) min = c;
+        }else {
+            if (a>c) min = c;
+        }
+
+        max = a;
+        if (a<=b){
+            max = b;
+            if (b<=c) max = c;
+        }else {
+            if (a<c) max = c;
+        }
+        double res = (max-min)/min*100;
+         resultLV= String.format ("%.3f",res);
+         return resultLV;
     }
 }

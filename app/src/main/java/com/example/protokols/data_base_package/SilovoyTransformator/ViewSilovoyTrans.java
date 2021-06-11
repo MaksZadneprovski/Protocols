@@ -112,7 +112,8 @@ public class ViewSilovoyTrans extends AppCompatActivity {
                 "\n\n2 ступень "+ s[1]+"%"+
                 "\n\n3 ступень "+ s[2]+"%"+
                 "\n\n4 ступень "+ s[3]+"%"+
-                "\n\n5 ступень "+ s[4]+"%"
+                "\n\n5 ступень "+ s[4]+"%"+
+                "\n\nОбмотки НН "+ s[4]+"%"
         );
 
     } // Конец onCreate
