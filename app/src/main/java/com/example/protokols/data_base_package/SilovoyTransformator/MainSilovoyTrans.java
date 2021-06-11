@@ -38,7 +38,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainSilovoyTrans extends AppCompatActivity {
-    TextView tvWork;
+    TextView tvWork ,tvDiscrepancy1, tvDiscrepancy2;
     BottomNavigationView bottomNavigationView;
     private ConstraintLayout cLObject;
     private ConstraintLayout cLMeterage;
@@ -310,6 +310,10 @@ public class MainSilovoyTrans extends AppCompatActivity {
         btnSetConstantForRpn =findViewById(R.id.fabSetConstant);
         // TextView
         tvWork= findViewById(R.id.tvWork);
+        tvDiscrepancy1= findViewById(R.id.tvDiscrepancy1);
+        tvDiscrepancy2= findViewById(R.id.tvDiscrepancy2);
+        tvDiscrepancy1.setVisibility(View.GONE);
+        tvDiscrepancy2.setVisibility(View.GONE);
 
         // Date setting
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
