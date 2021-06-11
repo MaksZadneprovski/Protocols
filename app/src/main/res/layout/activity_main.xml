@@ -6,40 +6,65 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvWork"
-        style="@style/Title"
-        android:layout_height="50dp"
-        android:background="@drawable/bg_title"
-        android:textSize="@dimen/text18"
-        android:text="Калькулятор"
-        android:textAlignment="center" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv13"
-            style="@style/TvForEt"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:text="Данные объекта измерения"
+            android:id="@+id/tvWork"
+            style="@style/Title"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_title"
             android:textSize="@dimen/text18"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Калькулятор"
+            android:textAlignment="center" />
 
-        <LinearLayout
-            android:id="@+id/LL1"
-            style="@style/Line"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv0" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
+            <TextView
+                android:id="@+id/tv13"
+                style="@style/TvForEt"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:text="Введите значения"
+                android:textSize="@dimen/text18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <LinearLayout
+                android:id="@+id/LL1"
+                style="@style/Line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv13" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etLObject"
+                style="@style/inTextForData"
+                android:layout_width="100dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LL1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etObject"
+                    style="@style/textInputEt"
+                    android:hint="min" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
 
 
     <com.google.android.material.bottomappbar.BottomAppBar
