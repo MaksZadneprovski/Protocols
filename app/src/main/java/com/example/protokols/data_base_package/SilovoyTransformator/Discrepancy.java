@@ -1,8 +1,10 @@
 package com.example.protokols.data_base_package.SilovoyTransformator;
 
+import java.text.DecimalFormat;
+
 public class Discrepancy {
 
-    public double[] countingDiscrepancy(SilovoyTrans silovoyTrans){
+    public String[] countingDiscrepancy(SilovoyTrans silovoyTrans){
 
         String[] phaseAB = {
                 silovoyTrans.getRpnHvAB1(),
@@ -30,10 +32,10 @@ public class Discrepancy {
         double[] BC = transformationArr(phaseBC);
         double[] CA = transformationArr(phaseCA);
 
-        double[] result = new double[5];
+        String[] result = new String[3];
 
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             double max;
             double min;
             min = AB[i];
@@ -51,17 +53,22 @@ public class Discrepancy {
             }else {
                 if (AB[i]<CA[i]) max = CA[i];
             }
-
-            result[i] = (max-min)/min;
+            double res = (max-min)/min*100;
+            result[i] = String.format ("%.3f",res);
         }
         return result;
     }
 
     private double[] transformationArr(String[] phase){
         double[] trans = new double[5];
+        double d=0;
+        String s;
         for (int i = 0; i < 4; i++) {
             if (phase[i]!=null) {
-                trans[i] = Double.parseDouble(phase[i]);
+                d = Double.parseDouble(phase[i]);
+                s = String.format("%.3f",d);
+                if (s.indexOf(',')!=-1 ) s = s.replace(",",".");
+                trans[i] = Double.parseDouble(s);
             } else {
                 trans[i]=1;
             }

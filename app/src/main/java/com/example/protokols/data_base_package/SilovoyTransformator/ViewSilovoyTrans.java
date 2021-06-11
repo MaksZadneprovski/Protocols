@@ -22,6 +22,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Arrays;
+
 public class ViewSilovoyTrans extends AppCompatActivity {
     private TextView tvWork, tv10;
     private BottomNavigationView bottomNavigationView;
@@ -104,8 +106,8 @@ public class ViewSilovoyTrans extends AppCompatActivity {
 
         // Расчет расхождения
         Discrepancy discrepancy = new Discrepancy();
-        double[] d = discrepancy.countingDiscrepancy(silovoyTrans);
-        Toast.makeText(this,d.toString()+"yo", Toast.LENGTH_LONG).show();
+        String[] s = discrepancy.countingDiscrepancy(silovoyTrans);
+        Toast.makeText(this, s[0]+"   "+s[1]+"   "+s[2]+"   "+s[3]+"   "+s[4], Toast.LENGTH_LONG).show();
 
     } // Конец onCreate
     ////////////////////////////////////////////////////////////////////////////////////////////
