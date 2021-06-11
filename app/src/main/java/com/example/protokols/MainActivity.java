@@ -26,7 +26,7 @@ import com.google.android.material.textfield.TextInputEditText;
 // Добавил в menu Resource Menu File
 public class    MainActivity extends AppCompatActivity {
     private Toolbar toolbarMain;
-    private FloatingActionButton fabSave;
+    private FloatingActionButton fabCalc;
     private BottomNavigationView bottomNavigationView;
     public static SharedPreferences sharedPreferences;
     private TextView tvDiscrepancyMain2;
@@ -64,7 +64,7 @@ public class    MainActivity extends AppCompatActivity {
         min5 =findViewById(R.id.min5);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
-        fabSave = findViewById(R.id.fabMain);
+        fabCalc = findViewById(R.id.fabMain);
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
         bottomNavigationView.getMenu().getItem(2).setIcon(R.drawable.dot_white);
@@ -92,6 +92,13 @@ public class    MainActivity extends AppCompatActivity {
 
                 }
                 return true;
+            }
+        });
+
+        fabCalc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calculate();
             }
         });
 
