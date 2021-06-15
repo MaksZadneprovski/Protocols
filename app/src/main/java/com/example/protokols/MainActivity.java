@@ -128,13 +128,17 @@ public class    MainActivity extends AppCompatActivity {
                 Double.parseDouble((max5.getText()).toString())
 
         };
-        Double result[] = new Double[5];
+        String result[] = new String[5];
         String s ;
+
         for (int i = 0; i < 5; i++) {
-            double res = (max[i]-min[i])/min[i]*100;
-            s = String.format ("%.3f",res);
-            if (s.indexOf(',')!=-1 ) s = s.replace(",",".");
-            result[i] = Double.parseDouble(s);
+            if (result[i]!=null & !result[i].isEmpty()) {
+                double res = (max[i]-min[i])/min[i]*100;
+                s = String.format ("%.3f",res);
+                if (s.indexOf(',')!=-1 ) s = s.replace(",",".");
+                result[i] = s;
+            }
+            else result[i]= "1";
 
 
         }
@@ -143,7 +147,9 @@ public class    MainActivity extends AppCompatActivity {
                         "\n\n2  "+ result[1].toString()+"%"+
                         "\n\n3  "+ result[2].toString()+"%"+
                         "\n\n4  "+ result[3].toString()+"%"+
-                        "\n\n5  "+ result[4].toString()+"%");
+                        "\n\n5  "+ result[4].toString()+"%"+
+                        "\n\n\n\n\n\n\n"
+                );
 
     }
 
