@@ -5,9 +5,9 @@
     <application
         android:name=".data_base_package.AppDelegateBd"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_cetl"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_cetl"
         android:supportsRtl="true"
         android:theme="@style/Theme.Protokols">
         <activity android:name=".data_base_package.FreeForm.MainFreeForm" android:windowSoftInputMode="adjustPan"/>
