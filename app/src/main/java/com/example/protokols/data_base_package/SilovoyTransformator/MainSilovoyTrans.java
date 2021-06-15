@@ -33,6 +33,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -113,7 +114,11 @@ public class MainSilovoyTrans extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 flagForSave = false;
-                insertToBd(true);
+                try {
+                    insertToBd(true);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
 
             }
         });
@@ -130,7 +135,11 @@ public class MainSilovoyTrans extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if (flagForSave) {
-            insertToBd(false);
+            try {
+                insertToBd(false);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -154,7 +163,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createSilovoyTransFromEditText()
-    private void insertToBd(boolean save) {
+    private void insertToBd(boolean save) throws ParseException {
 
         // Создание объекта  DAO для работы с БД
         SilovoyTransDao silovoyTransDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getSilovoyTransTableDao();
@@ -208,11 +217,12 @@ public class MainSilovoyTrans extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 3 Метод : создает объект SilovoyTrans по введенным данным в EditText-ы
-    private SilovoyTrans createSilovoyTransFromEditText() {
+    private SilovoyTrans createSilovoyTransFromEditText() throws ParseException {
         String object = etObject.getText().toString();
         String work = "Испытание\nсилового\nтрансформатора";
-        long date = currentDate.getTime();
-        String temperature = etTemperature.getText().toString();
+        long date=1;
+        Date d = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(etDate.getText().toString());
+        date = d.getTime();        String temperature = etTemperature.getText().toString();
         String PasportType = etPasportType.getText().toString();
         String PasportZavNumber = etPasportZavNumber.getText().toString();
         String PasportPower = etPasportPower.getText().toString();

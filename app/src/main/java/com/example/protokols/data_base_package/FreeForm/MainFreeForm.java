@@ -91,7 +91,11 @@ public class MainFreeForm extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 flagForSave = false;
-                insertToBd(true);
+                try {
+                    insertToBd(true);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -100,7 +104,11 @@ public class MainFreeForm extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if (flagForSave) {
-            insertToBd(false);
+            try {
+                insertToBd(false);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
         }}
 
 
@@ -124,7 +132,7 @@ public class MainFreeForm extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 2 Метод : Запись в БД. Проверяет EditText-ы на заполненность и записывает в БД объект, который создается методом createFreeFormFromEditText()
-    private void insertToBd(Boolean save) {
+    private void insertToBd(Boolean save) throws ParseException {
 
         // Создание объекта  DAO для работы с БД
         FreeFormDao freeFormDao = ((AppDelegateBd)getApplicationContext()).getAppDatabaseClass().getFreeFormTableDao();
@@ -182,12 +190,8 @@ public class MainFreeForm extends AppCompatActivity {
         String object = etObject.getText().toString();
         String work = tvWork.getText().toString();
         long date=1;
-        if (!MainActivity.isEditSilovoyTrans){
-            date = currentDate.getTime();
-        }else {
-            Date d = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(etDate.getText().toString());
-             date = d.getTime();
-        }
+        Date d = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(etDate.getText().toString());
+        date = d.getTime();
 
         String notes = etNotes.getText().toString();
 
