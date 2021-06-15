@@ -209,7 +209,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
             int id = silovoyTransList.get(i).getId();
             String object = silovoyTransList.get(i).getmObjectOrPodstancia();
             String work = silovoyTransList.get(i).getmWork();
-            String date = silovoyTransList.get(i).getmDate();
+            long date = silovoyTransList.get(i).getmDate();
             ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id,work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
@@ -219,7 +219,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
             int id = freeFormList.get(i).getId();
             String object = freeFormList.get(i).getmObjectOrPodstancia();
             String work = freeFormList.get(i).getmWork();
-            String date = freeFormList.get(i).getmDate();
+            long date = freeFormList.get(i).getmDate();
             ClassForViewingListProtocols classForViewingListProtocols = new ClassForViewingListProtocols(id, work,object,date);
             arrayList.add(i,classForViewingListProtocols);
         }
@@ -227,20 +227,11 @@ public class ViewingProtokolsList extends AppCompatActivity {
         Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-                String s1 = o1.getDate();
-                String s2 = o2.getDate();
 
-                Date d1 = null;
-                Date d2 = null;
-                try {
-                    d1 = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(s1);
-                    d2 = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(s2);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
 
-                if (d1.compareTo(d2) > 0) return 1;
-                if (d2.compareTo(d1) < 0) return -1;
+
+                if (l1 < l2) return 1;
+                if (l1 > l2) return -1;
                 else return 0;
             }
         });

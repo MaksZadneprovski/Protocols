@@ -54,6 +54,10 @@ public class MainSilovoyTrans extends AppCompatActivity {
             etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etSetConstantForRpn;
     public final String TAG = "MyLogger";
 
+    // Date setting
+    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -207,7 +211,7 @@ public class MainSilovoyTrans extends AppCompatActivity {
     private SilovoyTrans createSilovoyTransFromEditText() {
         String object = etObject.getText().toString();
         String work = "Испытание\nсилового\nтрансформатора";
-        String date = etDate.getText().toString();
+        long date = currentDate.getTime();
         String temperature = etTemperature.getText().toString();
         String PasportType = etPasportType.getText().toString();
         String PasportZavNumber = etPasportZavNumber.getText().toString();
@@ -260,9 +264,10 @@ public class MainSilovoyTrans extends AppCompatActivity {
 
     // 6 Метод : Заполняет EditText-ы данными из объекта silovoyTrans в случае редактирования
     private void setTextToEditTextFromSilovoyTrans(SilovoyTrans silovoyTrans){
+
         tvWork.setText("Редактирование\nпротокола");
         etObject.setText(silovoyTrans.getmObjectOrPodstancia().toString());
-        etDate.setText(silovoyTrans.getmDate().toString());
+        etDate.setText(dateFormat.format(silovoyTrans.getmDate()) );
         etTemperature.setText(silovoyTrans.getmTemperature().toString());
         etPasportCurrent.setText(silovoyTrans.getPasportCurrent().toString());
         etPasportPower.setText(silovoyTrans.getPasportPower().toString());
@@ -318,8 +323,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
         tvDiscrepancy1.setVisibility(View.GONE);
         tvDiscrepancy2.setVisibility(View.GONE);
 
-        // Date setting
-        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         // EditText
         etObject = findViewById(R.id.etObject);
         etDate = findViewById(R.id.etDate);
@@ -363,7 +366,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
         etRpnLvAn = findViewById(R.id.etRpnLvAn);
         etSetConstantForRpn = findViewById(R.id.etSetConstantForRpn);
 
-        sharedPreferences = getSharedPreferences("IdPreferences",MODE_PRIVATE);
 
 
 

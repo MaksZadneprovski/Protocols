@@ -19,7 +19,7 @@ public class FreeForm {
     public String mWork;
 
     @ColumnInfo(name = "Date")
-    public String mDate;
+    public long mDate;
 
     @ColumnInfo(name = "Notes")
     public String Notes;
@@ -27,7 +27,7 @@ public class FreeForm {
     public FreeForm() {
     }
 
-    public FreeForm(int id, String mObjectOrPodstancia, String mWork, String mDate, String notes) {
+    public FreeForm(int id, String mObjectOrPodstancia, String mWork, long mDate, String notes) {
         this.id = id;
         this.mObjectOrPodstancia = mObjectOrPodstancia;
         this.mWork = mWork;
@@ -36,7 +36,7 @@ public class FreeForm {
     }
 
     @Ignore
-    public FreeForm( String mObjectOrPodstancia, String mWork, String mDate, String notes) {
+    public FreeForm( String mObjectOrPodstancia, String mWork, long mDate, String notes) {
         this.mObjectOrPodstancia = mObjectOrPodstancia;
         this.mWork = mWork;
         this.mDate = mDate;
@@ -67,11 +67,11 @@ public class FreeForm {
         this.mWork = mWork;
     }
 
-    public String getmDate() {
+    public long getmDate() {
         return mDate;
     }
 
-    public void setmDate(String mDate) {
+    public void setmDate(long mDate) {
         this.mDate = mDate;
     }
 

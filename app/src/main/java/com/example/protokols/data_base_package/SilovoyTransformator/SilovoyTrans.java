@@ -22,7 +22,7 @@ public class SilovoyTrans {
     public String mWork;
 
     @ColumnInfo(name = "Date")
-    public String mDate;
+    public long mDate;
 
     @ColumnInfo(name = "Temperature")
     public String mTemperature;
@@ -143,7 +143,7 @@ public class SilovoyTrans {
     public SilovoyTrans() {
     }
 
-    public SilovoyTrans(int id,  String mObjectOrPodstancia, String mWork, String mDate, String mTemperature, String pasportType, String pasportZavNumber,
+    public SilovoyTrans(int id,  String mObjectOrPodstancia, String mWork, long mDate, String mTemperature, String pasportType, String pasportZavNumber,
                         String pasportPower, String pasportVoltage, String pasportCurrent, String pasportVoltageKz, String pasportYearOfManufacture,
                         String izolHvR15, String izolHvR60, String izolHvKoef, String izolLvR15, String izolLvR60, String izolLvKoef, String switchOperationPosition,
                         String rpnHvAB1, String rpnHvAB2, String rpnHvAB3, String rpnHvAB4, String rpnHvAB5, String rpnHvAB6, String rpnHvBC1, String rpnHvBC2,
@@ -193,7 +193,7 @@ public class SilovoyTrans {
     }
 
     @Ignore
-    public SilovoyTrans( String mObjectOrPodstancia, String mWork, String mDate, String mTemperature, String pasportType, String pasportZavNumber,
+    public SilovoyTrans( String mObjectOrPodstancia, String mWork, long mDate, String mTemperature, String pasportType, String pasportZavNumber,
                         String pasportPower, String pasportVoltage, String pasportCurrent, String pasportVoltageKz, String pasportYearOfManufacture,
                         String izolHvR15, String izolHvR60, String izolHvKoef, String izolLvR15, String izolLvR60, String izolLvKoef, String switchOperationPosition,
                         String rpnHvAB1, String rpnHvAB2, String rpnHvAB3, String rpnHvAB4, String rpnHvAB5, String rpnHvAB6, String rpnHvBC1, String rpnHvBC2,
@@ -267,11 +267,11 @@ public class SilovoyTrans {
         this.mWork = mWork;
     }
 
-    public String getmDate() {
+    public long getmDate() {
         return mDate;
     }
 
-    public void setmDate(String mDate) {
+    public void setmDate(long mDate) {
         this.mDate = mDate;
     }
 

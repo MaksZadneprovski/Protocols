@@ -33,6 +33,8 @@ import java.util.Locale;
 
 public class MainFreeForm extends AppCompatActivity {
     private Date currentDate = new Date();
+    // Date setting
+    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
     private TextView tvWork;
     private boolean flagForSave=true;
     private FloatingActionButton fabSave;
@@ -178,7 +180,7 @@ public class MainFreeForm extends AppCompatActivity {
     private FreeForm createFreeFormFromEditText() {
         String object = etObject.getText().toString();
         String work = tvWork.getText().toString();
-        String date = etDate.getText().toString();
+        long date = currentDate.getTime();
         String notes = etNotes.getText().toString();
 
         FreeForm freeForm = new FreeForm( object,work,date,notes);
@@ -188,7 +190,7 @@ public class MainFreeForm extends AppCompatActivity {
     // 6 Метод : Заполняет EditText-ы данными из объекта freeform в случае редактирования
     private void setTextToEditTextFromFreeForm(FreeForm freeForm){
         etObject.setText(freeForm.getmObjectOrPodstancia().toString());
-        etDate.setText(freeForm.getmDate().toString());
+        etDate.setText(dateFormat.format(freeForm.getmDate()));
         etNotes.setText(freeForm.getNotes().toString());
     }
 
@@ -197,8 +199,6 @@ public class MainFreeForm extends AppCompatActivity {
         etObject = findViewById(R.id.etObjectFreeForm);
         etDate = findViewById(R.id.etDateFreeForm);
 
-        // Date setting
-        DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
         etDate.setText(dateFormat.format(currentDate));
         etNotes = findViewById(R.id.etNotesFreeForm);
         fabSave = findViewById(R.id.fabSilovoyTrans);

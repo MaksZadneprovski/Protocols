@@ -14,11 +14,12 @@ import java.util.List;
 
 public class ClassForViewingListProtocols extends AppCompatActivity {
     private int id;
-    private String work, object, date;
+    private String work, object;
+    private long date;
     private Toolbar toolbarMain;
 
 
-    public ClassForViewingListProtocols(int id, String work, String object, String date) {
+    public ClassForViewingListProtocols(int id, String work, String object, long date) {
         this.id = id;
         this.work = work;
         this.object = object;
@@ -35,7 +36,7 @@ public class ClassForViewingListProtocols extends AppCompatActivity {
         return object;
     }
 
-    public String getDate() {
+    public long getDate() {
         return date;
     }
 
@@ -47,7 +48,7 @@ public class ClassForViewingListProtocols extends AppCompatActivity {
         this.object = object;
     }
 
-    public void setDate(String date) {
+    public void setDate(long date) {
         this.date = date;
     }
 
