@@ -117,22 +117,22 @@ public class MainActivity extends AppCompatActivity {
         } else {
             min[0] = 1;
         }
-        if (!(min1.getText()).toString().isEmpty()) {
+        if (!(min2.getText()).toString().isEmpty()) {
             min[1] = Double.parseDouble((min2.getText()).toString());
         } else {
             min[1] = 1;
         }
-        if (!(min1.getText()).toString().isEmpty()) {
+        if (!(min3.getText()).toString().isEmpty()) {
             min[2] = Double.parseDouble((min3.getText()).toString());
         } else {
             min[2] = 1;
         }
-        if (!(min1.getText()).toString().isEmpty()) {
+        if (!(min4.getText()).toString().isEmpty()) {
             min[3] = Double.parseDouble((min4.getText()).toString());
         } else {
             min[3] = 1;
         }
-        if (!(min1.getText()).toString().isEmpty()) {
+        if (!(min5.getText()).toString().isEmpty()) {
             min[4] = Double.parseDouble((min5.getText()).toString());
         } else {
             min[4] = 1;
@@ -145,22 +145,22 @@ public class MainActivity extends AppCompatActivity {
         } else {
             max[0] = 1;
         }
-        if (!(max1.getText()).toString().isEmpty()) {
+        if (!(max2.getText()).toString().isEmpty()) {
             max[1] = Double.parseDouble((max2.getText()).toString());
         } else {
             max[1] = 1;
         }
-        if (!(max1.getText()).toString().isEmpty()) {
+        if (!(max3.getText()).toString().isEmpty()) {
             max[2] = Double.parseDouble((max3.getText()).toString());
         } else {
             max[2] = 1;
         }
-        if (!(max1.getText()).toString().isEmpty()) {
+        if (!(max4.getText()).toString().isEmpty()) {
             max[3] = Double.parseDouble((max4.getText()).toString());
         } else {
             max[3] = 1;
         }
-        if (!(max1.getText()).toString().isEmpty()) {
+        if (!(max5.getText()).toString().isEmpty()) {
             max[4] = Double.parseDouble((max5.getText()).toString());
         } else {
             max[4] = 1;
