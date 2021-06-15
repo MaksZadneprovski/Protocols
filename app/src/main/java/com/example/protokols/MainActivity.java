@@ -132,6 +132,7 @@ public class    MainActivity extends AppCompatActivity {
         for (int i = 0; i < 5; i++) {
             double res = (max[i]-min[i])/min[i]*100;
             s = String.format ("%.3f",res);
+            if (s.indexOf(',')!=-1 ) s = s.replace(",",".");
             result[i] = Double.parseDouble(s);
 
 
