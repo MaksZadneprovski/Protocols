@@ -225,8 +225,8 @@ public class ViewingProtokolsList extends AppCompatActivity {
         Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-                if (o1.getIdForBD()<o2.getIdForBD()) return 1;
-                else if (o1.getIdForBD()>o2.getIdForBD()) return -1;
+                if (o1.getDate().compareTo(o2.getDate()) == 1) return -1;
+                if (o1.getDate().compareTo(o2.getDate()) == -1) return 1;
                 else return 0;
             }
         });
