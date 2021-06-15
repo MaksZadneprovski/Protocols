@@ -52,16 +52,16 @@ public class    MainActivity extends AppCompatActivity {
             idForDB=sharedPreferences.getInt("ID",0);
         }
 
-        max1 = findViewById(R.id.max1L);
-        min1 =findViewById(R.id.min1L);
-        max2 = findViewById(R.id.max2L);
-        min2 =findViewById(R.id.min2L);
-        max3 = findViewById(R.id.max3L);
-        min3 =findViewById(R.id.min3L);
-        max4 = findViewById(R.id.max4L);
-        min4 =findViewById(R.id.min4L);
-        max5 = findViewById(R.id.max5L);
-        min5 =findViewById(R.id.min5L);
+        max1 = findViewById(R.id.max1);
+        min1 =findViewById(R.id.min1);
+        max2 = findViewById(R.id.max2);
+        min2 =findViewById(R.id.min2);
+        max3 = findViewById(R.id.max3);
+        min3 =findViewById(R.id.min3);
+        max4 = findViewById(R.id.max4);
+        min4 =findViewById(R.id.min4);
+        max5 = findViewById(R.id.max5);
+        min5 =findViewById(R.id.min5);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         fabCalc = findViewById(R.id.fabMain);
@@ -127,11 +127,12 @@ public class    MainActivity extends AppCompatActivity {
                 Double.parseDouble((max5.getText()).toString())
 
         };
-        String result[] = new String[5];
-
+        Double result[] = new Double[5];
+        String s ;
         for (int i = 0; i < 5; i++) {
             double res = (max[i]-min[i])/min[i]*100;
-            result[i] = String.format ("%.3f",res);
+            s = String.format ("%.3f",res);
+            result[i] = Double.parseDouble(s);
 
 
         }
