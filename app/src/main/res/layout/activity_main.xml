@@ -59,7 +59,8 @@
                         android:id="@+id/min1"
                         style="@style/textInputEt"
                         android:inputType="numberDecimal"
-                        android:hint="min" />
+                        android:hint="min"
+                        android:nextFocusDown="@id/max1"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -75,6 +76,7 @@
                         android:id="@+id/max1"
                         android:inputType="numberDecimal"
                         style="@style/textInputEt"
+                        android:nextFocusDown="@id/min2"
                         android:hint="max" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,6 +93,7 @@
                         android:id="@+id/min2"
                         style="@style/textInputEt"
                         android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/max2"
                         android:hint="min" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,6 +110,7 @@
                         android:id="@+id/max2"
                         android:inputType="numberDecimal"
                         style="@style/textInputEt"
+                        android:nextFocusDown="@id/min3"
                         android:hint="max" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -125,6 +129,7 @@
                         android:id="@+id/min3"
                         style="@style/textInputEt"
                         android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/max3"
                         android:hint="min" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,6 +146,7 @@
                         android:id="@+id/max3"
                         android:inputType="numberDecimal"
                         style="@style/textInputEt"
+                        android:nextFocusDown="@id/min4"
                         android:hint="max" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -159,6 +165,7 @@
                         android:id="@+id/min4"
                         style="@style/textInputEt"
                         android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/max4"
                         android:hint="min" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -175,6 +182,7 @@
                         android:id="@+id/max4"
                         android:inputType="numberDecimal"
                         style="@style/textInputEt"
+                        android:nextFocusDown="@id/min5"
                         android:hint="max" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -191,6 +199,7 @@
                         android:id="@+id/min5"
                         style="@style/textInputEt"
                         android:inputType="numberDecimal"
+                        android:nextFocusDown="@id/max5"
                         android:hint="min" />
                 </com.google.android.material.textfield.TextInputLayout>
 
