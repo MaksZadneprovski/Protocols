@@ -32,6 +32,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -44,7 +45,6 @@ public class ViewingProtokolsList extends AppCompatActivity {
     private List <FreeForm> freeFormList;
     private FloatingActionButton fabAdd;
     private BottomNavigationView bottomNavigationView;
-    private Date d1,d2;
 
 
 
@@ -227,16 +227,20 @@ public class ViewingProtokolsList extends AppCompatActivity {
         Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-                DateFormat dateFormat1 = null;
-                DateFormat dateFormat2 = null;
+                String s1 = o1.getDate();
+                String s2 = o2.getDate();
+
+                Date d1 = null;
+                Date d2 = null;
                 try {
-                    d1 = dateFormat1.parse(o1.getDate());
-                    d2 = dateFormat2.parse(o2.getDate());
+                    d1 = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(s1);
+                    d2 = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(s2);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-                if (d1.compareTo(d2) == 1) return 1;
-                if (d2.compareTo(d1) == -1) return -1;
+
+                if (d1.compareTo(d2) > 0) return 1;
+                if (d2.compareTo(d1) < 0) return -1;
                 else return 0;
             }
         });
