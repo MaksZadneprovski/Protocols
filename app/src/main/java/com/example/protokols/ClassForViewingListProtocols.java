@@ -14,26 +14,18 @@ import java.util.List;
 
 public class ClassForViewingListProtocols extends AppCompatActivity {
     private int id;
-    private int idForBD;
     private String work, object, date;
     private Toolbar toolbarMain;
 
 
-    public ClassForViewingListProtocols(int id, int idForBD, String work, String object, String date) {
+    public ClassForViewingListProtocols(int id, String work, String object, String date) {
         this.id = id;
-        this.idForBD = idForBD;
         this.work = work;
         this.object = object;
         this.date = date;
     }
 
-    public int getIdForBD() {
-        return idForBD;
-    }
 
-    public void setIdForBD(int idForBD) {
-        this.idForBD = idForBD;
-    }
 
     public String getWork() {
         return work;

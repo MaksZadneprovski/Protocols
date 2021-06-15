@@ -135,8 +135,6 @@ public class MainFreeForm extends AppCompatActivity {
                 // Записываем в БД
                 freeFormDao.insertFreeForm(createFreeFormFromEditText());
 
-                // Инкрементируем ID
-                MainActivity.incrementId();
 
                 // Показываем Toast
                 Toast.makeText(MainFreeForm.this, "Протокол сохранён", Toast.LENGTH_SHORT).show();
@@ -178,13 +176,12 @@ public class MainFreeForm extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 3 Метод : создает объект FreeForm по введенным данным в EditText-ы
     private FreeForm createFreeFormFromEditText() {
-        int idForBD = MainActivity.idForDB;
         String object = etObject.getText().toString();
         String work = tvWork.getText().toString();
         String date = etDate.getText().toString();
         String notes = etNotes.getText().toString();
 
-        FreeForm freeForm = new FreeForm(idForBD, object,work,date,notes);
+        FreeForm freeForm = new FreeForm( object,work,date,notes);
         return freeForm;
     }
 

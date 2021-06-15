@@ -14,8 +14,6 @@ public class SilovoyTrans {
     @ColumnInfo(name = "id")
     public int id;
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    @ColumnInfo(name = "idForDB")
-    public int idForDB;
 
     @ColumnInfo(name = "Object")
     public String mObjectOrPodstancia;
@@ -145,14 +143,13 @@ public class SilovoyTrans {
     public SilovoyTrans() {
     }
 
-    public SilovoyTrans(int id, int idForDB, String mObjectOrPodstancia, String mWork, String mDate, String mTemperature, String pasportType, String pasportZavNumber,
+    public SilovoyTrans(int id,  String mObjectOrPodstancia, String mWork, String mDate, String mTemperature, String pasportType, String pasportZavNumber,
                         String pasportPower, String pasportVoltage, String pasportCurrent, String pasportVoltageKz, String pasportYearOfManufacture,
                         String izolHvR15, String izolHvR60, String izolHvKoef, String izolLvR15, String izolLvR60, String izolLvKoef, String switchOperationPosition,
                         String rpnHvAB1, String rpnHvAB2, String rpnHvAB3, String rpnHvAB4, String rpnHvAB5, String rpnHvAB6, String rpnHvBC1, String rpnHvBC2,
                         String rpnHvBC3, String rpnHvBC4, String rpnHvBC5, String rpnHvBC6, String rpnHvCA1, String rpnHvCA2, String rpnHvCA3, String rpnHvCA4,
                         String rpnHvCA5, String rpnHvCA6, String rpnLvAn, String rpnLvBn, String rpnLvCn, String notes) {
         this.id = id;
-        this.idForDB = idForDB;
         this.mObjectOrPodstancia = mObjectOrPodstancia;
         this.mWork = mWork;
         this.mDate = mDate;
@@ -196,13 +193,12 @@ public class SilovoyTrans {
     }
 
     @Ignore
-    public SilovoyTrans( int idForDB,String mObjectOrPodstancia, String mWork, String mDate, String mTemperature, String pasportType, String pasportZavNumber,
+    public SilovoyTrans( String mObjectOrPodstancia, String mWork, String mDate, String mTemperature, String pasportType, String pasportZavNumber,
                         String pasportPower, String pasportVoltage, String pasportCurrent, String pasportVoltageKz, String pasportYearOfManufacture,
                         String izolHvR15, String izolHvR60, String izolHvKoef, String izolLvR15, String izolLvR60, String izolLvKoef, String switchOperationPosition,
                         String rpnHvAB1, String rpnHvAB2, String rpnHvAB3, String rpnHvAB4, String rpnHvAB5, String rpnHvAB6, String rpnHvBC1, String rpnHvBC2,
                         String rpnHvBC3, String rpnHvBC4, String rpnHvBC5, String rpnHvBC6, String rpnHvCA1, String rpnHvCA2, String rpnHvCA3, String rpnHvCA4,
                         String rpnHvCA5, String rpnHvCA6, String rpnLvAn, String rpnLvBn, String rpnLvCn, String notes) {
-        this.idForDB = idForDB;
         this.mObjectOrPodstancia = mObjectOrPodstancia;
         this.mWork = mWork;
         this.mDate = mDate;
@@ -253,14 +249,6 @@ public class SilovoyTrans {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdForDB() {
-        return idForDB;
-    }
-
-    public void setIdForDB(int idForDB) {
-        this.idForDB = idForDB;
     }
 
     public String getmObjectOrPodstancia() {

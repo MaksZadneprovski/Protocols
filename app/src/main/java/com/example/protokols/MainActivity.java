@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
-    public static int idForDB;
 
 
     @Override
@@ -47,10 +46,6 @@ public class MainActivity extends AppCompatActivity {
 
         isEditSilovoyTrans = false;
 
-        sharedPreferences = getSharedPreferences("IdPreferences", MODE_PRIVATE);
-        if (sharedPreferences.contains("ID")) {
-            idForDB = sharedPreferences.getInt("ID", 0);
-        }
 
         tvDiscrepancyMain2 = findViewById(R.id.tvDiscrepancyMain2);
         max1 = findViewById(R.id.max1);
@@ -102,12 +97,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static void incrementId() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        idForDB++;
-        editor.putInt("ID", MainActivity.idForDB);
-        editor.apply();
-    }
 
     public void calculate() {
         double[] min = new double[5];
