@@ -45,6 +45,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
     private List <FreeForm> freeFormList;
     private FloatingActionButton fabAdd;
     private BottomNavigationView bottomNavigationView;
+    private long l1,l2;
 
 
 
@@ -227,9 +228,8 @@ public class ViewingProtokolsList extends AppCompatActivity {
         Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-
-
-
+                l1 = o1.getDate();
+                l2 = o2.getDate();
                 if (l1 < l2) return 1;
                 if (l1 > l2) return -1;
                 else return 0;

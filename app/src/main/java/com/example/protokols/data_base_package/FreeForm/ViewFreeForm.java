@@ -25,12 +25,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+
 public class ViewFreeForm extends AppCompatActivity {
     private TextView tvWork;
     private BottomNavigationView bottomNavigationView;
     private FloatingActionButton fabEdit ;
     private TextInputEditText etObject, etDate, etNotes;
     private int idFreeForm;
+    // Date setting
+    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
+
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     @Override
@@ -131,7 +138,7 @@ public class ViewFreeForm extends AppCompatActivity {
 
         // Заполняем EditText-ы данными из объекта silovoyTrans
         etObject.setText(freeForm.getmObjectOrPodstancia().toString());
-        etDate.setText(freeForm.getmDate().toString());
+        etDate.setText(dateFormat.format(freeForm.getmDate()));
         etNotes.setText(freeForm.getNotes().toString());
     }
 

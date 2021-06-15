@@ -11,7 +11,10 @@ import android.widget.TextView;
 
 import com.example.protokols.data_base_package.SilovoyTransformator.SilovoyTrans;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 // В одну из таблиц базы данных сохраняются объекты класса SilovoyTrans "Измерение силового трансформатора" .
 // В классе ViewingProtokolsList создается список из этих объектов и передается в адаптер через конструктор.
 
@@ -19,6 +22,8 @@ public class AdapterForList extends BaseAdapter {
     Context context;
     LayoutInflater layoutInflater;
     ArrayList<ClassForViewingListProtocols> classForViewingListProtocolsArrayList;
+    // Date setting
+    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
 
     // Конструктор
 
@@ -68,7 +73,7 @@ public class AdapterForList extends BaseAdapter {
         // ((TextView) view.findViewById(R.id.tvItem1)).setText(Integer.toString(silovoyTrans.getPasportType()));
         ((TextView) view.findViewById(R.id.tvItem1)).setText(classForViewingListProtocolsArrayList.getWork().replace("\n", " "));
         ((TextView) view.findViewById(R.id.tvItem2)).setText(classForViewingListProtocolsArrayList.getObject());
-        ((TextView) view.findViewById(R.id.tvItem3)).setText(classForViewingListProtocolsArrayList.getDate());
+        ((TextView) view.findViewById(R.id.tvItem3)).setText(dateFormat.format(classForViewingListProtocolsArrayList.getDate()));
         switch (classForViewingListProtocolsArrayList.getWork().toString()){
             case "Свободная форма" :
                 ((ImageView) view.findViewById(R.id.imgIcon)).setImageResource(R.drawable.ic_freeform);

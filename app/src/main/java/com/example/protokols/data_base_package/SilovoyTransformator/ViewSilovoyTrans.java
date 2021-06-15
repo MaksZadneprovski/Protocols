@@ -22,7 +22,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class ViewSilovoyTrans extends AppCompatActivity {
     private TextView tvWork, tv10,tvDiscrepancy1, tvDiscrepancy2;
@@ -37,6 +40,9 @@ public class ViewSilovoyTrans extends AppCompatActivity {
             etRpnHvBC4, etRpnHvBC5, etRpnHvBC6, etRpnHvCA1, etRpnHvCA2, etRpnHvCA3, etRpnHvCA4, etRpnHvCA5, etRpnHvCA6,
             etNotes, etRpnLvCn,etRpnLvBn,etRpnLvAn,etSetConstantForRpn;
     private int idSilovoyTrans;
+    // Date setting
+    DateFormat dateFormat = new SimpleDateFormat("dd.MM.yy EEE HH:mm", Locale.getDefault());
+
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     @Override
@@ -158,7 +164,7 @@ public class ViewSilovoyTrans extends AppCompatActivity {
 
         // Заполняем EditText-ы данными из объекта silovoyTrans
         etObject.setText(silovoyTrans.getmObjectOrPodstancia().toString());
-        etDate.setText(silovoyTrans.getmDate().toString());
+        etDate.setText(dateFormat.format(silovoyTrans.getmDate()));
         etTemperature.setText(silovoyTrans.getmTemperature().toString());
         etPasportCurrent.setText(silovoyTrans.getPasportCurrent().toString());
         etPasportPower.setText(silovoyTrans.getPasportPower().toString());
