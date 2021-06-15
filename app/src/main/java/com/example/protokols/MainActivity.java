@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabCalc;
     private BottomNavigationView bottomNavigationView;
     public static SharedPreferences sharedPreferences;
-    private TextView tvDiscrepancyMain2;
-    private TextInputEditText min1, min2, min3, min4, min5, max1, max2, max3, max4, max5;
+    private TextView tvDiscrepancyMain2,tvDiscrepancyMain1;
+    private TextInputEditText min1, min2, min3, min4, min5, max1, max2, max3, max4, max5, consta;
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         tvDiscrepancyMain2 = findViewById(R.id.tvDiscrepancyMain2);
+        tvDiscrepancyMain1 = findViewById(R.id.tvDiscrepancyMain1);
         max1 = findViewById(R.id.max1);
         min1 = findViewById(R.id.min1);
         max2 = findViewById(R.id.max2);
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         min4 = findViewById(R.id.min4);
         max5 = findViewById(R.id.max5);
         min5 = findViewById(R.id.min5);
+        consta = findViewById(R.id.consta);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         fabCalc = findViewById(R.id.fabMain);
@@ -172,6 +174,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+        tvDiscrepancyMain1.setText("Процентное расхождение составило :");
         tvDiscrepancyMain2.setText(
                 "1  "+result[0].
 
@@ -192,5 +195,31 @@ public class MainActivity extends AppCompatActivity {
             );
 
 }
+    private void setConstant (String constantForEt) {
+        min1.setText(constantForEt);
+        min1.setSelection(min1.getText().length());
+        min2.setText(constantForEt);
+        min2.setSelection(min2.getText().length());
+        min3.setText(constantForEt);
+        min3.setSelection(min3.getText().length());
+        min4.setText(constantForEt);
+        min4.setSelection(min4.getText().length());
+        min5.setText(constantForEt);
+        min5.setSelection(min5.getText().length());
+        max1.setText(constantForEt);
+        max1.setSelection(max1.getText().length());
+        max2.setText(constantForEt);
+        max2.setSelection(max2.getText().length());
+        max3.setText(constantForEt);
+        max3.setSelection(max3.getText().length());
+        max4.setText(constantForEt);
+        max4.setSelection(max4.getText().length());
+        max5.setText(constantForEt);
+        max5.setSelection(max5.getText().length());
 
+    }
+
+    public void setConsta(View view) {
+        setConstant(consta.getText().toString());
+    }
 }

@@ -47,7 +47,6 @@ public class MainSilovoyTrans extends AppCompatActivity {
     private ImageButton btnSetConstantForRpn;
     private FloatingActionButton  fabSave;
     private Date currentDate = new Date();
-    public SharedPreferences sharedPreferences;
     private TextInputEditText etObject, etDate, etPasportCurrent, etPasportPower, etPasportType, etPasportVoltage, etPasportVoltageKz, etPasportYearOfManufacture,
             etPasportZavNumber, etTemperature, etIzolHvKoef, etIzolHvR15, etIzolHvR60, etIzolLvKoef, etIzolLvR15, etIzolLvR60,
             etSwitchOperatingPosition, etRpnHvAB1, etRpnHvAB2, etRpnHvAB3, etRpnHvAB4, etRpnHvAB5, etRpnHvAB6, etRpnHvBC1, etRpnHvBC2, etRpnHvBC3,

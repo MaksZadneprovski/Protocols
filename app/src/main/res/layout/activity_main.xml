@@ -230,7 +230,7 @@
                         android:id="@+id/consta"
                         android:inputType="numberDecimal"
                         style="@style/textInputEt"
-                        android:hint="Установить полям значение" />
+                        android:hint="Установить начальное значение" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
@@ -239,6 +239,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:text="Установить"
+                    android:onClick="setConsta"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/constL"/>
@@ -248,7 +249,7 @@
                     style="@style/TvForEt"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="50dp"
-                    android:text="Процентное расхождение составило :"
+                    android:text=""
                     android:textSize="@dimen/text14"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btnSetMain" />
