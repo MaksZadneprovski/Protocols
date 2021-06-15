@@ -139,17 +139,33 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+    double[] max = new double[5];
+        if (!(max1.getText()).toString().isEmpty()) {
+            max[0] = Double.parseDouble((max1.getText()).toString());
+        } else {
+            max[0] = 1;
+        }
+        if (!(max1.getText()).toString().isEmpty()) {
+            max[1] = Double.parseDouble((max2.getText()).toString());
+        } else {
+            max[1] = 1;
+        }
+        if (!(max1.getText()).toString().isEmpty()) {
+            max[2] = Double.parseDouble((max3.getText()).toString());
+        } else {
+            max[2] = 1;
+        }
+        if (!(max1.getText()).toString().isEmpty()) {
+            max[3] = Double.parseDouble((max4.getText()).toString());
+        } else {
+            max[3] = 1;
+        }
+        if (!(max1.getText()).toString().isEmpty()) {
+            max[4] = Double.parseDouble((max5.getText()).toString());
+        } else {
+            max[4] = 1;
+        }
 
-
-
-    double[] max = {
-            Double.parseDouble((max1.getText()).toString()),
-            Double.parseDouble((max2.getText()).toString()),
-            Double.parseDouble((max3.getText()).toString()),
-            Double.parseDouble((max4.getText()).toString()),
-            Double.parseDouble((max5.getText()).toString())
-
-    };
     String result[] = new String[5];
     String s;
 
