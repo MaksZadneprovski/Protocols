@@ -27,6 +27,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -177,10 +178,17 @@ public class MainFreeForm extends AppCompatActivity {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
     // 3 Метод : создает объект FreeForm по введенным данным в EditText-ы
-    private FreeForm createFreeFormFromEditText() {
+    private FreeForm createFreeFormFromEditText() throws ParseException {
         String object = etObject.getText().toString();
         String work = tvWork.getText().toString();
-        long date = currentDate.getTime();
+        long date=1;
+        if (!MainActivity.isEditSilovoyTrans){
+            date = currentDate.getTime();
+        }else {
+            Date d = new SimpleDateFormat("dd.MM.yy EEE HH:mm").parse(etDate.getText().toString());
+             date = d.getTime();
+        }
+
         String notes = etNotes.getText().toString();
 
         FreeForm freeForm = new FreeForm( object,work,date,notes);
