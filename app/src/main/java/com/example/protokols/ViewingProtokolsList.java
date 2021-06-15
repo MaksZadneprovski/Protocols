@@ -30,9 +30,12 @@ import com.example.protokols.utils.ConstantsMy;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 
 public class ViewingProtokolsList extends AppCompatActivity {
@@ -41,6 +44,7 @@ public class ViewingProtokolsList extends AppCompatActivity {
     private List <FreeForm> freeFormList;
     private FloatingActionButton fabAdd;
     private BottomNavigationView bottomNavigationView;
+    private Date d1,d2;
 
 
 
@@ -223,8 +227,16 @@ public class ViewingProtokolsList extends AppCompatActivity {
         Collections.sort(arrayList, new Comparator<ClassForViewingListProtocols>() {
             @Override
             public int compare(ClassForViewingListProtocols o1, ClassForViewingListProtocols o2) {
-                if (o1.getDate().compareTo(o2.getDate()) == 1) return -1;
-                if (o1.getDate().compareTo(o2.getDate()) == -1) return 1;
+                DateFormat dateFormat1 = null;
+                DateFormat dateFormat2 = null;
+                try {
+                    d1 = dateFormat1.parse(o1.getDate());
+                    d2 = dateFormat2.parse(o2.getDate());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                if (d1.compareTo(d2) == 1) return 1;
+                if (d2.compareTo(d1) == -1) return -1;
                 else return 0;
             }
         });
