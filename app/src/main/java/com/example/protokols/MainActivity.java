@@ -52,6 +52,7 @@ public class    MainActivity extends AppCompatActivity {
             idForDB=sharedPreferences.getInt("ID",0);
         }
 
+        tvDiscrepancyMain2 = findViewById(R.id.tvDiscrepancyMain2);
         max1 = findViewById(R.id.max1);
         min1 =findViewById(R.id.min1);
         max2 = findViewById(R.id.max2);
@@ -138,11 +139,11 @@ public class    MainActivity extends AppCompatActivity {
 
         }
         tvDiscrepancyMain2.setText(
-                        "1  "+ result[0]+"%"+
-                        "\n\n2  "+ result[1]+"%"+
-                        "\n\n3  "+ result[2]+"%"+
-                        "\n\n4  "+ result[3]+"%"+
-                        "\n\n5  "+ result[4]+"%");
+                        "1  "+ result[0].toString()+"%"+
+                        "\n\n2  "+ result[1].toString()+"%"+
+                        "\n\n3  "+ result[2].toString()+"%"+
+                        "\n\n4  "+ result[3].toString()+"%"+
+                        "\n\n5  "+ result[4].toString()+"%");
 
     }
 
