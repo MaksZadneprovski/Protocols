@@ -131,7 +131,8 @@ public class    MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < 5; i++) {
             double res = (max[i]-min[i])/min[i]*100;
-             result[i] = String.format ("%.3f",res);
+             result[i] = String.format ("%.3f",String.valueOf(res));
+
 
         }
         tvDiscrepancyMain2.setText(
