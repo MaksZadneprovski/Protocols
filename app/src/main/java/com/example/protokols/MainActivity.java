@@ -24,13 +24,13 @@ import com.google.android.material.textfield.TextInputEditText;
 
 // Добавил Resource Directory в res и выбрал  menu
 // Добавил в menu Resource Menu File
-public class    MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private Toolbar toolbarMain;
     private FloatingActionButton fabCalc;
     private BottomNavigationView bottomNavigationView;
     public static SharedPreferences sharedPreferences;
     private TextView tvDiscrepancyMain2;
-    private TextInputEditText min1,min2,min3,min4,min5,max1, max2,max3,max4,max5;
+    private TextInputEditText min1, min2, min3, min4, min5, max1, max2, max3, max4, max5;
 
     // Статичная переменная, чтобы определить, хочу ли я редактировать объект EditSilovoyTrans или создаю новый
     public static boolean isEditSilovoyTrans = false;
@@ -43,26 +43,26 @@ public class    MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Отключение анимации перехода
-        overridePendingTransition(0,0);
+        overridePendingTransition(0, 0);
 
         isEditSilovoyTrans = false;
 
-        sharedPreferences = getSharedPreferences("IdPreferences",MODE_PRIVATE);
-        if (sharedPreferences.contains("ID")){
-            idForDB=sharedPreferences.getInt("ID",0);
+        sharedPreferences = getSharedPreferences("IdPreferences", MODE_PRIVATE);
+        if (sharedPreferences.contains("ID")) {
+            idForDB = sharedPreferences.getInt("ID", 0);
         }
 
         tvDiscrepancyMain2 = findViewById(R.id.tvDiscrepancyMain2);
         max1 = findViewById(R.id.max1);
-        min1 =findViewById(R.id.min1);
+        min1 = findViewById(R.id.min1);
         max2 = findViewById(R.id.max2);
-        min2 =findViewById(R.id.min2);
+        min2 = findViewById(R.id.min2);
         max3 = findViewById(R.id.max3);
-        min3 =findViewById(R.id.min3);
+        min3 = findViewById(R.id.min3);
         max4 = findViewById(R.id.max4);
-        min4 =findViewById(R.id.min4);
+        min4 = findViewById(R.id.min4);
         max5 = findViewById(R.id.max5);
-        min5 =findViewById(R.id.min5);
+        min5 = findViewById(R.id.min5);
 
         bottomNavigationView = findViewById(R.id.bottomNavView);
         fabCalc = findViewById(R.id.fabMain);
@@ -78,18 +78,15 @@ public class    MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.bottomNavIc1){
+                if (item.getItemId() == R.id.bottomNavIc1) {
 
-                }
-                else  if (item.getItemId() == R.id.bottomNavIc2){
+                } else if (item.getItemId() == R.id.bottomNavIc2) {
                     Intent i = new Intent(MainActivity.this, ViewingProtokolsList.class);
                     startActivity(i);
                     finish();
-                }
-                else  if (item.getItemId() == R.id.bottomNavIc3){
+                } else if (item.getItemId() == R.id.bottomNavIc3) {
 
-                }
-                else  if (item.getItemId() == R.id.bottomNavIc4){
+                } else if (item.getItemId() == R.id.bottomNavIc4) {
 
                 }
                 return true;
@@ -105,52 +102,90 @@ public class    MainActivity extends AppCompatActivity {
 
     }
 
-    public static void incrementId(){
+    public static void incrementId() {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         idForDB++;
-        editor.putInt("ID",MainActivity.idForDB);
+        editor.putInt("ID", MainActivity.idForDB);
         editor.apply();
     }
 
-    public void calculate(){
-        double[] min={
-                Double.parseDouble((min1.getText()).toString()),
-                Double.parseDouble((min2.getText()).toString()),
-                Double.parseDouble((min3.getText()).toString()),
-                Double.parseDouble((min4.getText()).toString()),
-                Double.parseDouble((min5.getText()).toString())
-               };
-        double[] max={
-                Double.parseDouble((max1.getText()).toString()),
-                Double.parseDouble((max2.getText()).toString()),
-                Double.parseDouble((max3.getText()).toString()),
-                Double.parseDouble((max4.getText()).toString()),
-                Double.parseDouble((max5.getText()).toString())
+    public void calculate() {
+        double[] min = new double[5];
 
-        };
-        String result[] = new String[5];
-        String s ;
-
-        for (int i = 0; i < 5; i++) {
-            if (result[i]!=null & !result[i].isEmpty()) {
-                double res = (max[i]-min[i])/min[i]*100;
-                s = String.format ("%.3f",res);
-                if (s.indexOf(',')!=-1 ) s = s.replace(",",".");
-                result[i] = s;
-            }
-            else result[i]= "1";
-
-
+        if (!(min1.getText()).toString().isEmpty()) {
+            min[0] = Double.parseDouble((min1.getText()).toString());
+        } else {
+            min[0] = 1;
         }
-        tvDiscrepancyMain2.setText(
-                        "1  "+ result[0].toString()+"%"+
-                        "\n\n2  "+ result[1].toString()+"%"+
-                        "\n\n3  "+ result[2].toString()+"%"+
-                        "\n\n4  "+ result[3].toString()+"%"+
-                        "\n\n5  "+ result[4].toString()+"%"+
-                        "\n\n\n\n\n\n\n"
-                );
+        if (!(min1.getText()).toString().isEmpty()) {
+            min[1] = Double.parseDouble((min2.getText()).toString());
+        } else {
+            min[1] = 1;
+        }
+        if (!(min1.getText()).toString().isEmpty()) {
+            min[2] = Double.parseDouble((min3.getText()).toString());
+        } else {
+            min[2] = 1;
+        }
+        if (!(min1.getText()).toString().isEmpty()) {
+            min[3] = Double.parseDouble((min4.getText()).toString());
+        } else {
+            min[3] = 1;
+        }
+        if (!(min1.getText()).toString().isEmpty()) {
+            min[4] = Double.parseDouble((min5.getText()).toString());
+        } else {
+            min[4] = 1;
+        }
+
+
+
+
+
+    double[] max = {
+            Double.parseDouble((max1.getText()).toString()),
+            Double.parseDouble((max2.getText()).toString()),
+            Double.parseDouble((max3.getText()).toString()),
+            Double.parseDouble((max4.getText()).toString()),
+            Double.parseDouble((max5.getText()).toString())
+
+    };
+    String result[] = new String[5];
+    String s;
+
+        for(
+    int i = 0;
+    i< 5;i++)
+
+    {
+        if (max[i] != 0 & min[i] != 0) {
+            double res = (max[i] - min[i]) / min[i] * 100;
+            s = String.format("%.3f", res);
+            if (s.indexOf(',') != -1) s = s.replace(",", ".");
+            result[i] = s;
+        } else result[i] = "1";
+
 
     }
+        tvDiscrepancyMain2.setText(
+                "1  "+result[0].
+
+    toString()+"%"+
+            "\n\n2  "+result[1].
+
+    toString()+"%"+
+            "\n\n3  "+result[2].
+
+    toString()+"%"+
+            "\n\n4  "+result[3].
+
+    toString()+"%"+
+            "\n\n5  "+result[4].
+
+    toString()+"%"+
+            "\n\n\n\n\n\n\n"
+            );
+
+}
 
 }
